@@ -221,7 +221,7 @@ h5{font:800 13px "Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppe
 .disc{display:block;margin:3px 0 0;text-align:center;font:500 10px/12px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#7a5a54;padding:0 8px}.disc a{color:var(--ink);font-weight:700;text-decoration:none}
 @media (max-width:640px){
  .top{display:flex!important;flex-wrap:wrap;align-items:center}
- .top h1{order:1;flex:1 1 0;min-width:0}
+ .top h1{order:1;flex:1 1 calc(100% - 150px);min-width:0}
  .snd{order:2;flex:none}
  .go{order:3;flex:1 1 calc(100% - 146px)!important;min-width:0}
  .hsel{order:4;flex:0 0 130px!important;width:130px!important}
@@ -233,6 +233,9 @@ h5{font:800 13px "Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppe
 @media (max-width:420px){.h1x{display:none}.passb .pl{display:none}.passb::before{content:"";display:inline-block;width:10px;height:10px;border:2px solid currentColor;border-radius:50%;vertical-align:-2px;margin-right:4px}}
 .corner{position:fixed;right:10px;z-index:4;display:flex;flex-direction:column;gap:6px}.corner .cb{width:40px;height:40px;border-radius:50%;border:2px solid var(--ink);background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;box-shadow:0 3px 10px #3b161322;position:relative}.corner .cb[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 3px 10px #3b161322}.corner .cb[aria-pressed=false]{background:#fff;color:var(--ink);text-decoration:none;opacity:.55}.corner .cb[aria-pressed=false]::after{content:"";position:absolute;left:8px;right:8px;top:50%;height:2.5px;background:#ef5054;transform:rotate(-45deg);border-radius:2px}@media (max-width:640px){.corner .cb{width:36px;height:36px}}
 .disc .teamb{border:0;background:none;padding:0;font:inherit;font-weight:700;color:var(--ink);text-decoration:underline;cursor:pointer}
+.corner{gap:8px}.corner a.cb{text-decoration:none}.corner .cb{width:auto;min-width:44px;height:44px;border-radius:999px;padding:0 14px 0 11px;display:flex;align-items:center;gap:8px;font:700 14px "Helvetica Neue",Helvetica,Arial,sans-serif;justify-content:flex-start}.corner .cb .cn{font-style:normal;font-weight:800;background:var(--ink);color:var(--cream);border-radius:999px;padding:1px 7px;font-size:12px;margin-left:auto}.corner .cbk{background:#ffcf3f}.corner .cbk.over{background:#ef5054;color:#fff}.corner #bsite,.corner #bav,.corner #bmus,.corner #bsfx{width:44px;padding:0;justify-content:center;align-self:flex-end}.corner .csep{height:2px;background:#3b161322;border-radius:2px;margin:2px 6px}.corner{align-items:stretch}@media (max-width:640px){.corner .cb{width:44px!important;height:44px;padding:0!important;justify-content:center}.corner .cb .cl{display:none}.corner .cb .cn{position:absolute;top:-6px;right:-8px;font-size:10px;padding:1px 5px;margin:0}.corner{align-items:flex-end}.corner .cbk .cn{background:#ef5054}}.hsel,.csel{-webkit-appearance:none;appearance:none;background-repeat:no-repeat;background-position:right 14px center;background-size:12px 8px;padding-right:36px!important;padding-left:14px!important}.hsel{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23fdf8d3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}.csel{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%233b1613' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-color:#fff}
+.swc{position:relative;width:38px;height:38px;border-radius:50%;cursor:pointer;display:grid;place-items:center;background:conic-gradient(#ef5054,#ffcf3f,#6cc28e,#3d7bd9,#7b4bb5,#ef5054);border:3px solid #fff;box-shadow:0 0 0 2px #3b161344;overflow:hidden}.swc.on{background:var(--c);box-shadow:0 0 0 3px var(--ink)}.swc span{font:800 18px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#fff;text-shadow:0 1px 2px #0008}.swc input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}.sw{width:34px;height:34px}.swc{width:34px;height:34px}
+.minibox{position:fixed}.mexp{position:absolute;right:10px;top:10px;width:32px;height:32px;border-radius:8px;border:2px solid var(--ink);background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;box-shadow:0 2px 6px #3b161333}.credit{position:fixed;right:14px;bottom:12px;z-index:4;max-width:min(250px,calc((100vw - 760px)/2 - 28px));font:500 10.5px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#7a5a54;text-align:right;background:#fffd;padding:6px 8px;border-radius:8px}.credit a,.xcred a{color:var(--ink);font-weight:700;text-decoration:none}.credit .teamb,.xcred .teamb{border:0;background:none;padding:0;font:inherit;font-weight:700;color:var(--ink);text-decoration:underline;cursor:pointer}.xcred{display:none;font:500 10.5px/14px "Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--cream);opacity:.85;max-width:160px;padding:6px 2px 0;border-top:1px solid #fdf8d333;margin-top:4px}.xcred a,.xcred .teamb{color:#ffcf3f}@media (max-width:1180px){.credit{display:none}.xcred{display:block}}.bigbox{width:min(1200px,100%);max-height:calc(100vh - 32px);overflow:auto;max-width:calc(100vw - 32px)}.bigwrap{position:relative}#bigcv{width:100%;display:block;border-radius:12px;cursor:pointer;touch-action:manipulation}.bigtip{position:absolute;pointer-events:none;background:var(--ink);color:var(--cream);font:500 12px/16px "Helvetica Neue",Helvetica,Arial,sans-serif;padding:6px 9px;border-radius:8px;max-width:240px;transform:translate(-50%,calc(-100% - 10px))}@media (max-width:640px){.mexp{width:28px;height:28px;right:6px;top:6px}}
 </style>
 </head>
 <body>
@@ -242,12 +245,13 @@ h5{font:800 13px "Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppe
   <div class="meta">28ª edição · 25 a 29 de novembro · campus Butantã</div>
   <span class="where" id="where">Entrada</span>
   <select id="cat" class="hsel" aria-label="Filtrar ilhas por categoria"></select>
-  <div class="snd"><button id="bcart" class="cartb">Cesta <em>0</em></button><button id="blist" class="listb">Lista</button><button id="bpass" class="passb" aria-label="Passaporte"><span class="pl">Passaporte</span> <em>0/60</em></button><button id="bmore" class="more-b" aria-expanded="false">Mais</button><div class="extra" id="extra"><button id="blist2" class="mlist">Lista de livros</button><button id="bsurp2">Me surpreenda</button><button id="bmodo">Modo na Festa</button><button id="bcmp">Comparar pilhas</button><button id="bret">Retrospectiva</button><button id="bfesta">A Festa</button><button id="btut">Como jogar</button><button id="breset" class="rst">Resetar jogo</button></div></div>
+  <div class="snd"><button id="bmore" class="more-b" aria-expanded="false">Mais funções</button><div class="extra" id="extra"><button id="bsurp2">Me surpreenda</button><button id="bmodo">Modo na Festa</button><button id="bcmp">Comparar pilhas</button><button id="bret">Retrospectiva</button><button id="bfesta">A Festa</button><button id="btut">Como jogar</button><button id="breset" class="rst">Resetar jogo</button><div class="xcred">Idealizado por Isabelle Zovico Designer (<a href="https://www.instagram.com/euzoartista" target="_blank" rel="noopener">@euzoartista</a>) e Gustavo Medeiros (<a href="https://www.instagram.com/pensandocomguga" target="_blank" rel="noopener">@pensandocomguga</a>). Projeto independente de fã, não oficial. Dados do site da Festa do Livro da USP e do Skoob. · <button class="teamb" id="bteam2">Área da equipe</button></div></div></div>
   <div class="go"><input id="q" placeholder="Editora, livro ou ISBN…" autocomplete="off" aria-label="Buscar editora, livro ou ISBN"><div class="sug" id="sug"></div></div>
 </header>
-<div class="corner" id="corner"><button id="bav" class="cb" aria-label="Personagem" title="Personagem"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></button><button id="bmus" class="cb" aria-pressed="true" aria-label="Música" title="Música"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></button><button id="bsfx" class="cb" aria-pressed="true" aria-label="Sons" title="Sons"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button></div>
+<div class="credit" id="credit">Idealizado por Isabelle Zovico Designer (<a href="https://www.instagram.com/euzoartista" target="_blank" rel="noopener">@euzoartista</a>) e Gustavo Medeiros (<a href="https://www.instagram.com/pensandocomguga" target="_blank" rel="noopener">@pensandocomguga</a>). Projeto independente de fã, não oficial. Dados do site da Festa do Livro da USP e do Skoob. · <button class="teamb" id="bteam">Área da equipe</button></div>
+<div class="corner" id="corner"><button id="bcart" class="cb cbk" aria-label="Cesta" title="Cesta (C)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.4 11.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cl">Cesta</span><em class="cn">0</em></button><button id="blist" class="cb" aria-label="Lista de livros" title="Lista de livros (L)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2"/><circle cx="4.5" cy="12" r="1.2"/><circle cx="4.5" cy="18" r="1.2"/></svg><span class="cl">Lista</span></button><button id="bpass" class="cb" aria-label="Passaporte" title="Passaporte (P)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12.3 2.3 2.3 4.7-5"/></svg><span class="cl">Passaporte</span><em class="cn">0/60</em></button><i class="csep"></i><a id="bsite" class="cb" href="https://festadolivro.edusp.com.br/" target="_blank" rel="noopener" aria-label="Site oficial da Festa do Livro" title="Site oficial da Festa do Livro"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/></svg></a><button id="bav" class="cb" aria-label="Personagem" title="Personagem"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></button><button id="bmus" class="cb" aria-pressed="true" aria-label="Música" title="Música"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></button><button id="bsfx" class="cb" aria-pressed="true" aria-label="Sons" title="Sons"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button></div>
 <div class="help">Ande com ←↑→↓ ou WASD · <b>Espaço</b> abre a ilha · <b>C</b> cesta · <b>L</b> lista · <b>P</b> passaporte · <b>R</b> me surpreenda · <b>/</b> busca</div>
-<div class="minibox"><span class="upd" id="upd"></span><canvas id="mini" aria-label="Mapa geral da tenda; clique para ir até uma ilha"></canvas><small class="disc">Idealizado por Isabelle Zovico Designer (<a href="https://www.instagram.com/euzoartista" target="_blank" rel="noopener">@euzoartista</a>) e Gustavo Medeiros (<a href="https://www.instagram.com/pensandocomguga" target="_blank" rel="noopener">@pensandocomguga</a>). Projeto independente de fã, não oficial. Dados do site da Festa do Livro da USP e do Skoob. · <button class="teamb" id="bteam">Área da equipe</button></small></div>
+<div class="minibox"><span class="upd" id="upd"></span><canvas id="mini" aria-label="Mapa geral da tenda; clique para ir até uma ilha"></canvas><button class="mexp" id="bmexp" aria-label="Expandir mapa" title="Expandir mapa"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
 <div class="hint" id="hint"></div>
 <div class="tip" id="tip" hidden></div>
 <div class="joy" id="joy" aria-label="Joystick"><i></i></div>
@@ -261,6 +265,7 @@ h5{font:800 13px "Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppe
 <div class="avm" id="cmpm" hidden><div class="avbox" role="dialog" aria-label="Comparar pilhas"><div class="maptop"><h2>Comparar pilhas</h2><div class="avact"><button id="cmpclose">Fechar</button></div></div><p class="note">Mande o seu link para alguém: quem abrir já vê a comparação com a pilha dela. Ou cole aqui o link (ou código) que te mandaram. Aparecem os livros em comum, o que só uma das duas tem e quanto vocês gastariam juntas.</p><h5>Meu link</h5><div class="cmprow"><input id="cmpmy" readonly aria-label="Meu link"><button id="cmpcopy">Copiar link</button></div><div class="cact"><button id="cmpwa" class="alt">Mandar no WhatsApp</button></div><h5>Link ou código da outra pessoa</h5><div class="cmprow"><input id="cmpin" placeholder="Cole aqui o link ou o código PILHA~…" aria-label="Código da outra pessoa" autocomplete="off"><button id="cmpgo">Comparar</button></div><div id="cmpres"></div></div></div>
 <div class="avm" id="retm" hidden><div class="avbox retbox" role="dialog" aria-label="Retrospectiva"><div class="maptop"><h2>Retrospectiva</h2><div class="avact"><button id="retclose">Fechar</button></div></div><div class="retsl" id="retsl" role="button" tabindex="0" aria-live="polite"></div><div class="cact"><button id="retprev" class="alt">Anterior</button><button id="retnext">Próximo</button><button id="retimg" class="alt">Gerar imagem</button></div></div></div>
 <div class="avm" id="teamm" hidden><div class="avbox" role="dialog" aria-label="Área da equipe"><div class="maptop"><h2>Área da equipe</h2><div class="avact"><button id="teamclose">Fechar</button></div></div><p class="note">Código do jogo para a equipe da Festa do Livro: o template, o montador do site, o mapa das ilhas e os dados coletados, com um guia de como gerar o site. Digite a senha que mandamos por e-mail.</p><div class="cmprow"><input id="teampw" type="password" placeholder="Senha" aria-label="Senha" autocomplete="off"><button id="teamgo">Baixar código</button></div><p class="note" id="teamst" aria-live="polite"></p></div></div>
+<div class="avm" id="bigm" hidden><div class="avbox bigbox" role="dialog" aria-label="Mapa da tenda"><div class="maptop"><h2>Mapa da tenda</h2><div class="avact"><button id="bigclose">Fechar</button></div></div><p class="note">Toque numa ilha para ir até ela. No computador, passe o mouse para ver as editoras.</p><div class="bigwrap"><canvas id="bigcv"></canvas><div class="bigtip" id="bigtip" hidden></div></div></div></div>
 <div class="avm" id="cardm" hidden><div class="avbox mapbox cardbox" role="dialog" aria-label="Cartão da minha pilha"><div class="maptop"><h2>Cartão da minha pilha</h2><div class="avact"><button id="cardclose" class="alt">Fechar</button></div></div><div class="cardfmt" role="group" aria-label="Formato"><button id="cfpost" class="on">Post · 1080×1350</button><button id="cfstory">Story · 1080×1920</button><button id="carddl" hidden>Baixar imagem</button></div><p class="note">No celular, toque e segure a imagem para salvar. O Story já explica o que é a Festa, para quem não conhece.</p><img id="cardimg" alt="Cartão com a personagem, a pilha de livros, o total e os destaques da sacola"></div></div>
 <div class="toast" id="toast" role="status"></div>
 <aside class="panel" id="panel" aria-live="polite"><div class="ph" id="ph"></div><div class="pb" id="pb"></div></aside>
@@ -499,7 +504,7 @@ let COMPREI=[];try{COMPREI=JSON.parse(localStorage.getItem('festa-comprei')||'[]
 const inCart=(pk,i)=>CART.includes(ckey(pk,i));
 function saveCart(){try{localStorage.setItem('festa-cesta',JSON.stringify(CART))}catch(e){};cartBadge()}
 function toggleCart(pk,i){if(!inCart(pk,i))fxJump();setTimeout(()=>PASS.check(),60);const k=ckey(pk,i);if(CART.includes(k)){CART=CART.filter(x=>x!==k);SND.play('drop')}else{CART.push(k);SND.play('coin')}saveCart()}
-function cartBadge(){const b=document.getElementById('bcart');if(!b)return;b.innerHTML='Cesta <em>'+CART.length+'</em>';const t=CART.map(k=>KEYMAP[k]).filter(Boolean).reduce((s,[pk,i])=>s+num(price(PUB[pk].b[i])),0);b.classList.toggle('over',BUDGET>0&&t>BUDGET);b.title=BUDGET?brl(t)+' de '+brl(BUDGET):brl(t)}
+function cartBadge(){const b=document.getElementById('bcart');if(!b)return;{const e=b.querySelector('.cn');if(e)e.textContent=CART.length}const t=CART.map(k=>KEYMAP[k]).filter(Boolean).reduce((s,[pk,i])=>s+num(price(PUB[pk].b[i])),0);b.classList.toggle('over',BUDGET>0&&t>BUDGET);b.title=BUDGET?brl(t)+' de '+brl(BUDGET):brl(t)}
 const ilhaOf=pk=>IS.find(x=>x.id===PUB[pk].ilha);
 function bookRow(pk,i,showPub){const b=PUB[pk].b[i],sk=b[6],on=inCart(pk,i);return '<div class="bkw"><button class="bk" data-p="'+pk+'" data-i="'+i+'"><span class="sp" style="background:'+SPN[h32(b[0])%SPN.length]+'"><i></i></span><span><h3>'+esc(b[0])+(isNovo(pk,b)?'<em class="nv">novo</em>':'')+'</h3><small>'+esc(b[1]||'—')+(showPub?' · '+esc(PUB[pk].n):'')+'</small>'+(sk&&sk[1]&&sk[2]?'<small>'+stars(sk[1])+' · '+sk[2].toLocaleString('pt-BR')+(sk[2]===1?' leitor':' leitores')+' no Skoob</small>':'')+'</span><span class="pr">'+(price(b)?(b[3]&&b[2]&&b[3]!==b[2]?'<s>'+esc(b[2])+'</s>':'')+'<b>'+esc(price(b))+'</b>':'<small>preço a<br>confirmar</small>')+'</span></button><button class="add'+(on?' on':'')+'" data-p="'+pk+'" data-i="'+i+'" aria-label="'+(on?'Tirar da cesta':'Colocar na cesta')+'" title="'+(on?'Tirar da cesta':'Colocar na cesta')+'">'+(on?'✓':'+')+'</button></div>'}
 function head(color,small,title,sub){ph.style.background=color;ph.style.color=color===COL.verde?INK:CREAM;ph.innerHTML='<div class="row"><div><small>'+small+'</small><h2>'+esc(title)+'</h2></div><button class="x" id="cl" aria-label="Fechar">✕</button></div>'+(sub?'<p>'+sub+'</p>':'');document.getElementById('cl').onclick=closeP}
@@ -638,18 +643,26 @@ cv.style.touchAction='none';
 
 /* ===== personagem ===== */
 const SPN2=['#6cc28e','#ef5054','#4a1d1a','#f2a33a','#2f7d4f','#c43a3e','#3d7bd9','#e6c84c','#fdf8d3'];
-const AV_DEF={nome:'',acess:'',corAcess:'#ef5054',sapato:'#3b1613',tipo:'menina',cabelo:'longo',corCabelo:'#4a1d1a',pele:'#e8b48a',roupa:'camiseta',corRoupa:'#ef5054',baixo:'calca',corBaixo:'#3b1613',oculos:'',sacola:'#6cc28e'};
+const AV_DEF={nome:'',acess:'',corAcess:'#ef5054',sapato:'#3b1613',tipo:'menina',cabelo:'longo',corCabelo:'#4a1d1a',pele:'#e8b48a',roupa:'camiseta',corRoupa:'#ef5054',baixo:'calca',corBaixo:'#3b1613',oculos:'',sacola:'#6cc28e',corDet:'#fdf8d3',tipoSapato:'tenis',rosto:''};
 let AV=Object.assign({},AV_DEF);try{const s=JSON.parse(localStorage.getItem('festa-avatar')||'null');if(s)AV=Object.assign(AV,s)}catch(e){}
 if(AV.oculos===true)AV.oculos='quadrado';if(AV.oculos===false)AV.oculos='';
 const saveAV=()=>{try{localStorage.setItem('festa-avatar',JSON.stringify(AV))}catch(e){}};
 function drawAvatar(c,a,dir,b,lg,n,sw,blink,pose){const OL=()=>{c.strokeStyle='#3b1613';c.lineWidth=1.4;c.stroke()};const rd=pose==='read'&&dir!=='up';const skin=a.pele,dk='#3b1613',hc=a.corCabelo;n=n||0;sw=sw||0;const back=dir==='up',ex=dir==='left'?-4:dir==='right'?4:0;
  c.fillStyle='#3b161333';c.beginPath();c.ellipse(0,16,13,5,0,0,7);c.fill();
- const legC=a.baixo==='calca'?a.corBaixo:skin;
+ const longL=a.baixo==='calca'||a.baixo==='jeans'||a.baixo==='legging';const legC=longL?a.corBaixo:skin;
  c.fillStyle=legC;c.fillRect(-7,3,5,12+lg/2);c.fillRect(2,3,5,12-lg/2);
+ if(a.baixo==='jeans'){c.fillStyle='#ffffff40';c.fillRect(-5,4,1,10+lg/2);c.fillRect(4,4,1,10-lg/2);c.fillStyle='#00000022';c.fillRect(-7,11+lg/2,5,1.2);c.fillRect(2,11-lg/2,5,1.2)}
+ if(a.baixo==='legging'){c.fillStyle='#ffffff30';c.fillRect(-7,3,1.2,12+lg/2);c.fillRect(5.8,3,1.2,12-lg/2)}
  if(a.baixo==='shorts'){c.fillStyle=a.corBaixo;c.fillRect(-8,2,16,7)}
- c.fillStyle=a.sapato||dk;c.fillRect(-8,13+lg/2,6,3);c.fillRect(2,13-lg/2,6,3);
- if(a.roupa==='vestido'){c.fillStyle=a.corRoupa;c.beginPath();c.moveTo(-10,-4+b);c.lineTo(10,-4+b);c.lineTo(14,9+b);c.lineTo(-14,9+b);c.fill()}
+ if(a.baixo==='bermuda'){c.fillStyle=a.corBaixo;c.fillRect(-8,2,7,10+lg/3);c.fillRect(1,2,7,10-lg/3);c.fillRect(-8,2,16,5)}
+ {const ts=a.tipoSapato||'tenis',sc=a.sapato||dk,L=13+lg/2,R=13-lg/2;
+  if(ts==='bota'){c.fillStyle=sc;c.fillRect(-8,L-5,6,8);c.fillRect(2,R-5,6,8);c.fillStyle='#00000030';c.fillRect(-8,L-5,6,1.2);c.fillRect(2,R-5,6,1.2)}
+  else if(ts==='sandalia'){c.fillStyle=skin;c.fillRect(-8,L,6,3);c.fillRect(2,R,6,3);c.fillStyle=sc;c.fillRect(-8,L+2.2,6,.9);c.fillRect(2,R+2.2,6,.9);c.fillRect(-6,L,1.2,3);c.fillRect(4,R,1.2,3)}
+  else{c.fillStyle=sc;c.fillRect(-8,L,6,3);c.fillRect(2,R,6,3);if(ts==='tenis'){c.fillStyle='#fff';c.fillRect(-8,L+2.2,6,1);c.fillRect(2,R+2.2,6,1)}}}
+ const VEST=a.roupa==='vestido'||a.roupa==='florido';
+ if(VEST){c.fillStyle=a.corRoupa;c.beginPath();c.moveTo(-10,-4+b);c.lineTo(10,-4+b);c.lineTo(14,9+b);c.lineTo(-14,9+b);c.fill();if(a.roupa==='florido'){c.fillStyle=a.corDet||'#fdf8d3';[[-9,6],[-3,2],[4,5],[9,7],[0,7]].forEach(([x,y])=>{c.beginPath();c.arc(x,y+b,1.6,0,7);c.fill()})}}
  else if(a.baixo==='saia'){c.fillStyle=a.corBaixo;c.beginPath();c.moveTo(-10,1+b);c.lineTo(10,1+b);c.lineTo(13,9+b);c.lineTo(-13,9+b);c.fill()}
+ else if(a.baixo==='saialonga'){c.fillStyle=a.corBaixo;c.beginPath();c.moveTo(-10,1+b);c.lineTo(10,1+b);c.lineTo(14,14);c.lineTo(-14,14);c.fill();c.fillStyle='#00000018';c.fillRect(-1,3+b,1.4,10)}
  /* cabelo atrás (comprido, tranças, rabo) */
  c.fillStyle=hc;
  if(a.cabelo==='longo'){if(back)c.fillRect(-11,-28+b,22,24);else{c.fillRect(-12,-28+b,5,20);c.fillRect(7,-28+b,5,20)}}
@@ -657,15 +670,27 @@ function drawAvatar(c,a,dir,b,lg,n,sw,blink,pose){const OL=()=>{c.strokeStyle='#
  if(a.cabelo==='trancas'&&back){c.fillRect(-11,-28+b,22,10);for(const s of[-1,1])for(let k=0;k<4;k++){c.beginPath();c.arc(s*6,-16+b+k*5,3,0,7);c.fill()}}
  if(a.cabelo==='rabo'){if(back){c.fillRect(-3,-22+b,6,16)}else if(dir!=='down'){c.fillRect(dir==='left'?7:-13,-30+b,6,14)}}
  if(a.cabelo==='blackpower'){c.beginPath();c.arc(0,-28+b,16,0,7);c.fill()}
+ if(a.cabelo==='ondulado'){if(back)c.fillRect(-11,-28+b,22,22);for(const sx of[-1,1])for(let k=0;k<5;k++){c.beginPath();c.arc(sx*(10+(k%2)*1.5),-26+b+k*4.5,3.6,0,7);c.fill()}}
+ if(a.cabelo==='dreads'){for(let k=0;k<7;k++){const x=-11+k*3.6;if(!back&&x>-7&&x<7)continue;c.fillRect(x,-30+b,2.6,24+(k%3)*2)}}
+ if(a.cabelo==='chanel'){if(back)c.fillRect(-12,-28+b,24,16);else{c.fillRect(-12,-28+b,5,14);c.fillRect(7,-28+b,5,14)}}
+ if(a.cabelo==='chiquinha'&&!back){for(const sx of[-1,1]){c.beginPath();c.ellipse(sx*14,-26+b,4,7,sx*.4,0,7);c.fill()}}
  /* corpo */
- rr(c,-11,-14+b,22,a.roupa==='vestido'?14:18,7,a.corRoupa);OL();
+ {const bw=a.roupa==='regata'?18:22,bh=VEST?14:18;rr(c,-bw/2,-14+b,bw,bh,7,a.corRoupa);OL();const dc=a.corDet||'#fdf8d3';
+  if(!a.vend&&['bolinhas','xadrez','sueter','livro','camisa','jaqueta','colete'].includes(a.roupa)){c.save();c.beginPath();c.roundRect(-bw/2,-14+b,bw,bh,7);c.clip();
+   if(a.roupa==='bolinhas'){c.fillStyle=dc;for(let y=-12;y<4;y+=4)for(let x=-9+((y/4)&1)*2;x<10;x+=4){c.beginPath();c.arc(x,y+b,1.1,0,7);c.fill()}}
+   if(a.roupa==='xadrez'){c.fillStyle=dc+'99';for(let x=-10;x<11;x+=5)c.fillRect(x,-14+b,1.6,bh);for(let y=-12;y<4;y+=5)c.fillRect(-11,y+b,22,1.6)}
+   if(a.roupa==='sueter'){c.strokeStyle=dc;c.lineWidth=1.2;for(const y0 of[-8,-2]){c.beginPath();for(let x=-11;x<=11;x+=3)c.lineTo(x,y0+b+((x+11)/3%2?2:0));c.stroke()}c.fillStyle='#00000022';c.fillRect(-11,1+b,22,3)}
+   if(a.roupa==='livro'&&!back){rr(c,-5,-9+b,10,8,1.2,dc);c.fillStyle=a.corRoupa;c.fillRect(-.5,-9+b,1,8);c.fillStyle='#00000033';c.fillRect(-4,-7+b,3,.8);c.fillRect(1.5,-7+b,3,.8);c.fillRect(-4,-5+b,3,.8);c.fillRect(1.5,-5+b,3,.8)}
+   if(a.roupa==='camisa'&&!back){c.fillStyle=dc;c.beginPath();c.moveTo(-5,-14+b);c.lineTo(0,-10+b);c.lineTo(5,-14+b);c.lineTo(3,-8+b);c.lineTo(0,-10+b);c.lineTo(-3,-8+b);c.fill();for(let y=-7;y<3;y+=3){c.beginPath();c.arc(0,y+b,.9,0,7);c.fill()}}
+   if((a.roupa==='jaqueta'||a.roupa==='colete')&&!back){c.fillStyle=dc;c.fillRect(-3.5,-14+b,7,bh);c.fillStyle='#00000025';c.fillRect(-4.2,-14+b,.8,bh);c.fillRect(3.4,-14+b,.8,bh)}
+   c.restore();OL()}}
  if(a.vend&&!back){rr(c,-8,-9+b,16,15,3,a.avental||'#3b1613');c.strokeStyle='#ffcf3f';c.lineWidth=1.2;c.beginPath();c.moveTo(-4,-14+b);c.lineTo(0,-6+b);c.lineTo(4,-14+b);c.stroke();rr(c,-3.5,-7+b,7,8,1.2,'#fff');c.strokeStyle='#3b1613';c.lineWidth=.8;c.stroke();c.fillStyle='#ffcf3f';c.fillRect(-3,-6.5+b,6,2);c.fillStyle='#3b161399';c.fillRect(-2,-3+b,4,.8);c.fillRect(-2,-1.5+b,3,.8)}
  if(a.vend&&back){rr(c,-8,-13+b,16,2,1,a.avental||'#3b1613')}
  if(a.roupa==='moletom'){c.fillStyle='#ffffff40';c.fillRect(-1,-12+b,2,14);rr(c,-9,-16+b,18,6,3,'#00000025')}
  if(a.roupa==='listrada'){c.fillStyle='#ffffffaa';for(let y=-11;y<4;y+=5)c.fillRect(-11,y+b,22,2)}
  if(a.roupa==='macacao'){rr(c,-8,-8+b,16,14,3,a.corBaixo);c.fillStyle=a.corBaixo;c.fillRect(-7,-14+b,3,7);c.fillRect(4,-14+b,3,7)}
  if(a.acess==='cachecol'){rr(c,-11,-15+b,22,5,2,'#f2a33a');if(!back)c.fillRect(3,-11+b,4,9)}
- {const sk2=a.pele,asw=rd?0:lg*.7;c.fillStyle=sk2;if(dir!=='left'){c.save();c.translate(11,-12+b);c.rotate(rd?-.9:-asw*.06);rr(c,-1,0,4,11,2,a.roupa==='moletom'?a.corRoupa:sk2);OL();c.restore()}if(dir!=='right'){c.save();c.translate(-12,-12+b);c.rotate(rd?.9:asw*.06);rr(c,-2,0,4,11,2,a.roupa==='moletom'?a.corRoupa:sk2);OL();c.restore()}}
+ {const LONGS=['moletom','jaqueta','sueter','camisa'].includes(a.roupa)&&!a.vend;const sk2=a.pele,asw=rd?0:lg*.7;c.fillStyle=sk2;if(dir!=='left'){c.save();c.translate(11,-12+b);c.rotate(rd?-.9:-asw*.06);rr(c,-1,0,4,11,2,LONGS?a.corRoupa:sk2);OL();c.restore()}if(dir!=='right'){c.save();c.translate(-12,-12+b);c.rotate(rd?.9:asw*.06);rr(c,-2,0,4,11,2,LONGS?a.corRoupa:sk2);OL();c.restore()}}
  if(!a.vend&&!rd&&(!back||n)){rr(c,dir==='left'?-20:9,-6+b+(back?6:0),11,14,2,a.sacola);OL();if(!back){c.fillStyle=CREAM;c.fillRect(dir==='left'?-18:11,-3+b,7,2)}}
  /* cabeça */
  rr(c,-10,-34+b,20,20,9,skin);OL();
@@ -674,6 +699,11 @@ function drawAvatar(c,a,dir,b,lg,n,sw,blink,pose){const OL=()=>{c.strokeStyle='#
  else if(a.cabelo==='cacheado'){[[-9,-30],[-4,-35],[2,-36],[8,-32],[11,-26],[-11,-24],[-6,-30],[5,-30]].forEach(([x,y])=>{c.beginPath();c.arc(x,y+b,5,0,7);c.fill()});if(back)c.fillRect(-11,-30+b,22,14)}
  else if(a.cabelo==='blackpower'){if(back)c.fillRect(-11,-30+b,22,14);else{c.beginPath();c.arc(0,-33+b,12,Math.PI,0);c.fill()}}
  else if(a.cabelo==='moicano'){c.fillRect(-3,-42+b,6,12);if(back)c.fillRect(-3,-30+b,6,10)}
+ else if(a.cabelo==='careca'){c.fillStyle='#ffffff30';c.beginPath();c.arc(-3,-30+b,2.5,0,7);c.fill()}
+ else if(a.cabelo==='topete'){c.beginPath();c.arc(0,-28+b,11,Math.PI,0);c.fill();if(back)c.fillRect(-11,-28+b,22,9);else{c.fillRect(-11,-28+b,3,6);c.fillRect(8,-28+b,3,6);c.beginPath();c.ellipse(back?0:(dir==='left'?-3:dir==='right'?3:0),-38+b,8,5,-.3,0,7);c.fill()}}
+ else if(a.cabelo==='dreads'){c.beginPath();c.arc(0,-28+b,11.5,Math.PI,0);c.fill();if(back)c.fillRect(-11,-28+b,22,10);else{c.fillRect(-11,-28+b,4,8);c.fillRect(7,-28+b,4,8)}}
+ else if(a.cabelo==='chanel'){c.beginPath();c.arc(0,-28+b,12,Math.PI,0);c.fill();if(!back){c.fillRect(-10,-31+b,20,5)}}
+ else if(a.cabelo==='ondulado'){c.beginPath();c.arc(0,-28+b,11.5,Math.PI,0);c.fill();if(!back){c.beginPath();c.arc(-5,-31+b,5,0,7);c.arc(4,-32+b,5,0,7);c.fill()}}
  else{c.beginPath();c.arc(0,-28+b,11,Math.PI,0);c.fill();
   if(back)c.fillRect(-11,-28+b,22,['curto','coque','franja'].includes(a.cabelo)?9:12);
   else if(a.cabelo==='curto'){c.fillRect(-11,-28+b,3,6);c.fillRect(8,-28+b,3,6);c.fillRect(-9,-31+b,14,4)}
@@ -684,37 +714,51 @@ function drawAvatar(c,a,dir,b,lg,n,sw,blink,pose){const OL=()=>{c.strokeStyle='#
  /* rosto */
  if(!back){c.fillStyle=dk;if(rd){c.fillRect(-5+ex,-22+b,3,1.5);c.fillRect(2+ex,-22+b,3,1.5)}else if(blink){c.fillRect(-5+ex,-23+b,3,1);c.fillRect(2+ex,-23+b,3,1)}else{c.fillRect(-5+ex,-24+b,3,3);c.fillRect(2+ex,-24+b,3,3)}
   c.fillStyle='#ef505466';c.fillRect(-8+ex,-20+b,3,2);c.fillRect(5+ex,-20+b,3,2);
-  c.fillStyle='#b5523b';c.fillRect(-1+ex,-19+b,3,1);
-  if(a.oculos){c.strokeStyle=dk;c.lineWidth=1.3;if(a.oculos==='redondo'){c.beginPath();c.arc(-3.5+ex,-23+b,3.4,0,7);c.stroke();c.beginPath();c.arc(3.5+ex,-23+b,3.4,0,7);c.stroke()}else{c.strokeRect(-7+ex,-26+b,6,6);c.strokeRect(1+ex,-26+b,6,6)}c.beginPath();c.moveTo(-1+ex,-23+b);c.lineTo(1+ex,-23+b);c.stroke()}}
+  c.fillStyle=a.rosto==='batom'?'#c43a3e':'#b5523b';c.fillRect(-1+ex,-19+b,3,a.rosto==='batom'?1.6:1);
+  if(a.rosto==='sardas'){c.fillStyle='#8a4b2e99';[[-7,-21],[-5,-20],[-6,-19],[5,-21],[7,-20],[6,-19]].forEach(([x,y])=>c.fillRect(x+ex,y+b,1,1))}
+  if(a.rosto==='barba'){c.fillStyle=hc;c.beginPath();c.moveTo(-9+ex,-22+b);c.lineTo(-8+ex,-16+b);c.quadraticCurveTo(0+ex,-12+b,8+ex,-16+b);c.lineTo(9+ex,-22+b);c.lineTo(6+ex,-19+b);c.lineTo(-6+ex,-19+b);c.fill();c.fillStyle='#b5523b';c.fillRect(-1+ex,-18.6+b,3,1)}
+  if(a.rosto==='bigode'){c.fillStyle=hc;c.beginPath();c.ellipse(-2+ex,-20.3+b,3,1.3,.2,0,7);c.ellipse(3+ex,-20.3+b,3,1.3,-.2,0,7);c.fill()}
+  if(a.rosto==='blush'){c.fillStyle='#ef5054aa';c.beginPath();c.arc(-6.5+ex,-19.5+b,2.2,0,7);c.arc(6.5+ex,-19.5+b,2.2,0,7);c.fill()}
+  if(a.oculos){c.strokeStyle=dk;c.lineWidth=1.3;if(a.oculos==='redondo'){c.beginPath();c.arc(-3.5+ex,-23+b,3.4,0,7);c.stroke();c.beginPath();c.arc(3.5+ex,-23+b,3.4,0,7);c.stroke()}else if(a.oculos==='sol'){c.fillStyle='#1e1412';rr(c,-7.5+ex,-26+b,6.5,5,2,'#1e1412');rr(c,1+ex,-26+b,6.5,5,2,'#1e1412');c.fillStyle='#ffffff55';c.fillRect(-6+ex,-25+b,2,1);c.fillRect(2.5+ex,-25+b,2,1)}else if(a.oculos==='gatinho'){c.strokeStyle=a.corAcess||dk;c.beginPath();c.moveTo(-8+ex,-26.5+b);c.lineTo(-1+ex,-25+b);c.lineTo(-2+ex,-21+b);c.lineTo(-7+ex,-21+b);c.closePath();c.stroke();c.beginPath();c.moveTo(8+ex,-26.5+b);c.lineTo(1+ex,-25+b);c.lineTo(2+ex,-21+b);c.lineTo(7+ex,-21+b);c.closePath();c.stroke();c.strokeStyle=dk}else{c.strokeRect(-7+ex,-26+b,6,6);c.strokeRect(1+ex,-26+b,6,6)}c.beginPath();c.moveTo(-1+ex,-23+b);c.lineTo(1+ex,-23+b);c.stroke()}}
  /* acessórios na cabeça */
  const top=a.cabelo==='blackpower'?-44:a.cabelo==='coque'?-46:a.cabelo==='moicano'?-42:-38;
  if(a.acess==='bone'){rr(c,-11,-41+b,22,9,5,a.corAcess||'#ef5054');if(!back)rr(c,dir==='left'?-17:dir==='right'?3:-8,-34+b,dir==='down'?16:14,3,2,a.corAcess||'#ef5054')}
  if(a.acess==='laco'){c.fillStyle=a.corAcess||'#ef5054';c.beginPath();c.moveTo(4,-37+b);c.lineTo(11,-41+b);c.lineTo(11,-33+b);c.fill();c.beginPath();c.moveTo(4,-37+b);c.lineTo(-3,-41+b);c.lineTo(-3,-33+b);c.fill();c.fillRect(2,-39+b,4,4)}
  if(a.acess==='fone'){c.strokeStyle=a.corAcess||'#3b1613';c.lineWidth=2.5;c.beginPath();c.arc(0,-28+b,12,Math.PI,0);c.stroke();rr(c,-14,-28+b,5,8,2,a.corAcess||'#3b1613');rr(c,9,-28+b,5,8,2,a.corAcess||'#3b1613')}
  if(a.acess==='flor'){['#ef5054','#f2a33a','#fdf8d3','#6cc28e','#ef5054'].forEach((f,k)=>{c.fillStyle=f;c.beginPath();c.arc(-10+k*5,-37+b-(k%2)*2,3,0,7);c.fill()})}
+ if(a.acess==='gorro'){const gc=a.corAcess||'#ef5054';rr(c,-11.5,-41+b,23,12,6,gc);c.fillStyle='#00000025';c.fillRect(-11.5,-32+b,23,3);c.fillStyle='#fdf8d3';c.beginPath();c.arc(0,-42+b,3,0,7);c.fill()}
+ if(a.acess==='boina'){c.fillStyle=a.corAcess||'#4a1d1a';c.beginPath();c.ellipse(dir==='left'?-2:2,-36+b,13,5,dir==='left'?.25:-.25,0,7);c.fill();c.fillRect(-1,-42+b,2,3)}
+ if(a.acess==='bandana'){const bc=a.corAcess||'#ef5054';rr(c,-11,-34+b,22,5,2,bc);if(!back||true){c.fillStyle=bc;c.beginPath();c.moveTo(dir==='left'?9:-9,-33+b);c.lineTo(dir==='left'?15:-15,-29+b);c.lineTo(dir==='left'?12:-12,-27+b);c.fill()}c.fillStyle='#ffffff88';[-6,0,6].forEach(x=>c.fillRect(x,-32.5+b,1.4,1.4))}
+ if(a.acess==='tiara'){c.strokeStyle=a.corAcess||'#ef5054';c.lineWidth=2.4;c.beginPath();c.arc(0,-28+b,11.5,Math.PI*1.05,Math.PI*1.95);c.stroke()}
+ if(a.acess==='coroa'){c.fillStyle='#ffcf3f';c.beginPath();c.moveTo(-8,-35+b);c.lineTo(-8,-42+b);c.lineTo(-4,-38+b);c.lineTo(0,-44+b);c.lineTo(4,-38+b);c.lineTo(8,-42+b);c.lineTo(8,-35+b);c.fill();c.strokeStyle='#b8860b';c.lineWidth=.8;c.stroke();c.fillStyle='#ef5054';c.beginPath();c.arc(0,-38+b,1.3,0,7);c.fill()}
  if(a.acess==='chapeu'){rr(c,-16,-35+b,32,4,2,a.corAcess||'#4a1d1a');rr(c,-9,-45+b,18,11,4,a.corAcess||'#4a1d1a');c.fillStyle='#fdf8d3';c.fillRect(-9,-38+b,18,2)}
  if(rd){c.save();c.translate(0,-8+b);rr(c,-11,-3,22,11,2,a.sacola);OL();c.fillStyle='#fff';c.fillRect(-10,-2,9.5,8);c.fillRect(.5,-2,9.5,8);c.fillStyle='#3b161355';for(let k=0;k<3;k++){c.fillRect(-8,0+k*2,6,.8);c.fillRect(2,0+k*2,6,.8)}c.restore()}
  /* pilha de livros */
  if(n&&!a.vend){const bx0=dir==='left'?-14.5:14.5,base=-6+b+(back?6:0);const m=Math.min(n,140);for(let k=0;k<m;k++){const w=12+((k*7)%3)*2,hh=3.5,off=bx0+Math.sin(k*1.7)*1.5+sw*k*.05;const y=base-k*hh;c.fillStyle=SPN2[k%SPN2.length];c.fillRect(off-w/2,y-hh,w,hh);c.strokeStyle='#3b161366';c.lineWidth=.6;c.strokeRect(off-w/2,y-hh,w,hh);c.fillStyle='#ffffff66';c.fillRect(off-w/2+1.5,y-hh+1,w-3,.8)}if(n>140){c.fillStyle=INK;c.font='800 9px "Helvetica Neue",Helvetica,Arial,sans-serif';c.textAlign='center';c.fillText('+'+(n-140),bx0+sw*7,base-m*3.5-6)}}}
+const CLR=['#ef5054','#c43a3e','#f29bb6','#f2a33a','#ffcf3f','#6cc28e','#2f7d4f','#7fd1c7','#3d7bd9','#1f3a68','#7b4bb5','#b48fe0','#4a1d1a','#8a5a44','#fdf8d3','#ffffff','#7a7a7a','#1e1412'];
 const AV_OPTS=[
  ['tipo','Quem é',[['menina','Menina'],['menino','Menino']]],
- ['cabelo','Cabelo',[['longo','Comprido'],['curto','Curto'],['franja','Franjinha'],['cacheado','Cacheado'],['blackpower','Black power'],['trancas','Tranças'],['rabo','Rabo de cavalo'],['coque','Coque'],['moicano','Moicano'],['raspado','Raspadinho']]],
- ['corCabelo','Cor do cabelo',['#4a1d1a','#1e1412','#a0522d','#e8c06a','#c43a3e','#7b4bb5','#3d7bd9','#f29bb6'],1],
- ['pele','Pele',['#f9dcc4','#f0c29a','#e0a874','#c68a5c','#a06a44','#7a4b2e','#5c3a28'],1],
- ['roupa','Roupa',[['camiseta','Camiseta'],['listrada','Listrada'],['moletom','Moletom'],['macacao','Jardineira'],['vestido','Vestido']]],
- ['corRoupa','Cor da roupa',['#ef5054','#6cc28e','#4a1d1a','#f2a33a','#3d7bd9','#fdf8d3','#7b4bb5','#f29bb6'],1],
- ['baixo','Parte de baixo',[['calca','Calça'],['saia','Saia'],['shorts','Shorts']]],
- ['corBaixo','Cor de baixo',['#3b1613','#3d5a80','#6cc28e','#ef5054','#f2a33a','#7a7a7a'],1],
- ['sapato','Sapato',['#3b1613','#fdf8d3','#ef5054','#3d7bd9','#f2a33a'],1],
- ['acess','Acessório',[['','Nenhum'],['bone','Boné'],['laco','Laço'],['fone','Fone'],['flor','Coroa de flores'],['chapeu','Chapéu'],['cachecol','Cachecol']]],
- ['corAcess','Cor do acessório',['#ef5054','#6cc28e','#3d7bd9','#f2a33a','#4a1d1a','#fdf8d3'],1],
- ['oculos','Óculos',[['','Sem'],['quadrado','Quadrado'],['redondo','Redondo']]],
- ['sacola','Sacola de livros',['#6cc28e','#ef5054','#f2a33a','#3d7bd9','#fdf8d3'],1]];
+ ['cabelo','Cabelo',[['longo','Comprido'],['ondulado','Ondulado'],['chanel','Chanel'],['curto','Curto'],['topete','Topete'],['franja','Franjinha'],['cacheado','Cacheado'],['blackpower','Black power'],['dreads','Dreads'],['trancas','Tranças'],['chiquinha','Maria-chiquinha'],['rabo','Rabo de cavalo'],['coque','Coque'],['moicano','Moicano'],['raspado','Raspadinho'],['careca','Careca']]],
+ ['corCabelo','Cor do cabelo',['#4a1d1a','#1e1412','#6b3a1f','#a0522d','#d9622b','#e8c06a','#f5ecd2','#c9c9c9','#c43a3e','#f29bb6','#7b4bb5','#3d7bd9','#2f7d4f','#7fd1c7'],1],
+ ['pele','Pele',['#fbe3d0','#f9dcc4','#f0c29a','#e8b48a','#e0a874','#c68a5c','#b07a4f','#a06a44','#7a4b2e','#5c3a28','#3f271b'],1],
+ ['rosto','Rosto',[['','Simples'],['blush','Bochecha rosada'],['sardas','Sardas'],['batom','Batom'],['bigode','Bigode'],['barba','Barba']]],
+ ['roupa','Roupa',[['camiseta','Camiseta'],['regata','Regata'],['livro','Camiseta de livro'],['listrada','Listrada'],['bolinhas','Bolinhas'],['xadrez','Xadrez'],['camisa','Camisa'],['moletom','Moletom'],['sueter','Suéter'],['jaqueta','Jaqueta'],['colete','Colete'],['macacao','Jardineira'],['vestido','Vestido'],['florido','Vestido florido']]],
+ ['corRoupa','Cor da roupa',CLR,1],
+ ['corDet','Cor do detalhe (estampa, gola, jaqueta)',CLR,1],
+ ['baixo','Parte de baixo',[['calca','Calça'],['jeans','Jeans'],['legging','Legging'],['bermuda','Bermuda'],['shorts','Shorts'],['saia','Saia'],['saialonga','Saia longa']]],
+ ['corBaixo','Cor de baixo',['#3b1613','#1f3a68','#3d5a80','#5b7fb5','#6cc28e','#2f7d4f','#ef5054','#f29bb6','#f2a33a','#ffcf3f','#7b4bb5','#8a5a44','#c9b38a','#7a7a7a','#1e1412','#fdf8d3'],1],
+ ['tipoSapato','Calçado',[['tenis','Tênis'],['sapatilha','Sapatilha'],['bota','Bota'],['sandalia','Sandália']]],
+ ['sapato','Cor do calçado',CLR,1],
+ ['acess','Acessório',[['','Nenhum'],['bone','Boné'],['gorro','Gorro'],['boina','Boina'],['chapeu','Chapéu'],['bandana','Bandana'],['tiara','Tiara'],['laco','Laço'],['fone','Fone'],['flor','Coroa de flores'],['coroa','Coroa'],['cachecol','Cachecol']]],
+ ['corAcess','Cor do acessório',CLR,1],
+ ['oculos','Óculos',[['','Sem'],['quadrado','Quadrado'],['redondo','Redondo'],['gatinho','Gatinho'],['sol','De sol']]],
+ ['sacola','Sacola de livros',CLR,1]];
 const avm=document.getElementById('avm'),avp=document.getElementById('avprev'),avc=avp.getContext('2d'),avo=document.getElementById('avopts');
-function avRender(){avo.innerHTML=AV_OPTS.map(([k,l,ops,isColor])=>'<div class="og"><h6>'+l+'</h6><div class="ops">'+ops.map(o=>isColor?'<button class="sw" data-k="'+k+'" data-v="'+o+'" style="background:'+o+'" aria-label="'+l+' '+o+'" aria-pressed="'+(AV[k]===o)+'"></button>':'<button class="op" data-k="'+k+'" data-v="'+o[0]+'" aria-pressed="'+(AV[k]===o[0])+'">'+o[1]+'</button>').join('')+'</div></div>').join('');
+function avRender(){avo.innerHTML=AV_OPTS.map(([k,l,ops,isColor])=>'<div class="og"><h6>'+l+'</h6><div class="ops">'+ops.map(o=>isColor?'<button class="sw" data-k="'+k+'" data-v="'+o+'" style="background:'+o+'" aria-label="'+l+' '+o+'" aria-pressed="'+(AV[k]===o)+'"></button>':'<button class="op" data-k="'+k+'" data-v="'+o[0]+'" aria-pressed="'+(AV[k]===o[0])+'">'+o[1]+'</button>').join('')+(isColor?'<label class="swc'+(ops.includes(AV[k])?'':' on')+'" title="Outra cor" style="--c:'+(AV[k]||'#ffffff')+'"><input type="color" data-kc="'+k+'" value="'+(/^#[0-9a-f]{6}$/i.test(AV[k]||'')?AV[k]:'#ffffff')+'" aria-label="'+l+': outra cor"><span>+</span></label>':'')+'</div></div>').join('');
+ avo.querySelectorAll('[data-kc]').forEach(inp=>{inp.oninput=()=>{AV[inp.dataset.kc]=inp.value;saveAV();inp.parentNode.style.setProperty('--c',inp.value)};inp.onchange=()=>{SND.play('blip');avRender()}});
  avo.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const k=b.dataset.k;let v=b.dataset.v;if(v==='true')v=true;else if(v==='false')v=false;AV[k]=v;
   if(k==='tipo'){if(v==='menino'){AV.cabelo='curto';AV.roupa='camiseta';AV.baixo='calca';AV.corRoupa='#3d7bd9'}else{AV.cabelo='longo';AV.roupa='camiseta';AV.baixo='saia';AV.corRoupa='#ef5054';AV.corBaixo='#3d5a80'}}
-  if(k==='roupa'&&v==='vestido')AV.baixo='calca'===AV.baixo?'saia':AV.baixo;
+  if(k==='roupa'&&(v==='vestido'||v==='florido')&&!['saia','saialonga','legging','shorts'].includes(AV.baixo))AV.baixo='legging';
   saveAV();SND.play('blip');avRender()})}
 let avT=0;function avLoop(){if(avm.hidden)return;const d=['down','right','up','left'][Math.floor(avT/90)%4];avT++;const w=avp.width,h=avp.height;avc.setTransform(1,0,0,1,0,0);avc.fillStyle=CREAM;avc.fillRect(0,0,w,h);avc.setTransform(w/92,0,0,w/92,w/2,h*.74);drawAvatar(avc,AV,d,Math.sin(avT*.2)*1.5,Math.sin(avT*.2)*4,Math.min(CART.length,8),0,(avT%150)<6);requestAnimationFrame(avLoop)}
 function openAV(){const nm=document.getElementById('avname');nm.value=AV.nome||'';nm.oninput=()=>{AV.nome=nm.value;saveAV()};avm.hidden=false;PASS&&PASS.flag('estilo');SND.play('open');avRender();avLoop();document.getElementById('avok').focus()}
@@ -756,7 +800,7 @@ const PASS=(()=>{let st={ilhas:{},livros:0,sinopses:0,cats:[],flags:{},done:{}};
  function next(){const h=tq.shift();if(!h){tb=false;return}tb=true;toastEl.innerHTML=h;toastEl.classList.add('on');setTimeout(()=>{toastEl.classList.remove('on');setTimeout(next,350)},2600)}
  function check(){M.forEach(([id,t,d,f])=>{const[v,goal]=f();if(v>=goal&&!st.done[id]){st.done[id]=new Date().toLocaleDateString('pt-BR');save();SND.play('fanfare');toast('<b>Conquista!</b> '+t)}});badge()}
  function stamp(i){if(st.ilhas[i.id])return;st.ilhas[i.id]=new Date().toLocaleDateString('pt-BR');save();try{fxStamp(i)}catch(e){}SND.play('stamp');toast('<b>Carimbo!</b> Ilha '+pad2(i.id)+' · '+NAME[i.sp]);check()}
- function badge(){const b=document.getElementById('bpass');if(b)b.innerHTML='<span class="pl">Passaporte</span> <em>'+Object.keys(st.ilhas).length+'/60</em>'}
+ function badge(){const b=document.getElementById('bpass');if(b){const e=b.querySelector('.cn');if(e)e.textContent=Object.keys(st.ilhas).length+'/60'}}
  function render(){const n=Object.keys(st.ilhas).length,nd=Object.keys(st.done).length;
   document.getElementById('passtit').textContent='Passaporte'+(AV.nome?' de '+AV.nome:'');
   document.getElementById('passsub').textContent=n+' de 60 ilhas carimbadas · '+nd+' de '+M.length+' conquistas';
@@ -772,7 +816,7 @@ const PASS=(()=>{let st={ilhas:{},livros:0,sinopses:0,cats:[],flags:{},done:{}};
 
 
 /* alvo do toque */
-window.__g={phr:id=>phrases(IS.find(x=>x.id===id)),get me(){return me},get walkTo(){return walkTo},plan:(x,y)=>plan(x,y),get Z(){return ZOOM},get cam(){return cam}};
+window.__g={av:(c,a,d)=>drawAvatar(c,a,d,0,0,3,0,false,''),rand:()=>randAV(),phr:id=>phrases(IS.find(x=>x.id===id)),get me(){return me},get walkTo(){return walkTo},plan:(x,y)=>plan(x,y),get Z(){return ZOOM},get cam(){return cam}};
 let TGT=null;function showTarget(x,y){TGT={x,y,t:performance.now()}}
 /* joystick */
 {const jo=document.getElementById('joy'),kn=jo.querySelector('i');let id=null,cx0=0,cy0=0;const R0=46;
@@ -827,7 +871,11 @@ function drawFX(){const now=performance.now();for(let k=FX.length-1;k>=0;k--){co
  cx.globalAlpha=1}
 /* visitantes */
 const pick=a=>a[Math.floor(Math.random()*a.length)];
-function randAV(){const t=Math.random()<.5?'menina':'menino';return {tipo:t,cabelo:pick(t==='menina'?['longo','cacheado','blackpower','trancas','rabo','coque','franja']:['curto','raspado','cacheado','blackpower','moicano','franja']),corCabelo:pick(['#4a1d1a','#1e1412','#a0522d','#e8c06a','#1e1412','#4a1d1a']),pele:pick(['#f9dcc4','#f0c29a','#e0a874','#c68a5c','#a06a44','#7a4b2e','#5c3a28']),roupa:pick(['camiseta','listrada','moletom','macacao','vestido','camiseta']),corRoupa:pick(['#ef5054','#6cc28e','#4a1d1a','#f2a33a','#3d7bd9','#fdf8d3','#7b4bb5','#f29bb6']),baixo:pick(['calca','calca','saia','shorts']),corBaixo:pick(['#3b1613','#3d5a80','#7a7a7a','#4a1d1a']),sapato:pick(['#3b1613','#fdf8d3','#ef5054']),acess:pick(['','','','bone','fone','laco','chapeu','cachecol']),corAcess:pick(['#ef5054','#6cc28e','#3d7bd9','#f2a33a']),oculos:pick(['','','','quadrado','redondo']),sacola:pick(['#6cc28e','#ef5054','#f2a33a','#3d7bd9','#fdf8d3'])}}
+function randAV(){const t=Math.random()<.5?'menina':'menino';const hairs=t==='menina'?['longo','ondulado','chanel','cacheado','blackpower','trancas','chiquinha','rabo','coque','franja','dreads']:['curto','topete','raspado','cacheado','blackpower','moicano','franja','dreads','careca','chanel'];
+ return {tipo:t,cabelo:pick(hairs),corCabelo:pick(['#4a1d1a','#1e1412','#6b3a1f','#a0522d','#e8c06a','#1e1412','#4a1d1a','#c9c9c9','#d9622b','#7b4bb5','#f29bb6']),pele:pick(['#fbe3d0','#f9dcc4','#f0c29a','#e0a874','#c68a5c','#a06a44','#7a4b2e','#5c3a28','#3f271b']),
+  rosto:pick(['','','','blush','sardas',t==='menino'?'barba':'batom',t==='menino'?'bigode':'blush']),roupa:pick(t==='menina'?['camiseta','regata','livro','listrada','bolinhas','xadrez','camisa','moletom','sueter','jaqueta','colete','macacao','vestido','florido']:['camiseta','regata','livro','listrada','xadrez','camisa','moletom','sueter','jaqueta','colete','macacao']),
+  corRoupa:pick(CLR.slice(0,16)),corDet:pick(['#fdf8d3','#ffffff','#1e1412','#ffcf3f','#ef5054','#3d7bd9']),baixo:pick(t==='menina'?['calca','jeans','legging','saia','saialonga','shorts','bermuda']:['calca','jeans','jeans','bermuda','shorts']),corBaixo:pick(['#3b1613','#1f3a68','#3d5a80','#5b7fb5','#7a7a7a','#4a1d1a','#c9b38a','#2f7d4f','#1e1412']),
+  tipoSapato:pick(['tenis','tenis','sapatilha','bota','sandalia']),sapato:pick(['#3b1613','#fdf8d3','#ffffff','#ef5054','#3d7bd9','#1e1412','#f2a33a']),acess:pick(['','','','bone','gorro','boina','fone','laco','chapeu','bandana','tiara','cachecol','flor']),corAcess:pick(CLR.slice(0,14)),oculos:pick(['','','','','quadrado','redondo','gatinho','sol']),sacola:pick(CLR.slice(0,16))}}
 function freeSpot(){const g=grid();for(let k=0;k<200;k++){const c=Math.floor(Math.random()*GW),r=Math.floor(Math.random()*GH);const x=GX0+c*GC+GC/2,y=GY0+r*GC+GC/2;if(!g[r*GW+c]&&x>tent.x+20&&x<tent.x+tent.w-20)return [x,y]}return [tent.x+60,(G1+G2)/2]}
 const NPCS=[];{const dow=new Date().toLocaleString('en-US',{timeZone:'America/Sao_Paulo',weekday:'short'});const N=((dow==='Sat'||dow==='Sun')?34:22)-(innerWidth<640?12:0);
  for(let k=0;k<N;k++){const[x,y]=freeSpot();NPCS.push({x,y,dir:'down',f:Math.random()*10,av:randAV(),pts:[],wait:Math.random()*200|0,n:Math.random()<.4?(1+Math.random()*5|0):0,moving:false,read:false})}}
@@ -1088,7 +1136,7 @@ document.getElementById('retimg').onclick=()=>{const d=retData(),W=1080,H=1920,c
 
 /* ===== área da equipe (download protegido por senha) ===== */
 {const tm=document.getElementById('teamm'),pw=document.getElementById('teampw'),st=document.getElementById('teamst'),go=document.getElementById('teamgo');
- document.getElementById('bteam').onclick=()=>{tm.hidden=false;st.textContent='';pw.value='';SND.play('open');setTimeout(()=>pw.focus(),50)};
+ {const t2=document.getElementById('bteam2');if(t2)t2.onclick=()=>document.getElementById('bteam').click()}document.getElementById('bteam').onclick=()=>{tm.hidden=false;st.textContent='';pw.value='';SND.play('open');setTimeout(()=>pw.focus(),50)};
  document.getElementById('teamclose').onclick=()=>{tm.hidden=true;SND.play('close')};tm.addEventListener('click',e=>{if(e.target===tm)tm.hidden=true});
  let busy=false;
  async function dl(){if(busy)return;const p=pw.value;if(!p){st.textContent='Digite a senha.';return}busy=true;go.disabled=true;st.textContent='Baixando e conferindo a senha…';
@@ -1106,6 +1154,35 @@ document.getElementById('retimg').onclick=()=>{const d=retData(),W=1080,H=1920,c
   finally{busy=false;go.disabled=false}}
  go.onclick=dl;pw.addEventListener('keydown',e=>{if(e.key==='Enter')dl()})}
 
+/* ===== mapa grande ===== */
+{const bm=document.getElementById('bigm'),cv2=document.getElementById('bigcv'),tip=document.getElementById('bigtip');let S=1,PN=[];
+ const F='"Helvetica Neue",Helvetica,Arial,sans-serif';
+ function drawBig(){const NARROW=innerWidth<700,W=Math.min(1160,innerWidth-(NARROW?40:64)),r=Math.min(2,devicePixelRatio||1);const s=W/(NARROW?520:735),PH=Math.round(150*s),GAP=Math.round(14*s);
+  PN=NARROW?[{x0:28,x1:430,y0:24,dy:0,sps:['verde']},{x0:375,x1:785,y0:24,dy:PH+GAP,sps:['rosa']},{x0:743,x1:1263,y0:24,dy:2*(PH+GAP),sps:['marrom']}]:[{x0:28,x1:763,y0:24,dy:0,sps:['verde','rosa']},{x0:743,x1:1263,y0:24,dy:PH+GAP,sps:['marrom']}];const H=PH*PN.length+GAP*(PN.length-1);S=s;
+  cv2.width=W*r;cv2.height=H*r;cv2.style.height=H+'px';const g=cv2.getContext('2d');g.setTransform(r,0,0,r,0,0);g.fillStyle='#fff';g.fillRect(0,0,W,H);const cb=cbi();
+  PN.forEach((p,pi)=>{const ox=x=>(x-p.x0)*s,oy=y=>(y-p.y0)*s+p.dy;g.save();g.beginPath();g.rect(0,p.dy,W,PH);g.clip();
+   g.fillStyle=CREAM;g.fillRect(ox(45),oy(46),1205*s,102*s);g.lineWidth=3;g.strokeStyle=INK;g.strokeRect(ox(45),oy(46),1205*s,102*s);
+   [['verde',200],['rosa',560],['marrom',1010]].forEach(([sp,x])=>{if(!p.sps.includes(sp))return;g.fillStyle=sp==='marrom'?INK:COL[sp];g.font='800 '+Math.round(11*s)+'px '+F;g.textAlign='center';g.textBaseline='alphabetic';g.fillText(NAME[sp].toUpperCase(),ox(x),oy(41))});
+   for(const i of IS){if(!p.sps.includes(i.sp))continue;const X=ox(i.x),Y=oy(i.y),Wd=i.w*s,Ht=i.h*s,dim=i.empty||(CAT>=0&&!i.cn);
+    g.globalAlpha=dim?.3:1;g.fillStyle=COL[i.sp];g.fillRect(X,Y,Wd,Ht);g.globalAlpha=1;g.lineWidth=i===near?4:1.6;g.strokeStyle=i===near?'#ffcf3f':INK;g.strokeRect(X,Y,Wd,Ht);
+    const tc=i.sp==='marrom'?CREAM:INK;g.fillStyle=tc;g.globalAlpha=dim?.6:1;const fz=Math.round(Math.min(13,Ht*.32));g.font='800 '+fz+'px '+F;g.textAlign='left';g.textBaseline='bottom';g.fillText(pad2(i.id),X+4,Y+Ht-3);
+    if(!i.empty&&Ht>30){const n=PUB[i.p.find(k=>PUB[k].b.length)].n;g.font='600 '+Math.round(Math.min(11,Ht*.26))+'px '+F;g.textBaseline='top';let t=n;const mw=Wd-8;while(g.measureText(t).width>mw&&t.length>3)t=t.slice(0,-2).trim()+'…';if(mw>22)g.fillText(t,X+4,Y+3)}
+    g.globalAlpha=1;
+    if(cb[i.id]){const cx2=X+Wd-11,cy2=Y+Ht-11;g.fillStyle='#ffcf3f';g.beginPath();g.arc(cx2,cy2,8,0,7);g.fill();g.lineWidth=1.5;g.strokeStyle=INK;g.stroke();g.fillStyle=INK;g.font='800 10px '+F;g.textAlign='center';g.textBaseline='middle';g.fillText(cb[i.id],cx2,cy2+.5)}
+    if(NOVO[i.id]){g.fillStyle='#6cc28e';g.beginPath();g.arc(X+Wd-5,Y+5,4.5,0,7);g.fill();g.strokeStyle=INK;g.lineWidth=1;g.stroke()}}
+   const px=me.x/SX+MX0,py=me.y/SY;if(px>=p.x0&&px<=p.x1){g.fillStyle=INK;g.beginPath();g.arc(ox(px),oy(py),7,0,7);g.fill();g.strokeStyle='#fff';g.lineWidth=2.5;g.stroke()}
+   g.font='600 '+Math.round(10*s)+'px '+F;g.fillStyle=INK;g.textBaseline='alphabetic';
+   if(pi===0){g.textAlign='left';g.fillText('← Praça do Relógio Solar',ox(45),oy(165))}if(pi===PN.length-1){g.textAlign='right';g.fillText('Raia Olímpica →',ox(1250),oy(165))}
+   g.restore()})}
+ const hit=e=>{const r=cv2.getBoundingClientRect(),cxp=e.clientX-r.left,cyp=e.clientY-r.top;for(const p of PN){const x=cxp/S+p.x0,y=(cyp-p.dy)/S+p.y0;const i=IS.find(i=>p.sps.includes(i.sp)&&x>=i.x&&x<=i.x+i.w&&y>=i.y&&y<=i.y+i.h);if(i)return i}return null};
+ cv2.addEventListener('mousemove',e=>{const i=hit(e);if(!i){tip.hidden=true;cv2.style.cursor='default';return}cv2.style.cursor='pointer';const r=cv2.getBoundingClientRect();tip.hidden=false;tip.style.left=(e.clientX-r.left)+'px';tip.style.top=(e.clientY-r.top)+'px';
+  const nb=i.p.reduce((t,k)=>t+PUB[k].b.length,0);tip.innerHTML='<b>Ilha '+pad2(i.id)+'</b> · '+NAME[i.sp]+'<br>'+i.p.map(k=>esc(PUB[k].n)).slice(0,6).join(', ')+(i.p.length>6?' e mais '+(i.p.length-6):'')+'<br>'+(nb?nb.toLocaleString('pt-BR')+' livros':'ainda sem estoque')});
+ cv2.addEventListener('mouseleave',()=>tip.hidden=true);
+ cv2.addEventListener('click',e=>{const i=hit(e);if(!i)return;bm.hidden=true;tip.hidden=true;goTo(i)});
+ const open=()=>{drawBig();bm.hidden=false;SND.play('open')};document.getElementById('bmexp').onclick=e=>{e.stopPropagation();e.currentTarget.blur();open()};
+ document.getElementById('bigclose').onclick=()=>{bm.hidden=true;SND.play('close')};bm.addEventListener('click',e=>{if(e.target===bm)bm.hidden=true});
+ addEventListener('resize',()=>{if(!bm.hidden)drawBig()});
+ addEventListener('keydown',e=>{if(e.key==='m'&&!e.metaKey&&!e.ctrlKey&&!['INPUT','SELECT','TEXTAREA'].includes(e.target.tagName)&&!document.querySelector('.avm:not([hidden])')){open();e.preventDefault()}})}
 /* atalhos */
 addEventListener('keydown',e=>{const t=e.target.tagName;if(t==='INPUT'||t==='SELECT'||t==='TEXTAREA'||e.metaKey||e.ctrlKey||e.altKey)return;if(document.querySelector('.avm:not([hidden])'))return;
  const k=e.key.toLowerCase();if(k==='c'){openCart();e.preventDefault()}else if(k==='l'){openList();e.preventDefault()}else if(k==='p'){document.getElementById('bpass').click();e.preventDefault()}else if(k==='r'){surprise();e.preventDefault()}else if(k==='/'){document.getElementById('q').focus();e.preventDefault()}else if(k==='f'){openModo();e.preventDefault()}});
