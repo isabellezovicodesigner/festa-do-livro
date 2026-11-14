@@ -620,14 +620,17 @@ document.getElementById('bfesta').onclick=e=>{e.currentTarget.blur();openFesta()
 document.getElementById('bcart').onclick=e=>{e.currentTarget.blur();openCart()};cartBadge();
 const q=document.getElementById('q'),sug=document.getElementById('sug');
 const norm=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
+const CATN={},CATI={},CATW={};{const il={};PUB.forEach(p=>p.b.forEach(b=>{CATN[b[7]]=(CATN[b[7]]||0)+1;(il[b[7]]=il[b[7]]||new Set()).add(p.ilha);if(b[4]&&(CATW[b[7]]||'').length<4000)CATW[b[7]]=(CATW[b[7]]||'')+'|'+norm(b[4])}));for(const k in il)CATI[k]=il[k].size}
 const BIDX=[];PUB.forEach((p,pk)=>p.b.forEach((b,i)=>BIDX.push([norm(b[0]),b[8]||'',pk,i])));
 q.oninput=()=>{const raw=q.value.trim(),v=norm(raw);if(v.length<2){sug.style.display='none';return}
  const dig=raw.replace(/[\s.-]/g,'');const isIsbn=/^\d{4,}$/.test(dig);
  const pm=isIsbn?[]:PUB.map((p,k)=>[p,k]).filter(([p])=>norm(p.n).includes(v)).slice(0,5);
+ const cm=isIsbn?[]:D.cats.map((n,k)=>[n,k]).filter(([n,k])=>CATN[k]&&(norm(n).includes(v)||(v.length>=4&&(CATW[k]||'').includes(v)))).slice(0,4);
  let bm=isIsbn?BIDX.filter(x=>x[1].includes(dig)):BIDX.filter(x=>x[0].includes(v));bm.sort((a,b)=>(b[0].startsWith(v)-a[0].startsWith(v))||a[0].length-b[0].length);const nB=bm.length;bm=bm.slice(0,8);
- sug.innerHTML=(pm.length?'<h6>Editoras</h6>'+pm.map(([p,k])=>'<button data-k="'+k+'"><span>'+esc(p.n)+'</span><b>Ilha '+pad2(p.ilha)+'</b></button>').join(''):'')+
+ sug.innerHTML=(cm.length?'<h6>Categorias</h6>'+cm.map(([n,k])=>'<button data-cat="'+k+'"><span>'+esc(n)+'<small>'+CATN[k].toLocaleString('pt-BR')+' livros em '+CATI[k]+(CATI[k]===1?' ilha':' ilhas')+' · mostrar no mapa</small></span><b class="catb">Ver</b></button>').join(''):'')+(pm.length?'<h6>Editoras</h6>'+pm.map(([p,k])=>'<button data-k="'+k+'"><span>'+esc(p.n)+'</span><b>Ilha '+pad2(p.ilha)+'</b></button>').join(''):'')+
   (bm.length?'<h6>Livros'+(nB>8?' · '+nB+' encontrados':'')+'</h6>'+bm.map(([t,isbn,pk,i])=>'<button data-bp="'+pk+'" data-bi="'+i+'"><span>'+esc(PUB[pk].b[i][0])+'<small>'+esc(PUB[pk].n)+(isIsbn?' · ISBN '+isbn:'')+'</small></span><b>Ilha '+pad2(PUB[pk].ilha)+'</b></button>').join(''):'')||'<button disabled>Nada encontrado</button>';
  sug.style.display='block';
+ sug.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{const sel=document.getElementById('cat');sel.value=b.dataset.cat;sel.dispatchEvent(new Event('change'));q.value='';sug.style.display='none';q.blur();if(panel.classList.contains('open'))closeP();const k=+b.dataset.cat;const first=IS.filter(i=>i.cn).sort((a,c)=>c.cn-a.cn)[0];if(first)goTo(first);PASS.toast('<b>'+esc(D.cats[k])+'</b> · '+CATI[k]+' ilhas acesas no mapa')});
  sug.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{const k=+b.dataset.k,i=IS.find(x=>x.id===PUB[k].ilha);goTo(i);q.value='';sug.style.display='none';q.blur();openI=i;panel.classList.add('open');setTimeout(()=>PASS.stamp(i),400);openPub(i,k)});
  sug.querySelectorAll('[data-bp]').forEach(b=>b.onclick=()=>{const pk=+b.dataset.bp,bi=+b.dataset.bi,i=IS.find(x=>x.id===PUB[pk].ilha);goTo(i);q.value='';sug.style.display='none';q.blur();openI=i;panel.classList.add('open');setTimeout(()=>PASS.stamp(i),400);mode='todos';filt='';pcat=-1;psort='az';view={t:'livro',i,pk,bi,from:{t:'ilha',i,pk}};SND.play('book');render()})};
 q.onkeydown=e=>{if(e.key==='Enter'){const f=sug.querySelector('[data-k],[data-bp]');f&&f.click()}if(e.key==='Escape'){q.value='';sug.style.display='none';q.blur()}};
