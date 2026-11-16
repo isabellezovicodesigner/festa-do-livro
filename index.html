@@ -252,6 +252,11 @@ h5{font:800 13px "Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppe
 .pmin span{font-size:18px}
 @media (max-width:640px){.pmin{left:50%;right:auto;transform:translateX(-50%);bottom:auto;top:calc(var(--toph,110px) + 10px)}}
 .toast{z-index:12}
+
+@media (min-width:641px){body:has(.panel.open) .corner{right:calc(min(480px,100vw) + 12px)}body:has(.panel.open) .toast{left:calc((100vw - 480px)/2)}}
+.grab{display:none}
+@media (max-width:640px){.grab{display:block;position:absolute;left:50%;top:0;transform:translateX(-50%);width:120px;height:24px;border:0;background:none;z-index:3;cursor:pointer}
+ .toast{top:calc(var(--toph,96px) + 8px)!important;bottom:auto!important}}
 </style>
 </head>
 <body>
@@ -289,12 +294,12 @@ h5{font:800 13px "Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppe
 </div></div></div>
 <div class="avm" id="cardm" hidden><div class="avbox mapbox cardbox" role="dialog" aria-label="Cartão da minha pilha"><div class="maptop"><h2>Cartão da minha pilha</h2><div class="avact"><button id="cardclose" class="alt">Fechar</button></div></div><div class="cardfmt" role="group" aria-label="Formato"><button id="cfpost" class="on">Post · 1080×1350</button><button id="cfstory">Story · 1080×1920</button><button id="carddl" hidden>Baixar imagem</button></div><p class="note">No celular, toque e segure a imagem para salvar. O Story já explica o que é a Festa, para quem não conhece.</p><img id="cardimg" alt="Cartão com a personagem, a pilha de livros, o total e os destaques da sacola"></div></div>
 <div class="toast" id="toast" role="status"></div><button class="pmin" id="pmin" hidden aria-label="Abrir o painel de novo"><span>▴</span><b>Painel</b></button>
-<aside class="panel" id="panel" aria-live="polite"><div class="ph" id="ph"></div><div class="pb" id="pb"></div></aside>
+<aside class="panel" id="panel" aria-live="polite"><button class="grab" id="grab" aria-label="Minimizar painel"></button><div class="ph" id="ph"></div><div class="pb" id="pb"></div></aside>
 <div id="load"><div class="ld"><div class="ldstack"><i></i><i></i><i></i><i></i><i></i></div><h1>Festa do Livro da USP</h1><p id="ldt">Arrumando as estantes…</p><div class="ldbar"><b id="ldb"></b></div></div></div>
 <script>
 (async()=>{const bar=document.getElementById('ldb'),t=document.getElementById('ldt');
  const msgs=['Arrumando as estantes…','Contando 7 mil livros…','Montando a tenda…','Carimbando o passaporte…'];let mi=0;const mt=setInterval(()=>{t.textContent=msgs[++mi%msgs.length]},1400);
- try{const r=await fetch('data.json?v=202611160034');const total=+r.headers.get('content-length')||0;let txt;
+ try{const r=await fetch('data.json?v=202611160042');const total=+r.headers.get('content-length')||0;let txt;
   if(r.body&&total){const rd=r.body.getReader();const parts=[];let got=0;for(;;){const {done,value}=await rd.read();if(done)break;parts.push(value);got+=value.length;bar.style.width=Math.min(100,got/total*100)+'%'}const u=new Uint8Array(got);let o=0;for(const p of parts){u.set(p,o);o+=p.length}txt=new TextDecoder().decode(u)}
   else{bar.style.width='60%';txt=await r.text()}
   window.DATA=JSON.parse(txt);bar.style.width='100%';clearInterval(mt);
@@ -514,8 +519,10 @@ mini.addEventListener('click',e=>{const r=mini.getBoundingClientRect(),s=r.width
 function goTo(i){SND.play('warp');const cands=[];for(const f of [.3,.5,.15,.7])cands.push([i.X+i.W*f,i.Y+i.H+R+10,'up'],[i.X+i.W*f,i.Y-R-10,'down']);cands.push([i.X-R-10,i.Y+i.H/2,'right'],[i.X+i.W+R+10,i.Y+i.H/2,'left']);const nearest=(x,y)=>{let b=null,bd=1e9;for(const j of IS){const px=Math.max(j.X,Math.min(x,j.X+j.W)),py=Math.max(j.Y,Math.min(y,j.Y+j.H));const d=Math.hypot(x-px,y-py);if(d<bd){bd=d;b=j}}return b};for(const k of [0,1])for(const[x,y,d]of cands)if(!blocked(x,y)&&(k||nearest(x,y)===i)){me.x=x;me.y=y;me.dir=d;return}}
 let ACC=0,LT=0;function loop(n){n=n||performance.now();if(!LT)LT=n;ACC+=Math.min(n-LT,120);LT=n;let k=0;while(ACC>=14.7&&k<6){FR++;step();stepNPC();stepVendors();ACC-=16.667;k++}if(k>=6)ACC=0;if(k&&(MOB?(panel.classList.contains('open')?FR%4<k:FR%2<k):true))draw();requestAnimationFrame(loop)}
 function placeHint(){const mb=document.querySelector('.minibox'),he=document.getElementById('hint')||document.querySelector('.hint'),jo=document.getElementById('joy');if(!mb)return;const base=innerHeight-mb.getBoundingClientRect().top;BOTH=base+(innerWidth<640?34:0);if(he)he.style.bottom=(base+(innerWidth<640?32:40))+'px';if(jo)jo.style.bottom=(base+30)+'px'}
-try{const ro=new ResizeObserver(()=>{const tp=document.querySelector('.top');if(tp)TOPH=tp.offsetHeight||60;const co=document.getElementById('corner');if(co)co.style.top=(TOPH+10)+'px';placeHint()});ro.observe(document.querySelector('.top'));ro.observe(document.querySelector('.minibox'))}catch(e){}addEventListener('resize',placeHint);setTimeout(placeHint,300);
+try{const ro=new ResizeObserver(()=>{const tp=document.querySelector('.top');if(tp)TOPH=tp.offsetHeight||60;document.documentElement.style.setProperty('--toph',TOPH+'px');const co=document.getElementById('corner');if(co)co.style.top=(TOPH+10)+'px';placeHint()});ro.observe(document.querySelector('.top'));ro.observe(document.querySelector('.minibox'))}catch(e){}addEventListener('resize',placeHint);setTimeout(placeHint,300);
 document.getElementById('upd').textContent='Última atualização em '+D.updated;
+let VIS=null;function visitas(){fetch('https://euzodesigner.goatcounter.com/counter/TOTAL.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j)return;const n=+String(j.count).replace(/\D/g,'');if(!n)return;VIS=n;document.getElementById('upd').textContent='Última atualização em '+D.updated+' · '+n.toLocaleString('pt-BR')+(n===1?' visita':' visitas')}).catch(()=>{})}
+if(/github\.io$/.test(location.hostname)){setTimeout(visitas,2500);setInterval(visitas,300000)}
 /* categoria global */
 let CAT=-1;
 function catCounts(){IS.forEach(i=>{i.cn=CAT<0?0:i.p.reduce((n,k)=>n+PUB[k].b.filter(b=>b[7]==CAT).length,0)})}
@@ -542,7 +549,7 @@ function renderFesta(){const n=spNow();ph.style.background=INK;ph.style.color=CR
 
 const panel=document.getElementById('panel'),ph=document.getElementById('ph'),pb=document.getElementById('pb');
 let view=null,mode='todos',filt='',RV=null,pcat=-1,cfilt='',psort='az';
-RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611160034').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
+RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611160042').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
 const SPN=['#6cc28e','#ef5054','#4a1d1a','#f2a33a','#2f7d4f','#c43a3e','#8a5a44','#e6c84c'];
 const score=b=>{const r=b[6][1],n=b[6][2];return (r*n+3.8*200)/(n+200)};
 const rated=b=>b[6]&&b[6][1]>0&&b[6][2]>=10;
@@ -962,7 +969,7 @@ const VST={};function vst(i){if(!VST[i.id]){const h=h32('v'+i.id);VST[i.id]={x:i
 function stepVendors(){for(const i of IS){if(i.empty)continue;const v=vst(i);if(v.wait>0){v.wait--;v.moving=false;if(!v.wait&&Math.random()<.5)v.dir=v.dir==='left'?'right':'left';continue}
  const lo=i.X+Math.min(56,i.W*.6)+8,hi=Math.max(lo,i.X+i.W-14);const sp=.7;v.x+=v.dir==='right'?sp:-sp;v.f+=.15;v.moving=true;
  if(v.x>hi){v.x=hi;v.dir='left';v.wait=60+Math.random()*120|0}else if(v.x<lo){v.x=lo;v.dir='right';v.wait=60+Math.random()*120|0}else if(Math.random()<.004){v.wait=80+Math.random()*200|0;v.dir='down'}}}
-function vendorPos(i){return [vst(i).x,i.Y+i.H-12]}
+function vendorPos(i){return [vst(i).x,i.Y+i.H+10]}
 function drawVendor(i){if(i.empty)return;const v=vst(i),[vx,vy]=vendorPos(i);const b=v.moving?Math.sin(v.f*2)*1.5:Math.sin(performance.now()/500+i.id)*.8,lg=v.moving?Math.sin(v.f*2)*3:0;
  cx.save();cx.translate(vx,vy);cx.scale(.8,.8);drawAvatar(cx,vendorAV(i),v.moving?v.dir:(v.dir==='down'?'down':v.dir),b,lg,0,0,(performance.now()+i.id*431)%4000<120,'');cx.restore()}
 const CATPH={'Infantil e juvenil':['Tem muito infantil aqui!','Leva um pra criançada!'],'HQ e mangá':['Curte HQ? Temos!','Mangá e quadrinho aqui!'],'Psicologia e psicanálise':['Psicanálise boa aqui!','Freud manda lembranças!'],'Filosofia':['Filosofia de montão!','Bora filosofar?'],'Ciências sociais e política':['Muita ciência social aqui!','Livro pra pensar o Brasil!'],'Comunicação e livro':['Livro sobre livro? Temos!'],'Educação':['Professora? Olha esses!','Muito livro de educação!'],'Poesia':['Poesia boa aqui, viu?','Leva um poema pra casa!'],'Teoria literária e linguística':['Teoria literária aqui!','Pra quem é de Letras!'],'História':['Muita história aqui!','Gosta de história? Vem!'],'Literatura':['Romance bom aqui!','Muita ficção boa!'],'Artes':['Livro de arte lindo aqui!','Olha que capa linda!'],'Arquitetura e urbanismo':['Arquitetura aqui!'],'Ciências e saúde':['Ciência de qualidade!'],'Economia, negócios e direito':['Direito e economia aqui!'],'Religião e espiritualidade':['Espiritualidade aqui!'],'Biografias e memórias':['Biografia boa aqui!'],'Autoajuda e comportamento':['Autoajuda? Temos!'],'Gastronomia e viagem':['Livro de receita aqui!']};
@@ -1290,7 +1297,8 @@ const bm=document.getElementById('bmus'),bs=document.getElementById('bsfx');
 const sync=()=>{bm.setAttribute('aria-pressed',SND.prefs.music);bs.setAttribute('aria-pressed',SND.prefs.sfx)};sync();
 bm.onclick=()=>{SND.set('music',!SND.prefs.music);sync();bm.blur()};bs.onclick=()=>{SND.set('sfx',!SND.prefs.sfx);sync();SND.play('blip');bs.blur()};
 /* janelas: X, Esc e clique fora fecham; painel minimizado volta pelo botão */
-const pmin=document.getElementById('pmin');pmin.onclick=restoreP;
+const pmin=document.getElementById('pmin');pmin.onclick=restoreP;document.getElementById('grab').onclick=minP;
+if(innerWidth<640){const o=document.querySelector('#cat option[value="-1"]');if(o)o.textContent='Categorias'}
 const MCL={avm:'#avok',tutm:'#tutskip',rstm:'#rstno'};
 function mCloser(m){return m.querySelector(MCL[m.id]||'[id$=close]')}
 document.querySelectorAll('.avm').forEach(m=>{const box=m.querySelector('.avbox');const c=mCloser(m);if(!box||!c)return;
