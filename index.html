@@ -10,7 +10,7 @@
 <meta property="og:description" content="Passeie pela tenda antes de ir: 60 ilhas, mais de 7 mil livros, preços da Festa e notas do Skoob. Monte sua cesta e chegue sabendo onde ir.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233b1613'/%3E%3Crect x='7' y='8' width='5' height='17' rx='1' fill='%236cc28e'/%3E%3Crect x='13.5' y='6' width='5' height='19' rx='1' fill='%23ef5054'/%3E%3Crect x='20' y='9' width='5' height='16' rx='1' fill='%23ffcf3f'/%3E%3C/svg%3E">
-<link rel="preload" href="data.json?v=202611161445" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="data.json?v=202611161530" as="fetch" crossorigin="anonymous">
 <style>
 /* VOICE: brincalhão e acolhedor, um passeio de sábado na tenda da USP
    IDEA: o mapa oficial da Festa virado jogo 2D — a tenda horizontal com as ilhas numeradas
@@ -249,7 +249,7 @@ h5{font:800 13px "Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppe
 
 .mx{position:sticky;top:0;float:right;margin:-6px -6px 6px 10px;z-index:3;border:0;background:var(--ink);color:var(--cream);width:44px;height:44px;border-radius:12px;font:800 18px "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer}
 .mx:hover{filter:brightness(1.3)}
-#mapclose,#passclose,#cmpclose,#retclose,#teamclose,#bigclose,#ideaclose,#cardclose,#fmclose{display:none}
+#novclose,#helpclose,#mapclose,#passclose,#cmpclose,#retclose,#teamclose,#bigclose,#ideaclose,#cardclose,#fmclose{display:none}
 .pctl{display:flex;gap:8px;flex:none}
 #pback{font-size:22px}
 #pminb{font-size:24px;line-height:1}
@@ -320,7 +320,20 @@ body:has(#sug[style*="block"]) .catpill{display:none}
  .spot{bottom:auto!important;top:calc(var(--toph,60px) + 56px)}
  body:has(.pmin:not([hidden])) .spot{top:calc(var(--toph,60px) + 112px)}
 }
-@media (min-width:641px) and (max-height:800px){.corner{gap:4px}.corner .cb{height:38px!important;min-width:38px}.corner .cb:not(.cbk):not(#blist):not(#bpass):not(#bidea):not(#bteam){width:38px!important}}
+@media (min-width:641px) and (max-height:800px){.corner{gap:4px}.corner .cb{height:38px!important;min-width:38px}.corner .cb:not(.cbk):not(#blist):not(#bpass):not(#bidea):not(#bteam):not(#bhelp){width:38px!important}}
+.rowlab{margin:12px 0 6px;font:800 11px "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+.helpg{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media (max-width:640px),(pointer:coarse){.helpg{grid-template-columns:1fr}.helpg>div:first-child{display:none}}
+.helpbox h5{margin:4px 0 8px;font:800 13px "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.05em;text-transform:uppercase}
+ul.keys{list-style:none;padding:0;margin:0;display:grid;gap:8px;font-size:15px;line-height:1.4}
+kbd{display:inline-block;min-width:22px;padding:2px 7px;border:2px solid var(--ink);border-bottom-width:3px;border-radius:7px;background:#fff;font:700 13px "Helvetica Neue",Helvetica,Arial,sans-serif;text-align:center}
+.novbox{max-width:560px}.novhd{text-align:center;margin-bottom:12px;padding:0 46px}@media (max-width:420px){.novhd h2{font-size:22px}}.novhd h2{margin:6px 0 4px}.novhd p{margin:0;font-size:15px;line-height:1.45}
+.novtag{display:inline-block;background:var(--ama,#ffcf3f);border:2px solid var(--ink);border-radius:99px;padding:3px 12px;font:800 12px Archivo,"Helvetica Neue",Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em}
+.novpill{background:#ef5054;color:#fff;border-radius:99px;padding:1px 8px;font-weight:800;font-size:12px}
+.novlist{display:grid;gap:8px;max-height:min(46vh,380px);overflow:auto;padding:2px}
+.novit{display:flex;align-items:center;gap:10px;text-align:left;width:100%;background:#fff;border:2px solid var(--ink);border-radius:12px;padding:8px 10px;cursor:pointer;color:inherit;font:inherit}
+.novit:hover,.novit:focus-visible{background:#fdf8d3}.novit .fmn{flex:none}.novbox .avact,.helpbox .avact{justify-content:center;margin-top:14px}#bhelp .cl{white-space:nowrap}
+.novtx{display:grid;gap:1px;flex:1;min-width:0}.novtx small{font-size:13px;opacity:.8}.novtx i{font-size:12.5px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.novar{font-size:22px;font-weight:800}
 </style>
 </head>
 <body>
@@ -334,8 +347,8 @@ body:has(#sug[style*="block"]) .catpill{display:none}
   <div class="go"><input id="q" placeholder="Editora, livro ou ISBN…" autocomplete="off" aria-label="Buscar editora, livro ou ISBN"><div class="sug" id="sug"></div></div>
 </header>
 <div class="spot" id="spot" hidden><div class="spoth"><b>Trilha da Festa</b><button id="spotx" aria-label="Fechar player">✕</button></div><div id="spotf"></div><small>Sem login no Spotify, tocam prévias de 30 s.</small></div>
-<div class="corner" id="corner"><button id="bcart" class="cb cbk" title="Cesta (C)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.4 11.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cl">Cesta</span><em class="cn">0</em></button><button id="blist" class="cb" aria-label="Lista de livros" title="Lista de livros (L)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2"/><circle cx="4.5" cy="12" r="1.2"/><circle cx="4.5" cy="18" r="1.2"/></svg><span class="cl">Lista</span></button><button id="bpass" class="cb" title="Passaporte (P)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12.3 2.3 2.3 4.7-5"/></svg><span class="cl">Passaporte</span><em class="cn">0/60</em></button><button id="bcm" class="cb" aria-label="Mais botões" aria-expanded="false" title="Mais botões"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><circle cx="5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="19" cy="12" r="2.2"/></svg></button><button id="bidea" class="cb" aria-label="Conheça os idealizadores" title="Conheça os idealizadores"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="16.5" cy="9" r="2.6"/><path d="M3.5 19c.8-3.3 3-5 5.5-5s4.7 1.7 5.5 5"/><path d="M14.5 14.3c.6-.2 1.3-.3 2-.3 2.2 0 3.8 1.5 4.5 4"/></svg><span class="cl">Idealizadores</span></button><button id="bteam" class="cb cadm" aria-label="Admin: área da equipe" title="Área da equipe"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span class="cl">Admin</span></button><i class="csep"></i><a id="bsite" class="cb" href="https://festadolivro.edusp.com.br/" target="_blank" rel="noopener" aria-label="Site oficial da Festa do Livro" title="Site oficial da Festa do Livro"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/></svg></a><button id="bav" class="cb" aria-label="Personagem" title="Personagem"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></button><button id="bspot" class="cb" aria-label="Trilha no Spotify (sem login no Spotify, toca prévias de 30 segundos)" title="Trilha no Spotify · sem login, toca prévias de 30 s" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#1DB954"/><path d="M7 9.3c3.3-1 7.3-.7 10 1M7.6 12.3c2.8-.8 6-.5 8.4.9M8.2 15.1c2.3-.6 4.6-.4 6.6.7" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg></button><button id="bmus" class="cb" aria-pressed="true" aria-label="Música" title="Música"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></button><button id="bsfx" class="cb" aria-pressed="true" aria-label="Sons" title="Sons"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button></div>
-<div class="help">Ande com ←↑→↓ ou WASD · <b>Espaço</b> abre a ilha · <b>C</b> cesta · <b>L</b> lista · <b>P</b> passaporte · <b>R</b> me surpreenda · <b>/</b> busca</div>
+<div class="corner" id="corner"><button id="bcart" class="cb cbk" title="Cesta (C)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.4 11.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="cl">Cesta</span><em class="cn">0</em></button><button id="blist" class="cb" aria-label="Lista de livros" title="Lista de livros (L)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1.2"/><circle cx="4.5" cy="12" r="1.2"/><circle cx="4.5" cy="18" r="1.2"/></svg><span class="cl">Lista</span></button><button id="bpass" class="cb" title="Passaporte (P)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m8.5 12.3 2.3 2.3 4.7-5"/></svg><span class="cl">Passaporte</span><em class="cn">0/60</em></button><button id="bcm" class="cb" aria-label="Mais botões" aria-expanded="false" title="Mais botões"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><circle cx="5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="19" cy="12" r="2.2"/></svg></button><button id="bidea" class="cb" aria-label="Conheça os idealizadores" title="Conheça os idealizadores"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="16.5" cy="9" r="2.6"/><path d="M3.5 19c.8-3.3 3-5 5.5-5s4.7 1.7 5.5 5"/><path d="M14.5 14.3c.6-.2 1.3-.3 2-.3 2.2 0 3.8 1.5 4.5 4"/></svg><span class="cl">Idealizadores</span></button><button id="bteam" class="cb cadm" aria-label="Admin: área da equipe" title="Área da equipe"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span class="cl">Admin</span></button><button id="bhelp" class="cb" aria-label="Como jogar" title="Como jogar (H)"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 1-1 1.7"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg><span class="cl">Como jogar</span></button><i class="csep"></i><a id="bsite" class="cb" href="https://festadolivro.edusp.com.br/" target="_blank" rel="noopener" aria-label="Site oficial da Festa do Livro" title="Site oficial da Festa do Livro"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/></svg></a><button id="bav" class="cb" aria-label="Personagem" title="Personagem"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></button><button id="bspot" class="cb" aria-label="Trilha no Spotify (sem login no Spotify, toca prévias de 30 segundos)" title="Trilha no Spotify · sem login, toca prévias de 30 s" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#1DB954"/><path d="M7 9.3c3.3-1 7.3-.7 10 1M7.6 12.3c2.8-.8 6-.5 8.4.9M8.2 15.1c2.3-.6 4.6-.4 6.6.7" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg></button><button id="bmus" class="cb" aria-pressed="true" aria-label="Música" title="Música"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l11-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="17" cy="16" r="3"/></svg></button><button id="bsfx" class="cb" aria-pressed="true" aria-label="Sons" title="Sons"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg></button></div>
+<div class="help" hidden>Ande com ←↑→↓ ou WASD · <b>Espaço</b> abre a ilha · <b>C</b> cesta · <b>L</b> lista · <b>P</b> passaporte · <b>R</b> me surpreenda · <b>/</b> busca</div>
 <div class="minibox"><span class="upd" id="upd"></span><canvas id="mini" aria-label="Mapa geral da tenda; clique para ir até uma ilha"></canvas><div class="zbox"><button id="zout" aria-label="Afastar o mapa" title="Afastar (tecla −)">−</button><button id="zin" aria-label="Aproximar o mapa" title="Aproximar (tecla +)">+</button></div><button class="mexp" id="bmexp" aria-label="Expandir mapa" title="Expandir mapa"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
 <div class="hint" id="hint"></div>
 <div class="tip" id="tip" hidden></div>
@@ -357,13 +370,20 @@ body:has(#sug[style*="block"]) .catpill{display:none}
 <article class="idea"><img src="foto-guga.jpg" alt="Foto de Gustavo Medeiros" width="120" height="120" loading="lazy"><div><h3>Gustavo Medeiros</h3><p class="idm"><a href="https://www.instagram.com/pensandocomguga" target="_blank" rel="noopener">@pensandocomguga</a></p><p>Formado em Ciências Sociais pela USP. É Marketing Product Owner na Wigoo Digital, unindo estratégia, criação e gestão de projetos em marketing e comunicação. Curioso por natureza: das ciências sociais aos idiomas, passou pela pesquisa acadêmica na USP e pela consultoria empresarial antes de encontrar a sua praia no marketing.</p><a class="idl" href="https://www.instagram.com/pensandocomguga" target="_blank" rel="noopener">Instagram</a></div></article>
 </div></div></div>
 <div class="avm" id="cardm" hidden><div class="avbox mapbox cardbox" role="dialog" aria-label="Cartão da minha pilha"><div class="maptop"><h2>Cartão da minha pilha</h2><div class="avact"><button id="cardclose" class="alt">Fechar</button></div></div><div class="cardfmt" role="group" aria-label="Formato"><button id="cfpost" class="on">Post · 1080×1350</button><button id="cfstory">Story · 1080×1920</button><button id="carddl" hidden>Baixar imagem</button></div><p class="note">No celular, toque e segure a imagem para salvar. O Story já explica o que é a Festa, para quem não conhece.</p><img id="cardimg" alt="Cartão com a personagem, a pilha de livros, o total e os destaques da sacola"></div></div>
-<div class="toast" id="toast" role="status"></div><div class="catpill" id="catpill" hidden><button class="cpgo"><b></b> →</button><button class="cpx" aria-label="Tirar o destaque de categoria" title="Tirar o destaque">✕</button></div><button class="pmin" id="pmin" hidden aria-label="Abrir o painel de novo"><span>▴</span><b>Painel</b></button>
+<div class="toast" id="toast" role="status"></div>
+<div class="avm" id="novm" hidden role="dialog" aria-modal="true" aria-labelledby="novt"><div class="avbox novbox"><div class="novhd"><span class="novtag">Acervo atualizado</span><h2 id="novt"></h2><p id="novsub"></p></div><div id="novlist" class="novlist"></div><div class="avact"><button id="novgo">Ir à primeira ilha</button><button id="novclose" class="alt">Depois eu vejo</button></div></div></div>
+<div class="avm" id="helpm" hidden role="dialog" aria-modal="true" aria-labelledby="helpt"><div class="avbox helpbox"><div class="avtop"><h2 id="helpt">Como jogar</h2></div>
+<div class="helpg"><div><h5>No computador</h5><ul class="keys">
+<li><kbd>←↑→↓</kbd> ou <kbd>W A S D</kbd> anda</li><li>Segure <kbd>Shift</kbd> para correr</li><li><kbd>Espaço</kbd> abre a ilha perto de você</li><li><kbd>C</kbd> cesta · <kbd>L</kbd> lista · <kbd>P</kbd> passaporte</li><li><kbd>R</kbd> me surpreenda · <kbd>/</kbd> busca</li><li><kbd>−</kbd> e <kbd>+</kbd> zoom no mapa · <kbd>Esc</kbd> fecha</li><li>Dá para andar com a ilha aberta e clicar no chão para ir até lá</li></ul></div>
+<div><h5>No celular</h5><ul class="keys"><li>Arraste o joystick para andar; empurre até a borda para correr</li><li>Ou toque no chão e a personagem vai sozinha</li><li>Toque na ilha para abrir</li><li>Dois dedos no mapa: zoom</li><li>Botão ⋯ no canto: personagem, música, sons e mais</li></ul></div></div>
+<p class="note">Saia pelas portas laterais para passear pela Praça do Relógio Solar e pela Raia Olímpica.</p>
+<div class="avact"><button id="helptut">Ver o tutorial de novo</button><button id="helpclose" class="alt">Fechar</button></div></div></div><div class="catpill" id="catpill" hidden><button class="cpgo"><b></b> →</button><button class="cpx" aria-label="Tirar o destaque de categoria" title="Tirar o destaque">✕</button></div><button class="pmin" id="pmin" hidden aria-label="Abrir o painel de novo"><span>▴</span><b>Painel</b></button>
 <aside class="panel" id="panel" aria-live="polite"><button class="grab" id="grab" aria-label="Minimizar painel"></button><div class="ph" id="ph"></div><div class="pb" id="pb"></div></aside>
 <div id="load"><div class="ld"><div class="ldstack"><i></i><i></i><i></i><i></i><i></i></div><h1>Festa do Livro da USP</h1><p id="ldt">Arrumando as estantes…</p><div class="ldbar"><b id="ldb"></b></div></div></div>
 <script>
 (async()=>{const bar=document.getElementById('ldb'),t=document.getElementById('ldt');
  const msgs=['Arrumando as estantes…','Contando 7 mil livros…','Montando a tenda…','Carimbando o passaporte…'];let mi=0;const mt=setInterval(()=>{t.textContent=msgs[++mi%msgs.length]},1400);
- try{const r=await fetch('data.json?v=202611161445',{credentials:'same-origin',mode:'cors'});const total=+r.headers.get('content-length')||0;let txt;
+ try{const r=await fetch('data.json?v=202611161530',{credentials:'same-origin',mode:'cors'});const total=+r.headers.get('content-length')||0;let txt;
   if(r.body&&total){const rd=r.body.getReader();const parts=[];let got=0;for(;;){const {done,value}=await rd.read();if(done)break;parts.push(value);got+=value.length;bar.style.width=Math.min(100,got/total*100)+'%'}const u=new Uint8Array(got);let o=0;for(const p of parts){u.set(p,o);o+=p.length}txt=new TextDecoder().decode(u)}
   else{bar.style.width='60%';txt=await r.text()}
   window.DATA=JSON.parse(txt);bar.style.width='100%';clearInterval(mt);
@@ -391,6 +411,7 @@ const SND=(()=>{let ac=null,master,musicBus,sfxBus,started=false,timer=null;
  let lastBump=0,stepN=0;
  const fx={
   step(){stepN++;const t=ac.currentTime;noise(t,.045,.35,stepN%2?900:700);tone(stepN%2?110:98,t,.04,'triangle',.25)},
+  run(){stepN++;const t=ac.currentTime;noise(t,.03,.42,stepN%2?1500:1150);tone(stepN%2?150:132,t,.03,'triangle',.22);if(stepN%4===0)noise(t+.02,.06,.12,2600)},
   near(){const t=ac.currentTime;tone(988,t,.07);tone(1319,t+.07,.12)},
   open(){const t=ac.currentTime;[523,659,784,1047].forEach((f,k)=>tone(f,t+k*.055,.09,'square',.4))},
   close(){const t=ac.currentTime;[784,659,523].forEach((f,k)=>tone(f,t+k*.05,.08,'square',.35))},
@@ -453,21 +474,21 @@ const me={x:tent.x-60,y:(G1+G2)/2,dir:'right',f:0,moving:false};
 const keys={};let near=null,openI=null,dpr=1,cam={x:0,y:0},first=true;
 var TOPH=60,BOTH=0,MOB=false,MINIK='',FR=0;function size(){const hp=document.querySelector('.help'),tp=document.querySelector('.top');TOPH=(tp&&tp.offsetHeight)||60;{const co=document.getElementById('corner');if(co)co.style.top=(TOPH+10)+'px'}MOB=innerWidth<640;if(hp&&tp)hp.style.top=(TOPH+8)+'px';dpr=Math.min(MOB?1.5:2,devicePixelRatio||1);MINIK='';cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;const w=mini.clientWidth||600;mini.width=w*dpr;mini.height=Math.round(w*120/1220)*dpr}
 addEventListener('resize',size);size();
-const K={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',w:'up',s:'down',a:'left',d:'right',W:'up',S:'down',A:'left',D:'right'};
-addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT'||!document.getElementById('avm').hidden||!document.getElementById('mapm').hidden||!document.getElementById('passm').hidden||!document.getElementById('rstm').hidden||!document.getElementById('tutm').hidden||!document.getElementById('cardm').hidden||document.querySelector('.avm:not([hidden])'))return;if(K[e.key]){keys[K[e.key]]=1;e.preventDefault()}if((e.key===' '||e.key==='Enter')&&near&&!openI){openIsland(near);e.preventDefault()}if(e.key==='Escape')closeP()});
+const K={Shift:'run',ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',w:'up',s:'down',a:'left',d:'right',W:'up',S:'down',A:'left',D:'right'};
+addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||e.target.tagName==='SELECT'||!document.getElementById('avm').hidden||!document.getElementById('mapm').hidden||!document.getElementById('passm').hidden||!document.getElementById('rstm').hidden||!document.getElementById('tutm').hidden||!document.getElementById('cardm').hidden||document.querySelector('.avm:not([hidden])'))return;if(K[e.key]){keys[K[e.key]]=1;e.preventDefault()}if((e.key===' '||e.key==='Enter')&&near&&(!openI||openI!==near)&&!(e.target.closest&&e.target.closest('#panel'))){openIsland(near);e.preventDefault()}if(e.key==='Escape')closeP()});
 addEventListener('keyup',e=>{if(K[e.key])keys[K[e.key]]=0});
 addEventListener('blur',()=>{for(const k in keys)keys[k]=0});
 document.querySelectorAll('#pad button').forEach(b=>{const k=b.dataset.k;b.addEventListener('pointerdown',e=>{keys[k]=1;e.preventDefault()});['pointerup','pointerleave','pointercancel'].forEach(t=>b.addEventListener(t,()=>keys[k]=0))});
 const R=8;
-function blocked(x,y){const inX=x>tent.x&&x<tent.x+tent.w;
- if(x<tent.x-220||x>tent.x+tent.w+220)return true;
- if(!inX&&(y<G1+R||y>G2-R))return true;
- if(inX&&(y<tent.y+R+6||y>tent.y+tent.h-R))return true;
- if(Math.abs(x-tent.x)<R||Math.abs(x-tent.x-tent.w)<R){if(y<G1+R||y>G2-R)return true}
+const OUTX=260,OUTY=170;
+function blocked(x,y){if(x<tent.x-OUTX||x>tent.x+tent.w+OUTX||y<tent.y-OUTY||y>tent.y+tent.h+OUTY)return true;
+ const inX=x>tent.x-R&&x<tent.x+tent.w+R,inY=y>tent.y-R-6&&y<tent.y+tent.h+R;
+ if(inX&&(Math.abs(y-tent.y)<R+6||Math.abs(y-tent.y-tent.h)<R))return true;
+ if(inY&&(Math.abs(x-tent.x)<R||Math.abs(x-tent.x-tent.w)<R)&&(y<G1+R||y>G2-R))return true;
  for(const i of IS)if(x>i.X-R&&x<i.X+i.W+R&&y>i.Y-R&&y<i.Y+i.H+R)return true;return false}
 let ZOOM=1,walkTo=null,JOY=null,idleT=0;
 /* grade para achar caminho */
-const GC=12,GX0=tent.x-210,GY0=tent.y,GW=Math.ceil((tent.w+420)/GC),GH=Math.ceil(tent.h/GC);let GRID=null;
+const GC=12,GX0=tent.x-OUTX+10,GY0=tent.y-OUTY+10,GW=Math.ceil((tent.w+2*OUTX-20)/GC),GH=Math.ceil((tent.h+2*OUTY-20)/GC);let GRID=null;
 function grid(){if(GRID)return GRID;GRID=new Uint8Array(GW*GH);for(let r=0;r<GH;r++)for(let c=0;c<GW;c++)GRID[r*GW+c]=blocked(GX0+c*GC+GC/2,GY0+r*GC+GC/2)?1:0;return GRID}
 function cellOf(x,y){return [Math.max(0,Math.min(GW-1,Math.floor((x-GX0)/GC))),Math.max(0,Math.min(GH-1,Math.floor((y-GY0)/GC)))]}
 function freeNear(c,r){const g=grid();if(!g[r*GW+c])return [c,r];for(let d=1;d<12;d++)for(let dc=-d;dc<=d;dc++)for(const dr of[-d,d]){const cc=c+dc,rr2=r+dr;if(cc>=0&&rr2>=0&&cc<GW&&rr2<GH&&!g[rr2*GW+cc])return [cc,rr2]}for(let d=1;d<12;d++)for(let dr=-d;dr<=d;dr++)for(const dc of[-d,d]){const cc=c+dc,rr2=r+dr;if(cc>=0&&rr2>=0&&cc<GW&&rr2<GH&&!g[rr2*GW+cc])return [cc,rr2]}return null}
@@ -479,15 +500,15 @@ function planFrom(sx,sy,tx,ty){const g=grid();const[sc,sr]=freeNear(...cellOf(sx
  if(prev[goal]<0)return null;const pts=[];for(let u=goal;u!==s0;u=prev[u])pts.push([GX0+(u%GW)*GC+GC/2,GY0+((u/GW)|0)*GC+GC/2]);pts.reverse();
  const out=[];let cx0=sx,cy0=sy,k=0;while(k<pts.length){let j=pts.length-1;while(j>k&&!sight(cx0,cy0,pts[j][0],pts[j][1]))j--;out.push(pts[j]);[cx0,cy0]=pts[j];k=j+1}
  if(!blocked(tx,ty)&&sight(cx0,cy0,tx,ty))out.push([tx,ty]);return {pts:out}}
-function step(){const sp=3.4;let dx=(keys.right?1:0)-(keys.left?1:0),dy=(keys.down?1:0)-(keys.up?1:0),mag=1;
+function step(){const RUN=!!keys.run||!!(JOY&&Math.hypot(JOY.x,JOY.y)>.97),sp=RUN?6.2:3.4;const canWalk=!openI||innerWidth>=641;let dx=(keys.right?1:0)-(keys.left?1:0),dy=(keys.down?1:0)-(keys.up?1:0),mag=1;
  if(JOY&&(Math.abs(JOY.x)>.15||Math.abs(JOY.y)>.15)){dx=JOY.x;dy=JOY.y;mag=Math.min(1,Math.hypot(dx,dy));const m=Math.hypot(dx,dy)||1;dx/=m;dy/=m}
  else if(dx&&dy){dx*=.71;dy*=.71}
- if(dx||dy)walkTo=null;else if(walkTo&&!openI){const p=walkTo.pts[0];if(!p)walkTo=null;else{const ex=p[0]-me.x,ey=p[1]-me.y,d=Math.hypot(ex,ey);if(d<sp+1){me.x=p[0];me.y=p[1];walkTo.pts.shift();if(!walkTo.pts.length)walkTo=null}else{dx=ex/d;dy=ey/d}}}
- me.moving=!!(dx||dy)&&!openI;
- if(me.moving){idleT=0;if(Math.abs(dx)>Math.abs(dy))me.dir=dx>0?'right':'left';else me.dir=dy>0?'down':'up';const ox=me.x,oy=me.y,v=sp*mag;if(!blocked(me.x+dx*v,me.y))me.x+=dx*v;if(!blocked(me.x,me.y+dy*v))me.y+=dy*v;me.f+=.2*mag;if(me.x===ox&&me.y===oy){SND.play('bump');if(walkTo)walkTo=null}else if(Math.floor(me.f/1.6)!==Math.floor((me.f-.2*mag)/1.6))SND.play('step')}else idleT++;
+ if(dx||dy)walkTo=null;else if(walkTo&&canWalk){const p=walkTo.pts[0];if(!p)walkTo=null;else{const ex=p[0]-me.x,ey=p[1]-me.y,d=Math.hypot(ex,ey);if(d<sp+1){me.x=p[0];me.y=p[1];walkTo.pts.shift();if(!walkTo.pts.length)walkTo=null}else{dx=ex/d;dy=ey/d}}}
+ me.moving=!!(dx||dy)&&canWalk;me.run=me.moving&&RUN;
+ if(me.moving){idleT=0;if(Math.abs(dx)>Math.abs(dy))me.dir=dx>0?'right':'left';else me.dir=dy>0?'down':'up';const ox=me.x,oy=me.y,v=sp*mag;if(!blocked(me.x+dx*v,me.y))me.x+=dx*v;if(!blocked(me.x,me.y+dy*v))me.y+=dy*v;const fi=(RUN?.34:.2)*mag;me.f+=fi;if(me.x===ox&&me.y===oy){SND.play('bump');if(walkTo)walkTo=null}else if(Math.floor(me.f/1.6)!==Math.floor((me.f-fi)/1.6))SND.play(RUN?'run':'step')}else idleT++;
  let best=null,bd=1e9;for(const i of IS){const px=Math.max(i.X,Math.min(me.x,i.X+i.W)),py=Math.max(i.Y,Math.min(me.y,i.Y+i.H));const d=Math.hypot(me.x-px,me.y-py);if(d<bd){bd=d;best=i}}const was=near;near=bd<R+18?best:null;if(near&&near!==was&&!openI){SND.play('near')}hint();where()}
 const hintEl=document.getElementById('hint'),whereEl=document.getElementById('where');
-function where(){const out=me.x<tent.x?'Praça do Relógio Solar':me.x>tent.x+tent.w?'Raia Olímpica':null;const mxp=me.x/SX+MX0;const s=mxp<360?'verde':mxp<765?'rosa':'marrom';SND.space(s);const t=out||NAME[s];if(whereEl.textContent!==t){whereEl.textContent=t;whereEl.style.background=out?CREAM:COL[s];whereEl.style.color=out||s==='verde'?INK:CREAM}}
+function where(){const out=me.x<tent.x?'Praça do Relógio Solar':me.x>tent.x+tent.w?'Raia Olímpica':me.y<tent.y?'Praça do Relógio da USP':me.y>tent.y+tent.h?'CEPEUSP':null;const mxp=me.x/SX+MX0;const s=mxp<360?'verde':mxp<765?'rosa':'marrom';SND.space(s);const t=out||NAME[s];if(whereEl.textContent!==t){whereEl.textContent=t;whereEl.style.background=out?CREAM:COL[s];whereEl.style.color=out||s==='verde'?INK:CREAM}}
 function hint(){if(near&&!openI){hintEl.style.display='block';if(hintEl.dataset.i!=near.id){const names=near.p.map(k=>PUB[k].n);hintEl.dataset.i=near.id;hintEl.innerHTML='<kbd>'+(matchMedia('(pointer:coarse)').matches?'Toque':'Espaço')+'</kbd><b>Ilha '+String(near.id).padStart(2,'0')+'</b> · '+esc(names.slice(0,3).join(', '))+(names.length>3?' +'+(names.length-3):'')}}else{hintEl.style.display='none';hintEl.dataset.i=''}}
 hintEl.onclick=()=>near&&openIsland(near);
 function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
@@ -500,7 +521,7 @@ function drawIsland(i,cx){const c=COL[i.sp],hi=near===i,x=i.X,y=i.Y,w=i.W,h=i.H;
  const tw=Math.min(40,w*.6),th=Math.min(34,h*.72);
  {const fs=MOB?13:(w<130?12:14),lh=fs+3;cx.font='700 '+fs+'px "Helvetica Neue",Helvetica,Arial,sans-serif';cx.textAlign='left';cx.textBaseline='top';const tc=i.sp==='marrom'?CREAM:INK;
   if(!i._tl){const names=i.p.map(k=>[PUB[k].n,PUB[k].b.length]).sort((a,b)=>(b[1]>0)-(a[1]>0));const maxL=MOB?Math.min(2,Math.max(1,Math.floor((h-12)/lh))):Math.max(1,Math.floor((h-12)/lh));let ly=7;i._tl=[];
-   for(let k=0;k<Math.min(names.length,maxL);k++){const last=k===maxL-1&&names.length>maxL;let t=last?'+'+(names.length-k)+' editoras':names[k][0];const x0=(ly+lh>h-th)?tw+6:7,mw=(!i.empty&&ly+lh>h-46)?Math.min(w-7-x0-26,w*.6-x0-4):w-7-x0-(i.empty?0:26);if(mw<20)break;while(cx.measureText(t).width>mw&&t.length>3)t=t.slice(0,-2).trim()+'…';i._tl.push([t,x0,ly,(names[k][1]||last?1:.5)]);ly+=lh}}
+   for(let k=0;k<Math.min(names.length,maxL);k++){const last=k===maxL-1&&names.length>maxL;let t=last?'+'+(names.length-k)+' editoras':names[k][0];const x0=(ly+lh>h-th)?tw+6:7,mw=(!i.empty&&ly+lh>h-62)?Math.min(w-7-x0-26,w*.6-x0-4):w-7-x0-(i.empty?0:26);if(mw<20)break;while(cx.measureText(t).width>mw&&t.length>3)t=t.slice(0,-2).trim()+'…';i._tl.push([t,x0,ly,(names[k][1]||last?1:.5)]);ly+=lh}}
   for(const[t,x0,ly,al]of i._tl){cx.globalAlpha=(dim?(i.empty?.32:.2):1)*al;cx.fillStyle=tc;cx.fillText(t,x+x0,y+ly)}
   cx.textBaseline='middle'}
  cx.globalAlpha=1;
@@ -529,7 +550,7 @@ const SUR=(()=>{const r=rng(20261125),L=tent.x,R=tent.x+tent.w,Tp=tent.y,Bt=tent
  add(R+120,R+230,Tp-500,Bt+500,18);
  const paths=[[[L-150,Tp-110],[L+tent.w*.18,Tp-300],[L+tent.w*.42,Tp-130],[L+tent.w*.7,Tp-330],[R+60,Tp-150]],[[L+tent.w*.18,Tp-300],[L+tent.w*.24,Tp-70]],[[L+tent.w*.7,Tp-330],[L+tent.w*.66,Tp-70]]];
  return {L,R,Tp,Bt,MY,trees,track,paths}})();
-function drawSurround(W){if(MOB)return;const S=SUR,vx0=-cam.x-40,vx1=-cam.x+W+40,F='"Helvetica Neue",Helvetica,Arial,sans-serif';
+function drawSurround(W){const S=SUR,vx0=-cam.x-40,vx1=-cam.x+W+40,F='"Helvetica Neue",Helvetica,Arial,sans-serif';
  // calçada (Travessa C) em volta da tenda
  cx.fillStyle='#ece6d6';cx.fillRect(S.L-90,S.Tp-60,S.R-S.L+180,S.Bt-S.Tp+120);
  // Praça do Relógio da USP (em cima)
@@ -570,6 +591,7 @@ function mobZ(){const avail=innerHeight-(TOPH||96)-(BOTH||110)-24;return Math.ma
 function draw(){const Z=(innerWidth<640?mobZ():1)*UZ;ZOOM=Z;const W=cv.width/dpr/Z,H=cv.height/dpr/Z;cx.setTransform(dpr*Z,0,0,dpr*Z,0,0);
  const top=TOPH/Z,bot=(BOTH||(innerWidth<640?70:Math.min(110,30+innerWidth*.1)))/Z;const vh=H-top-bot;
  const fullH=tent.h+110;let ty;if(vh>=fullH)ty=top+Math.min((vh-fullH)/2,innerWidth<640?20:999)+60-tent.y;else ty=Math.max(Math.min(top+60-tent.y,top+vh/2-me.y),top+vh-(tent.y+tent.h+50));
+ if(me.y+ty<top+50)ty=top+50-me.y;if(me.y+ty>top+vh-40)ty=top+vh-40-me.y;
  const tx=W/2-me.x;
  if(first){cam.x=tx;cam.y=ty;first=false}cam.x+=(tx-cam.x)*.15;cam.y+=(ty-cam.y)*.15;
  cx.fillStyle='#fff';cx.fillRect(0,0,W,H);
@@ -616,7 +638,7 @@ function renderFesta(){const n=spNow();ph.style.background=INK;ph.style.color=CR
 
 const panel=document.getElementById('panel'),ph=document.getElementById('ph'),pb=document.getElementById('pb');
 let view=null,mode='todos',filt='',RV=null,pcat=-1,cfilt='',psort='az';
-RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611161445').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
+RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611161530').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
 const SPN=['#6cc28e','#ef5054','#4a1d1a','#f2a33a','#2f7d4f','#c43a3e','#8a5a44','#e6c84c'];
 const score=b=>{const r=b[6][1],n=b[6][2];return (r*n+3.8*200)/(n+200)};
 const rated=b=>b[6]&&b[6][1]>0&&b[6][2]>=10;
@@ -671,7 +693,7 @@ function render0(){const v=view;
   head(c,NAME[i.sp],'Ilha '+pad2(i.id),i.p.length+(i.p.length>1?' editoras':' editora')+(nb?' · '+nb.toLocaleString('pt-BR')+' livros':''));
   let h=i.empty?'<p class="aviso">Ilha ainda sem estoque: nenhuma editora daqui mandou a lista de livros para o site da Festa. Assim que mandarem, a gente atualiza.</p>':vendorBox(i)+novosBox(i);
   const withB=i.p.filter(pk=>PUB[pk].b.length),noB=i.p.filter(pk=>!PUB[pk].b.length);
-  if(withB.length>1||(withB.length&&sel!=null&&!PUB[sel].b.length))h+='<div class="pubs sc">'+(withB.length>1?'<button class="pub'+(sel==null?' sel':'')+'" data-pk="-1">Todas <em>'+nb+'</em></button>':'')+withB.map(pk=>'<button class="pub'+(sel===pk?' sel':'')+'" data-pk="'+pk+'">'+esc(PUB[pk].n)+' <em>'+PUB[pk].b.length+'</em></button>').join('')+'</div>';
+  if(withB.length>1||(withB.length&&sel!=null&&!PUB[sel].b.length))h+='<p class="rowlab">Editoras desta ilha</p><div class="pubs sc">'+(withB.length>1?'<button class="pub'+(sel==null?' sel':'')+'" data-pk="-1">Todas <em>'+nb+'</em></button>':'')+withB.map(pk=>'<button class="pub'+(sel===pk?' sel':'')+'" data-pk="'+pk+'">'+esc(PUB[pk].n)+' <em>'+PUB[pk].b.length+'</em></button>').join('')+'</div>';
   else if(withB.length===1)h+='<p class="pub1"><b>'+esc(PUB[withB[0]].n)+'</b> · '+PUB[withB[0]].b.length+' livros '+folBtn(withB[0])+'</p>';
   if(withB.length>1&&sel!=null&&PUB[sel].b.length)h+='<p class="pub1"><b>'+esc(PUB[sel].n)+'</b> '+folBtn(sel)+'</p>';
   h+=progBox(i);
@@ -686,7 +708,7 @@ function render0(){const v=view;
    const P0=b=>num(price(b))||Infinity,P1=b=>num(price(b))||-1,ttl=b=>J2(b[0]).replace(/^(o|a|os|as|um|uma) /,'');
    if(psort==='az')list.sort((a,b)=>ttl(a[2]).localeCompare(ttl(b[2])));else if(psort==='za')list.sort((a,b)=>ttl(b[2]).localeCompare(ttl(a[2])));else if(psort==='pmenor')list.sort((a,b)=>P0(a[2])-P0(b[2]));else if(psort==='pmaior')list.sort((a,b)=>P1(b[2])-P1(a[2]));else list.sort((a,b)=>(rated(b[2])?score(b[2]):0)-(rated(a[2])?score(a[2]):0));
    const nTop=all.filter(x=>rated(x[2])).length,nRv=RV?all.filter(x=>hasRv(x[2])).length:null,nP=c=>all.filter(x=>{const p=num(price(x[2]));return p>0&&p<=c}).length;
-   h+='<div class="fbar"><div class="filt sc" role="tablist">'+[['todos','Todos',all.length],['p30','Até R$ 30',nP(30)],['p50','Até R$ 50',nP(50)],['top','Mais bem avaliados',nTop],['rv','Com resenhas',nRv]].map(([k,l,n])=>'<button role="tab" data-m="'+k+'" aria-selected="'+(mode===k)+'">'+l+(n!=null?' <em>'+n+'</em>':'')+'</button>').join('')+'</div>'+
+   h+='<div class="fbar"><p class="rowlab">Filtrar os livros</p><div class="filt sc" role="tablist">'+[['todos','Todos',all.length],['p30','Até R$ 30',nP(30)],['p50','Até R$ 50',nP(50)],['top','Mais bem avaliados',nTop],['rv','Com resenhas',nRv]].map(([k,l,n])=>'<button role="tab" data-m="'+k+'" aria-selected="'+(mode===k)+'">'+l+(n!=null?' <em>'+n+'</em>':'')+'</button>').join('')+'</div>'+
    '<div class="frow"><input class="find" id="ff" placeholder="Filtrar por título, autor ou ISBN" value="'+esc(filt)+'" aria-label="Filtrar livros">'+catSelect('pc',pcat,counts)+'<select class="csel" id="ps" aria-label="Ordenar">'+[['az','A a Z'],['za','Z a A'],['pmenor','Menor preço'],['pmaior','Maior preço'],['nota','Melhor nota']].map(([k,l])=>'<option value="'+k+'"'+(psort===k?' selected':'')+'>'+l+'</option>').join('')+'</select></div>'+
    '<p class="note cnt">'+list.length.toLocaleString('pt-BR')+(list.length===1?' livro':' livros')+(mode==='top'?' · nota do Skoob pesada pelo número de leitores':mode==='p30'?' até R$ 30':mode==='p50'?' até R$ 50':'')+'</p></div>'+
    (list.length?list.slice(0,ILIM).map(([pk,k])=>bookRow(pk,k,sel==null&&i.p.length>1)).join(''):'<p class="empty">Nada encontrado com esse filtro.</p>')+(list.length>ILIM?'<div class="cact"><button id="bmorebk" class="alt">Mostrar mais livros ('+(list.length-ILIM).toLocaleString('pt-BR')+' restantes)</button></div>':'')}
@@ -1244,22 +1266,21 @@ function stepVendors(){for(const i of IS){if(i.empty)continue;const v=vst(i);if(
  if(v.x>hi){v.x=hi;v.dir='left';v.wait=60+Math.random()*120|0}else if(v.x<lo){v.x=lo;v.dir='right';v.wait=60+Math.random()*120|0}else if(Math.random()<.004){v.wait=80+Math.random()*200|0;v.dir='down'}}}
 function vendorPos(i){return [vst(i).x,i.Y+i.H+10]}
 function drawVendor(i){if(i.empty)return;const v=vst(i),[vx,vy]=vendorPos(i);const b=v.moving?Math.sin(v.f*2)*1.5:Math.sin(performance.now()/500+i.id)*.8,lg=v.moving?Math.sin(v.f*2)*3:0;
- cx.save();cx.translate(vx,vy);cx.scale(.8,.8);drawAvatar(cx,vendorAV(i),v.moving?v.dir:(v.dir==='down'?'down':v.dir),b,lg,0,0,(performance.now()+i.id*431)%4000<120,'');cx.restore()}
+ cx.save();cx.translate(vx,vy);drawAvatar(cx,vendorAV(i),v.moving?v.dir:(v.dir==='down'?'down':v.dir),b,lg,0,0,(performance.now()+i.id*431)%4000<120,'');cx.restore()}
 const CATPH={'Infantil e juvenil':['Tem muito infantil aqui!','Leva um pra criançada!'],'HQ e mangá':['Curte HQ? Temos!','Mangá e quadrinho aqui!'],'Psicologia e psicanálise':['Psicanálise boa aqui!','Freud manda lembranças!'],'Filosofia':['Filosofia de montão!','Bora filosofar?'],'Ciências sociais e política':['Muita ciência social aqui!','Livro pra pensar o Brasil!'],'Comunicação e livro':['Livro sobre livro? Temos!'],'Educação':['Professora? Olha esses!','Muito livro de educação!'],'Poesia':['Poesia boa aqui, viu?','Leva um poema pra casa!'],'Teoria literária e linguística':['Teoria literária aqui!','Pra quem é de Letras!'],'História':['Muita história aqui!','Gosta de história? Vem!'],'Literatura':['Romance bom aqui!','Muita ficção boa!'],'Artes':['Livro de arte lindo aqui!','Olha que capa linda!'],'Arquitetura e urbanismo':['Arquitetura aqui!'],'Ciências e saúde':['Ciência de qualidade!'],'Economia, negócios e direito':['Direito e economia aqui!'],'Religião e espiritualidade':['Espiritualidade aqui!'],'Biografias e memórias':['Biografia boa aqui!'],'Autoajuda e comportamento':['Autoajuda? Temos!'],'Gastronomia e viagem':['Livro de receita aqui!']};
 const short=(t,n)=>{t=String(t).trim();t=t===t.toUpperCase()?t.charAt(0)+t.slice(1).toLowerCase():t;t=t.split(/\s*[:|(]\s*|\s+[–-]\s+/)[0].trim()||t;const m=t.match(/^(.*),\s*(o|a|os|as|um|uma)$/i);if(m)t=m[2].charAt(0).toUpperCase()+m[2].slice(1).toLowerCase()+' '+m[1].charAt(0).toLowerCase()+m[1].slice(1);return t.length>n?t.slice(0,n-1).replace(/[\s,:;–-]+\S*$/,'')+'…':t};
 function rng(seed){let x=seed>>>0||1;return()=>{x^=x<<13;x^=x>>>17;x^=x<<5;return (x>>>0)/4294967296}}
 const PHR={};function phrases(i){if(PHR[i.id])return PHR[i.id];
  const books=[];i.p.forEach(pk=>PUB[pk].b.forEach(b=>books.push([pk,b])));const withB=i.p.filter(pk=>PUB[pk].b.length);
  const hr=+new Date().toLocaleString('sv-SE',{timeZone:'America/Sao_Paulo'}).slice(11,13);const ola=hr<12?'Bom dia!':hr<18?'Boa tarde!':'Boa noite!';
- const L=[ola+' Chega mais!','Bem-vinda à ilha '+pad2(i.id)+'!','Oi! Pode olhar à vontade','Dá uma olhada, sem pressa',books.length.toLocaleString('pt-BR')+' livros nesta ilha!'];
+ const L=[ola+' Chega mais!','Bem-vinda à ilha '+pad2(i.id)+'!','Oi! Pode olhar à vontade','Dá uma olhada, sem pressa'];
  withB.slice(0,4).forEach(pk=>{const n=short(PUB[pk].n,20);L.push(pick(['Aqui é a '+n+'!','A '+n+' tá aqui!','Conhece a '+n+'?']))});
- const cc={};books.forEach(([,b])=>cc[b[7]]=(cc[b[7]]||0)+1);Object.entries(cc).sort((a,b)=>b[1]-a[1]).slice(0,2).forEach(([k])=>{const ph=CATPH[D.cats[k]];if(ph)L.push(...ph)});
  const top=books.filter(([,b])=>rated(b)).sort((a,b)=>score(b[1])-score(a[1]));
  if(top[0]){const t=short(top[0][1][0],22);L.push('Leva '+t+'!','Todo mundo leva '+t,t+': ★ '+top[0][1][6][1].toFixed(1).replace('.',','))}
  if(top[1]){L.push('Também indico '+short(top[1][1][0],20))}
- const priced=books.filter(([,b])=>num(price(b))>0);if(priced.length){const mn=priced.reduce((m,x)=>num(price(x[1]))<num(price(m[1]))?x:m);L.push('Tem livro por '+brl(num(price(mn[1])))+'!');
-  const ds=priced.filter(([,b])=>num(b[2])>num(b[3])&&num(b[3])>0).map(([,b])=>Math.round((1-num(b[3])/num(b[2]))*100)).sort((a,b)=>a-b);if(ds.length){const md=ds[ds.length>>1];L.push('Tudo com '+md+'% de desconto!')}}
- const nrv=books.filter(([,b])=>hasRv(b)).length;if(nrv>3)L.push(nrv+' com resenha no Skoob!');
+ {const R2=rng(h32('fala'+i.id)),pk2=()=>books[Math.floor(R2()*books.length)];if(books.length){for(let k=0;k<3;k++){const [,b]=pk2(),tt=short(b[0],20),au=String(b[1]||'').split(/[;,]/)[0].trim();
+  const F=['Esse eu li duas vezes: '+tt,'Já leu '+tt+'?','Quem leva '+tt+' volta pra contar','Separei '+tt+' pra você','Meu xodó: '+tt,'Abre '+tt+' na página 1, vai','Tô relendo '+tt];if(au&&au.length<24)F.push('Fã de '+au.split(' ')[0]+'? Tem aqui','Já leu '+au.split(' ')[0]+'?');L.push(F[Math.floor(R2()*F.length)])}}}
+ L.push(pick(['Trouxe sacola? Vai precisar','Depois tem bandejão?','A fila do caixa tá andando!','Já passou na Raia?','Hoje o sol tá forte, hein','Se perder, segue o relógio','Leitura boa pro busão de volta','Livro novo tem cheiro bom, né?']));
  L.push(pick(['Leva dois, vai!','Já carimbou o passaporte?','Cabe mais um na sacola!','Livro bom é livro lido!','Quer uma dica? Pergunta!','Olha a promoção!','Hoje tá movimentado, hein!']));
  {const P=PERS[i.sp];L.push(pick(P.ola),...P.extra.slice().sort(()=>Math.random()-.5).slice(0,2));for(let k=0;k<L.length;k++)L[k]=styl(i.sp,L[k])}
  const r=rng(h32('p'+i.id+Date.now()));for(let k=L.length-1;k>0;k--){const j=Math.floor(r()*(k+1));[L[k],L[j]]=[L[j],L[k]]}
@@ -1376,7 +1397,16 @@ var NOVO={},NOVOn=0;
  const st={v:1,i:prev&&prev.v===1?prev.i:cur};
  window.__seen=id=>{st.i[id]=cur[id];try{localStorage.setItem('festa-visto',JSON.stringify(st))}catch(e){}};
  if(!prev||prev.v!==1){try{localStorage.setItem('festa-visto',JSON.stringify(st))}catch(e){}}
- if(NOVOn)setTimeout(()=>{const nb=Object.values(NOVO).reduce((t,s)=>t+s.size,0);PASS.toast('<b>Novidade!</b> '+nb.toLocaleString('pt-BR')+(nb===1?' livro novo':' livros novos')+' em '+NOVOn+(NOVOn===1?' ilha':' ilhas'))},2600)}
+ if(NOVOn)setTimeout(()=>{const tryOpen=()=>{if(document.querySelector('.avm:not([hidden])')||!document.getElementById('tutm').hidden){setTimeout(tryOpen,1500);return}openNovos()};tryOpen()},1800)}
+function openNovos(){const m=document.getElementById('novm');const rows=Object.entries(NOVO).map(([id,s])=>{const il=IS.find(x=>x.id===+id);const ns=[],eds=new Set(),fol=[];il.p.forEach(pk=>PUB[pk].b.forEach(b=>{if(s.has(h32(PUB[pk].n+'|'+b[0]).toString(36))){ns.push(b);eds.add(PUB[pk].n);if(isFol(pk))fol.push(b)}}));return {il,n:s.size,ns,eds:[...eds],fol:fol.length}}).sort((a,b)=>(b.fol-a.fol)||(b.n-a.n));
+ const nb=rows.reduce((t,r)=>t+r.n,0),nf=rows.reduce((t,r)=>t+r.fol,0);
+ document.getElementById('novt').textContent=nb.toLocaleString('pt-BR')+(nb===1?' livro novo':' livros novos')+' na Festa!';
+ document.getElementById('novsub').innerHTML='Chegaram desde a sua última visita, em '+NOVOn+(NOVOn===1?' ilha':' ilhas')+'.'+(nf?' <b>'+nf+(nf===1?' é':' são')+' de editoras que você segue.</b>':'')+' Nas ilhas, eles aparecem com a etiqueta <span class="novpill">Novo</span>.';
+ document.getElementById('novlist').innerHTML=rows.slice(0,8).map(r=>'<button class="novit" data-nil="'+r.il.id+'"><span class="fmn" style="background:'+COL[r.il.sp]+';color:'+(r.il.sp==='verde'?INK:CREAM)+'">'+pad2(r.il.id)+'</span><span class="novtx"><b>'+r.n+(r.n===1?' novo':' novos')+(r.fol?' · ♥ '+r.fol:'')+'</b><small>'+esc(r.eds.slice(0,2).join(', '))+(r.eds.length>2?' e mais':'')+'</small><i>'+r.ns.slice(0,2).map(b=>esc(short(b[0],34))).join(' · ')+'</i></span><span class="novar">›</span></button>').join('')+(rows.length>8?'<p class="note">E mais '+(rows.length-8)+' ilhas com novidade.</p>':'');
+ const go=id=>{const il=IS.find(x=>x.id===+id);m.hidden=true;if(il){goTo(il);openIsland(il)}};
+ document.getElementById('novlist').querySelectorAll('[data-nil]').forEach(b=>b.onclick=()=>go(b.dataset.nil));
+ document.getElementById('novgo').onclick=()=>go(rows[0].il.id);document.getElementById('novclose').onclick=()=>{m.hidden=true;SND.play('close')};
+ SND.play('fanfare');m.hidden=false;document.getElementById('novgo').focus()}
 function isNovo(pk,b){const s=NOVO[PUB[pk].ilha];return !!s&&s.has(h32(PUB[pk].n+'|'+b[0]).toString(36))}
 function novosBox(i){const s=NOVO[i.id];if(!s)return '';const L=[];i.p.forEach(pk=>PUB[pk].b.forEach((b,bi)=>{if(isNovo(pk,b))L.push([pk,bi])}));if(!L.length)return '';
  return '<div class="novo"><b>'+L.length+(L.length===1?' livro novo':' livros novos')+'</b> desde a sua última visita a esta ilha.'+(L.length>1?' <button id="nvtg">Ver os novos</button>':'')+'<div class="nvl" hidden>'+L.slice(0,40).map(([pk,bi])=>bookRow(pk,bi,i.p.length>1)).join('')+'</div></div>'}
@@ -1406,7 +1436,7 @@ function styl(sp,t){if(sp==='marrom')return t.toLowerCase().replace(/r\$/g,'R$')
 const VTALK={};
 function vendorBox(i){const P=PERS[i.sp],a=vendorAV(i),who=a.tipo==='menino'?'Vendedor':'Vendedora',t=VTALK[i.id];
  return '<div class="vbox vb-'+i.sp+'"><canvas class="vav" width="112" height="128" data-v="'+i.id+'"></canvas><div class="vtx"><small>'+who+' da ilha · '+P.tag+'</small><p class="vsay">'+esc(t?t.say:pick(P.ola))+'</p>'+
-  '<div class="vq">'+[['p30','Até R$ 30'],['p50','Até R$ 50'],['top','O mais amado'],['low','O mais baratinho'],['sur','Me surpreende']].map(([k,l])=>'<button data-q="'+k+'"'+(t&&t.q===k?' aria-pressed="true"':'')+'>'+l+'</button>').join('')+'</div></div>'+
+  '<div class="vq">'+[['sur','Me indica um livro']].map(([k,l])=>'<button data-q="'+k+'"'+(t&&t.q===k?' aria-pressed="true"':'')+'>'+l+'</button>').join('')+'</div></div>'+
   (t&&t.pk!=null?'<div class="vans">'+bookRow(t.pk,t.bi,i.p.length>1)+'</div>':'')+'</div>'}
 function vendorAnswer(i,q){const P=PERS[i.sp];const L=[];i.p.forEach(pk=>PUB[pk].b.forEach((b,bi)=>L.push([pk,bi,b])));const pr=x=>num(price(x[2]));let pool=L.filter(x=>pr(x)>0),r=null;
  const best=a=>a.slice().sort((x,y)=>(rated(y[2])?score(y[2]):0)-(rated(x[2])?score(x[2]):0)||pr(x)-pr(y))[0];
@@ -1577,7 +1607,7 @@ function folBtn(pk){const on=isFol(pk);return '<button class="folb'+(on?' on':''
 function togFol(pk){const n=PUB[pk].n,was=isFol(pk);FOL=was?FOL.filter(x=>x!==n):[...FOL,n];try{localStorage.setItem('festa-seguir',JSON.stringify(FOL))}catch(e){};SND.play(was?'drop':'coin');IS.forEach(i=>i._ck=null);if(!was)PASS.toast('<b>Seguindo '+esc(n)+'</b> · a ilha ganha um ♥ no mapa e as novidades dela aparecem primeiro')}
 pb.addEventListener('click',e=>{const f=e.target.closest('[data-fol]');if(f){e.stopPropagation();togFol(+f.dataset.fol);const st=pb.scrollTop;render();pb.scrollTop=st;return}
  const g=e.target.closest('[data-goil]');if(g){const il=IS.find(x=>x.id===+g.dataset.goil);if(il){goTo(il);openIsland(il)}}});
-setTimeout(()=>{if(!FOL.length)return;let n=0;const nm=new Set();PUB.forEach((p,pk)=>{if(!isFol(pk))return;p.b.forEach(b=>{if(isNovo(pk,b)){n++;nm.add(p.n)}})});if(n)PASS.toast('<b>Novidade!</b> '+n+(n>1?' livros novos':' livro novo')+' em '+[...nm].slice(0,2).map(esc).join(', ')+(nm.size>2?' e mais':''))},3500);
+setTimeout(()=>{if(!FOL.length||NOVOn)return;let n=0;const nm=new Set();PUB.forEach((p,pk)=>{if(!isFol(pk))return;p.b.forEach(b=>{if(isNovo(pk,b)){n++;nm.add(p.n)}})});if(n)PASS.toast('<b>Novidade!</b> '+n+(n>1?' livros novos':' livro novo')+' em '+[...nm].slice(0,2).map(esc).join(', ')+(nm.size>2?' e mais':''))},3500);
 /* ===== programação no mapa ===== */
 function progItem(p){return '<div class="rv prog"><div class="who"><b>'+esc(p.t||'')+'</b><span>'+esc(p.q||'')+'</span></div>'+(p.d?'<p>'+esc(p.d)+'</p>':'')+(p.il?'<button class="alt goil" data-goil="'+p.il+'">Ir à Ilha '+pad2(p.il)+' · '+esc(PUB[p.pk].n)+'</button>':'')+'</div>'}
 function progBox(i){const L=PROGI[i.id];if(!L)return '';return '<div class="progbox"><b>★ Programação nesta ilha</b>'+L.map(p=>'<p><b>'+esc(p.q||'')+'</b> · '+esc(p.t||'')+'</p>').join('')+'</div>'}
@@ -1616,16 +1646,19 @@ function renderTop(){ph.style.background=INK;ph.style.color=CREAM;ph.innerHTML='
 document.getElementById('btop').onclick=e=>{e.currentTarget.blur();openTop()};
 /* janelas: X, Esc e clique fora fecham; painel minimizado volta pelo botão */
 const pmin=document.getElementById('pmin');pmin.onclick=restoreP;
+if(/[?&]teste/.test(location.search))window.__t={me:()=>me,tent:()=>tent,G:()=>[G1,G2],set:(x,y)=>{me.x=x;me.y=y},open:n=>openIsland(IS[n]),openI:()=>!!openI};
+{const hm=document.getElementById('helpm'),open=()=>{SND.play('open');hm.hidden=false;document.getElementById('helpclose').focus()},close=()=>{hm.hidden=true};document.getElementById('bhelp').onclick=open;document.getElementById('helpclose').onclick=close;document.getElementById('helptut').onclick=()=>{close();document.getElementById('btut').click()};
+ addEventListener('keydown',e=>{if((e.key==='h'||e.key==='H')&&!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)&&!document.querySelector('.avm:not([hidden])'))open()})}
 {const bm=document.getElementById('bmore'),ex=document.getElementById('extra');bm.addEventListener('click',()=>requestAnimationFrame(()=>{ex.style.left='';ex.style.right='';const r=ex.getBoundingClientRect();if(r.left<4){ex.style.right='auto';ex.style.left='0'}}))}
 {let pd=0,pz=1;const dd=e=>Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);
  cv.addEventListener('touchstart',e=>{if(e.touches.length===2){pd=dd(e);pz=UZ;e.preventDefault()}},{passive:false});
  cv.addEventListener('touchmove',e=>{if(e.touches.length===2&&pd){UZ=Math.round(Math.max(.5,Math.min(1.5,pz*dd(e)/pd))*20)/20;e.preventDefault()}},{passive:false});
  cv.addEventListener('touchend',e=>{if(e.touches.length<2)pd=0})}
 {const cm=document.getElementById('bcm'),co=document.getElementById('corner'),tr=document.createElement('div');tr.className='ctray';tr.id='ctray';tr.setAttribute('role','menu');document.body.appendChild(tr);
- const L={bidea:'Idealizadores',bteam:'Admin',bsite:'Site oficial',bav:'Personagem',bspot:'Spotify',bmus:'Música',bsfx:'Sons'};const ids=Object.keys(L);
+ const L={bidea:'Idealizadores',bteam:'Admin',bhelp:'Como jogar',bsite:'Site oficial',bav:'Personagem',bspot:'Spotify',bmus:'Música',bsfx:'Sons'};const ids=Object.keys(L);
  ids.forEach(id=>{const b=document.getElementById(id);if(b)b.dataset.l=L[id]});
  const sep=co.querySelector('.csep');
- const place=()=>{const mob=innerWidth<640;ids.forEach(id=>{const b=document.getElementById(id);if(!b)return;if(mob){if(b.parentNode!==tr)tr.appendChild(b)}else if(b.parentNode!==co){co.insertBefore(b,['bidea','bteam'].includes(id)?sep:null)}});if(!mob)tr.classList.remove('on');tr.style.top=(co.getBoundingClientRect().top)+'px'};
+ const place=()=>{const mob=innerWidth<640;ids.forEach(id=>{const b=document.getElementById(id);if(!b)return;if(mob){if(b.parentNode!==tr)tr.appendChild(b)}else if(b.parentNode!==co){co.insertBefore(b,['bidea','bteam','bhelp'].includes(id)?sep:null)}});if(!mob)tr.classList.remove('on');tr.style.top=(co.getBoundingClientRect().top)+'px'};
  place();addEventListener('resize',place);
  const close=()=>{tr.classList.remove('on');cm.setAttribute('aria-expanded','false');cm.classList.remove('on')};
  cm.onclick=e=>{e.stopPropagation();place();const o=tr.classList.toggle('on');cm.setAttribute('aria-expanded',o);cm.classList.toggle('on',o);SND.play('blip')};
