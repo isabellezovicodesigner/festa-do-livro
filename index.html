@@ -10,7 +10,7 @@
 <meta property="og:description" content="Passeie pela tenda antes de ir: 60 ilhas, mais de 7 mil livros, preços da Festa e notas do Skoob. Monte sua cesta e chegue sabendo onde ir.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233b1613'/%3E%3Crect x='7' y='8' width='5' height='17' rx='1' fill='%236cc28e'/%3E%3Crect x='13.5' y='6' width='5' height='19' rx='1' fill='%23ef5054'/%3E%3Crect x='20' y='9' width='5' height='16' rx='1' fill='%23ffcf3f'/%3E%3C/svg%3E">
-<link rel="preload" href="data.json?v=202611161530" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="data.json?v=202611161651" as="fetch" crossorigin="anonymous">
 <style>
 /* VOICE: brincalhão e acolhedor, um passeio de sábado na tenda da USP
    IDEA: o mapa oficial da Festa virado jogo 2D — a tenda horizontal com as ilhas numeradas
@@ -249,7 +249,7 @@ h5{font:800 13px "Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppe
 
 .mx{position:sticky;top:0;float:right;margin:-6px -6px 6px 10px;z-index:3;border:0;background:var(--ink);color:var(--cream);width:44px;height:44px;border-radius:12px;font:800 18px "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer}
 .mx:hover{filter:brightness(1.3)}
-#novclose,#helpclose,#mapclose,#passclose,#cmpclose,#retclose,#teamclose,#bigclose,#ideaclose,#cardclose,#fmclose{display:none}
+#numclose,#novclose,#helpclose,#mapclose,#passclose,#cmpclose,#retclose,#teamclose,#bigclose,#ideaclose,#cardclose,#fmclose{display:none}
 .pctl{display:flex;gap:8px;flex:none}
 #pback{font-size:22px}
 #pminb{font-size:24px;line-height:1}
@@ -334,6 +334,29 @@ kbd{display:inline-block;min-width:22px;padding:2px 7px;border:2px solid var(--i
 .novit:hover,.novit:focus-visible{background:#fdf8d3}.novit .fmn{flex:none}.novbox .avact,.helpbox .avact{justify-content:center;margin-top:14px}#bhelp .cl{white-space:nowrap}
 .novtx{display:grid;gap:1px;flex:1;min-width:0}.novtx small{font-size:13px;opacity:.8}.novtx i{font-size:12.5px;opacity:.75;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .novar{font-size:22px;font-weight:800}
+.cops{display:grid;gap:8px;margin:6px 0 14px}.cops h5{margin:10px 0 0}
+.cop{display:grid;gap:2px;text-align:left;background:#fff;border:2px solid var(--ink);border-radius:12px;padding:10px 12px;color:var(--ink);font:inherit;cursor:pointer;text-decoration:none}
+.cop b{font:800 15px "Helvetica Neue",Helvetica,Arial,sans-serif}.cop small{font-size:13px;opacity:.78;line-height:1.35}.cop:hover,.cop:focus-visible{background:#fdf8d3}
+#bclear{border-style:dashed}
+.pgb{flex:none;width:28px;height:28px;border:2px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink);font:800 16px/1 "Helvetica Neue",Arial,sans-serif;cursor:pointer;padding:0;margin-right:6px}
+.pgb[aria-pressed="true"]{background:#6cc28e}.citem.pg .bk2 b{text-decoration:line-through;opacity:.6}
+.pgsum{background:#e6f5ec;border-radius:10px;padding:8px 10px}
+.linkb{background:none;border:0;color:var(--ink);font:700 14px "Helvetica Neue",Arial,sans-serif;text-decoration:underline;cursor:pointer;padding:6px 0;min-height:36px}
+.mlh{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:10px 12px;margin:6px 0}.mlh p{margin:0 0 8px;font-size:14px}
+.mlr{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-top:1px solid #0001}.mlr span{display:grid;min-width:0}.mlr small{font-size:12px;opacity:.75}.mlr em{font-style:normal;font-weight:800;white-space:nowrap}
+.sinol{margin:6px 0 10px}.sinolist p{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin:0;padding:8px 0;border-bottom:1px solid #0001}
+.sinob.on{background:#ffcf3f}.sinoit{background:#fff8d6}
+.wx{position:fixed;z-index:6;left:12px;top:calc(var(--toph,60px) + 10px);background:#fffe;border:2px solid var(--ink);border-radius:999px;padding:4px 12px;font:700 13px "Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink);pointer-events:none}
+.wx[hidden]{display:none}
+@media (max-width:640px){.wx{font-size:12px;padding:3px 10px;left:8px;top:calc(var(--toph,96px) + 6px)}}
+.numbox{max-width:640px}.nmg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}@media (max-width:640px){.nmg{grid-template-columns:repeat(2,1fr)}}
+.nmc{background:#fff;border:2px solid var(--ink);border-radius:12px;padding:10px;display:grid;gap:2px}.nmc b{font:800 22px Archivo,"Helvetica Neue",Arial,sans-serif}.nmc small{font-size:12.5px;opacity:.8}
+.numbox h5{margin:16px 0 6px;font:800 13px "Helvetica Neue",Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em}
+.nmbar div{display:grid;grid-template-columns:110px 1fr 60px;align-items:center;gap:8px;margin:4px 0;font-size:14px}.nmbar i{display:block;height:14px;border-radius:7px;border:2px solid var(--ink)}.nmbar em{font-style:normal;font-weight:700;text-align:right}
+.nml{margin:0;padding-left:22px;display:grid;gap:4px;font-size:14px}.nml em{font-style:normal;opacity:.7;font-size:13px}
+#numbody{max-height:min(64vh,620px);overflow:auto}
+@media (max-width:640px){#extra{max-height:calc(100vh - var(--toph,96px) - 150px);overflow:auto}}
+
 </style>
 </head>
 <body>
@@ -343,7 +366,7 @@ kbd{display:inline-block;min-width:22px;padding:2px 7px;border:2px solid var(--i
   <div class="meta">28ª edição · 25 a 29 de novembro · campus Butantã</div>
   <span class="where" id="where">Entrada</span>
   <select id="cat" class="hsel" aria-label="Filtrar ilhas por categoria"></select>
-  <div class="snd"><button id="bmore" class="more-b" aria-expanded="false">Mais funções</button><div class="extra" id="extra"><button id="bsurp2">Me surpreenda</button><button id="bcaca">Caça ao livro do dia</button><button id="btop">Mais levados</button><button id="bmodo">Modo na Festa</button><button id="bcmp">Comparar pilhas</button><button id="bret">Retrospectiva</button><button id="bfesta">A Festa</button><button id="btut">Como jogar</button><button id="breset" class="rst">Resetar jogo</button></div></div>
+  <div class="snd"><button id="bmore" class="more-b" aria-expanded="false">Mais funções</button><div class="extra" id="extra"><button id="bsurp2">Me surpreenda</button><button id="bcaca">Caça ao livro do dia</button><button id="btop">Mais levados</button><button id="bnum">Números da Festa</button><button id="bmodo">Modo na Festa</button><button id="bcmp">Comparar pilhas</button><button id="bret">Retrospectiva</button><button id="bfesta">A Festa</button><button id="btut">Como jogar</button><button id="breset" class="rst">Resetar jogo</button></div></div>
   <div class="go"><input id="q" placeholder="Editora, livro ou ISBN…" autocomplete="off" aria-label="Buscar editora, livro ou ISBN"><div class="sug" id="sug"></div></div>
 </header>
 <div class="spot" id="spot" hidden><div class="spoth"><b>Trilha da Festa</b><button id="spotx" aria-label="Fechar player">✕</button></div><div id="spotf"></div><small>Sem login no Spotify, tocam prévias de 30 s.</small></div>
@@ -369,8 +392,10 @@ kbd{display:inline-block;min-width:22px;padding:2px 7px;border:2px solid var(--i
 <article class="idea"><img src="foto-isa.jpg" alt="Foto de Isabelle Zovico" width="120" height="120" loading="lazy"><div><h3>Isabelle Zovico</h3><p class="idm">25 anos · <a href="https://www.instagram.com/euzodesigner" target="_blank" rel="noopener">@euzodesigner</a></p><p>Publicitária formada em Comunicação Social – Publicidade e Propaganda pela Universidade Paulista (UNIP). É Coordenadora de Criação na Wigoo Digital, onde atua com direção de arte, gestão criativa e processos criativos, conectando design, conteúdo, branding e performance.</p><a class="idl" href="https://euzoartista.tumblr.com/links" target="_blank" rel="noopener">Meus links</a></div></article>
 <article class="idea"><img src="foto-guga.jpg" alt="Foto de Gustavo Medeiros" width="120" height="120" loading="lazy"><div><h3>Gustavo Medeiros</h3><p class="idm"><a href="https://www.instagram.com/pensandocomguga" target="_blank" rel="noopener">@pensandocomguga</a></p><p>Formado em Ciências Sociais pela USP. É Marketing Product Owner na Wigoo Digital, unindo estratégia, criação e gestão de projetos em marketing e comunicação. Curioso por natureza: das ciências sociais aos idiomas, passou pela pesquisa acadêmica na USP e pela consultoria empresarial antes de encontrar a sua praia no marketing.</p><a class="idl" href="https://www.instagram.com/pensandocomguga" target="_blank" rel="noopener">Instagram</a></div></article>
 </div></div></div>
-<div class="avm" id="cardm" hidden><div class="avbox mapbox cardbox" role="dialog" aria-label="Cartão da minha pilha"><div class="maptop"><h2>Cartão da minha pilha</h2><div class="avact"><button id="cardclose" class="alt">Fechar</button></div></div><div class="cardfmt" role="group" aria-label="Formato"><button id="cfpost" class="on">Post · 1080×1350</button><button id="cfstory">Story · 1080×1920</button><button id="carddl" hidden>Baixar imagem</button></div><p class="note">No celular, toque e segure a imagem para salvar. O Story já explica o que é a Festa, para quem não conhece.</p><img id="cardimg" alt="Cartão com a personagem, a pilha de livros, o total e os destaques da sacola"></div></div>
+<div class="avm" id="cardm" hidden><div class="avbox mapbox cardbox" role="dialog" aria-label="Cartão da minha pilha"><div class="maptop"><h2>Imagens da minha pilha</h2><div class="avact"><button id="cardclose" class="alt">Fechar</button></div></div><div class="cardfmt" role="group" aria-label="Formato"><button id="cfpost" class="on">Post · 1080×1350</button><button id="cfstory">Story · 1080×1920</button><button id="cfbolso">Mapa de bolso</button><button id="cardsh" hidden>Compartilhar</button><button id="carddl" hidden>Baixar imagem</button></div><p class="note">No celular, toque e segure a imagem para salvar. O post e o story servem para mostrar a pilha; o mapa de bolso é para usar na Festa, mesmo sem internet.</p><img id="cardimg" alt="Cartão com a personagem, a pilha de livros, o total e os destaques da sacola"></div></div>
+<div class="wx" id="wx" hidden></div>
 <div class="toast" id="toast" role="status"></div>
+<div class="avm" id="numm" hidden role="dialog" aria-modal="true" aria-labelledby="numt"><div class="avbox numbox"><div class="avtop"><h2 id="numt">Números da Festa</h2></div><div id="numbody"></div><div class="avact"><button id="numclose" class="alt">Fechar</button></div></div></div>
 <div class="avm" id="novm" hidden role="dialog" aria-modal="true" aria-labelledby="novt"><div class="avbox novbox"><div class="novhd"><span class="novtag">Acervo atualizado</span><h2 id="novt"></h2><p id="novsub"></p></div><div id="novlist" class="novlist"></div><div class="avact"><button id="novgo">Ir à primeira ilha</button><button id="novclose" class="alt">Depois eu vejo</button></div></div></div>
 <div class="avm" id="helpm" hidden role="dialog" aria-modal="true" aria-labelledby="helpt"><div class="avbox helpbox"><div class="avtop"><h2 id="helpt">Como jogar</h2></div>
 <div class="helpg"><div><h5>No computador</h5><ul class="keys">
@@ -383,7 +408,7 @@ kbd{display:inline-block;min-width:22px;padding:2px 7px;border:2px solid var(--i
 <script>
 (async()=>{const bar=document.getElementById('ldb'),t=document.getElementById('ldt');
  const msgs=['Arrumando as estantes…','Contando 7 mil livros…','Montando a tenda…','Carimbando o passaporte…'];let mi=0;const mt=setInterval(()=>{t.textContent=msgs[++mi%msgs.length]},1400);
- try{const r=await fetch('data.json?v=202611161530',{credentials:'same-origin',mode:'cors'});const total=+r.headers.get('content-length')||0;let txt;
+ try{const r=await fetch('data.json?v=202611161651',{credentials:'same-origin',mode:'cors'});const total=+r.headers.get('content-length')||0;let txt;
   if(r.body&&total){const rd=r.body.getReader();const parts=[];let got=0;for(;;){const {done,value}=await rd.read();if(done)break;parts.push(value);got+=value.length;bar.style.width=Math.min(100,got/total*100)+'%'}const u=new Uint8Array(got);let o=0;for(const p of parts){u.set(p,o);o+=p.length}txt=new TextDecoder().decode(u)}
   else{bar.style.width='60%';txt=await r.text()}
   window.DATA=JSON.parse(txt);bar.style.width='100%';clearInterval(mt);
@@ -504,7 +529,7 @@ function step(){const RUN=!!keys.run||!!(JOY&&Math.hypot(JOY.x,JOY.y)>.97),sp=RU
  if(JOY&&(Math.abs(JOY.x)>.15||Math.abs(JOY.y)>.15)){dx=JOY.x;dy=JOY.y;mag=Math.min(1,Math.hypot(dx,dy));const m=Math.hypot(dx,dy)||1;dx/=m;dy/=m}
  else if(dx&&dy){dx*=.71;dy*=.71}
  if(dx||dy)walkTo=null;else if(walkTo&&canWalk){const p=walkTo.pts[0];if(!p)walkTo=null;else{const ex=p[0]-me.x,ey=p[1]-me.y,d=Math.hypot(ex,ey);if(d<sp+1){me.x=p[0];me.y=p[1];walkTo.pts.shift();if(!walkTo.pts.length)walkTo=null}else{dx=ex/d;dy=ey/d}}}
- me.moving=!!(dx||dy)&&canWalk;me.run=me.moving&&RUN;
+ me.moving=!!(dx||dy)&&canWalk;me.run=me.moving&&RUN;corredor();
  if(me.moving){idleT=0;if(Math.abs(dx)>Math.abs(dy))me.dir=dx>0?'right':'left';else me.dir=dy>0?'down':'up';const ox=me.x,oy=me.y,v=sp*mag;if(!blocked(me.x+dx*v,me.y))me.x+=dx*v;if(!blocked(me.x,me.y+dy*v))me.y+=dy*v;const fi=(RUN?.34:.2)*mag;me.f+=fi;if(me.x===ox&&me.y===oy){SND.play('bump');if(walkTo)walkTo=null}else if(Math.floor(me.f/1.6)!==Math.floor((me.f-fi)/1.6))SND.play(RUN?'run':'step')}else idleT++;
  let best=null,bd=1e9;for(const i of IS){const px=Math.max(i.X,Math.min(me.x,i.X+i.W)),py=Math.max(i.Y,Math.min(me.y,i.Y+i.H));const d=Math.hypot(me.x-px,me.y-py);if(d<bd){bd=d;best=i}}const was=near;near=bd<R+18?best:null;if(near&&near!==was&&!openI){SND.play('near')}hint();where()}
 const hintEl=document.getElementById('hint'),whereEl=document.getElementById('where');
@@ -585,7 +610,7 @@ function drawTent(W,H){
  cx.setLineDash([16,16]);cx.lineWidth=3;cx.strokeStyle='#3b161340';[360,765].forEach(x=>{cx.beginPath();cx.moveTo(T(x,0)[0],tent.y+12);cx.lineTo(T(x,0)[0],tent.y+tent.h-12);cx.stroke()});cx.setLineDash([]);
  sign('COMIDA',344,54);sign('BANHEIROS',372,54);sign('INFO · ÁGUA',368,142);sign('ÁGUA',1258-10,100);sign('+ SOCORRO',40,62);
  const[px,py]=T(160,124);cx.save();cx.translate(px,py);cx.scale(.6,.6);cx.translate(-px,-py);cx.fillStyle=INK;cx.beginPath();cx.moveTo(px-18,py);cx.lineTo(px+18,py);cx.lineTo(px+13,py+26);cx.lineTo(px-13,py+26);cx.fill();cx.fillStyle='#2f7d4f';[[-10,-8],[0,-16],[10,-8]].forEach(([a,b])=>{cx.beginPath();cx.ellipse(px+a,py+b,8,13,a/12,0,7);cx.fill()});cx.restore()}
-function drawMe(){const jt=(performance.now()-JUMP)/420,jy=jt>=0&&jt<1?-Math.sin(jt*Math.PI)*16:0;const b=(me.moving?Math.sin(me.f*2)*2:0)+jy,lg=me.moving?Math.sin(me.f*2)*4:0;cx.save();cx.translate(me.x,me.y-4);cx.scale(.95,.95);drawAvatar(cx,AV,me.dir,b,lg,CART.length,me.moving?Math.sin(me.f):0,(performance.now()%3200)<140,(!me.moving&&!openI&&idleT>240)?'read':'');cx.restore();if(AV.nome){cx.font='800 12px "Helvetica Neue",Helvetica,Arial,sans-serif';const t=AV.nome.slice(0,18),w=cx.measureText(t).width+14;rr(cx,me.x-w/2,me.y+18,w,20,6,INK);cx.fillStyle=CREAM;cx.textAlign='center';cx.textBaseline='middle';cx.fillText(t,me.x,me.y+29)}}
+function drawMe(){const jt=(performance.now()-JUMP)/420,jy=jt>=0&&jt<1?-Math.sin(jt*Math.PI)*16:0;const b=(me.moving?Math.sin(me.f*2)*2:0)+jy,lg=me.moving?Math.sin(me.f*2)*4:0;cx.save();cx.translate(me.x,me.y-4);cx.scale(.95,.95);drawAvatar(cx,AV,me.dir,b,lg,CART.length,me.moving?Math.sin(me.f):0,(performance.now()%3200)<140,(!me.moving&&!openI&&idleT>240)?'read':'');cx.restore();drawUmbrella();if(AV.nome){cx.font='800 12px "Helvetica Neue",Helvetica,Arial,sans-serif';const t=AV.nome.slice(0,18),w=cx.measureText(t).width+14;rr(cx,me.x-w/2,me.y+18,w,20,6,INK);cx.fillStyle=CREAM;cx.textAlign='center';cx.textBaseline='middle';cx.fillText(t,me.x,me.y+29)}}
 let UZ=1;const UZS=[.5,.65,.8,1,1.25];function setZoom(d){const i0=UZS.reduce((b,v,k)=>Math.abs(v-UZ)<Math.abs(UZS[b]-UZ)?k:b,0);const k=Math.max(0,Math.min(UZS.length-1,i0+d));if(UZS[k]===UZ)return;UZ=UZS[k];SND.play('blip');const zo=document.getElementById('zout'),zi=document.getElementById('zin');if(zo)zo.disabled=k===0;if(zi)zi.disabled=k===UZS.length-1}
 function mobZ(){const avail=innerHeight-(TOPH||96)-(BOTH||110)-24;return Math.max(.72,Math.min(.95,avail/(tent.h+90)))}
 function draw(){const Z=(innerWidth<640?mobZ():1)*UZ;ZOOM=Z;const W=cv.width/dpr/Z,H=cv.height/dpr/Z;cx.setTransform(dpr*Z,0,0,dpr*Z,0,0);
@@ -599,7 +624,7 @@ function draw(){const Z=(innerWidth<640?mobZ():1)*UZ;ZOOM=Z;const W=cv.width/dpr
  const vis=IS.filter(i=>i.X+cam.x<W+30&&i.X+i.W+cam.x>-30);
  if(TGT){const a=(performance.now()-TGT.t)/900;if(a<1&&walkTo){cx.globalAlpha=1-a;cx.strokeStyle=INK;cx.lineWidth=3;cx.beginPath();cx.ellipse(TGT.x,TGT.y+12,10+a*10,5+a*5,0,0,7);cx.stroke();cx.globalAlpha=1}else if(!walkTo)TGT=null}
  const items=vis.map(i=>[i.Y+i.H-8,()=>{drawIslandC(i);drawVendor(i)}]);items.push([me.y,drawMe]);for(const p of NPCS)if(p.x+cam.x>-60&&p.x+cam.x<W+60)items.push([p.y,()=>drawNPC(p)]);items.sort((a,b)=>a[0]-b[0]);for(const it of items)it[1]();drawFX();{let bi=null,bd=170;for(const i of vis){if(i.empty)continue;const[vx,vy]=vendorPos(i);const d=i===near?0:Math.hypot(vx-me.x,vy-me.y);if(d<bd){bd=d;bi=i}}if(bi)drawBubble(bi)}
- cx.restore();drawSky(W,H,vis);drawMini()}
+ cx.restore();drawSky(W,H,vis);drawWeather(W,H);drawMini()}
 function drawMini(){const mk=Math.round(me.x)+'|'+Math.round(me.y)+'|'+(near?near.id:0)+'|'+CAT+'|'+CBIk+'|'+mini.width;if(mk===MINIK&&FR%30)return;MINIK=mk;const w=mini.width,h=mini.height,s=w/1220;mx.setTransform(1,0,0,1,0,0);mx.fillStyle='#fff';mx.fillRect(0,0,w,h);const o=x=>(x-30)*s,oy=y=>(y-38)*s;
  mx.fillStyle=CREAM;mx.fillRect(o(45),oy(46),1205*s,102*s);mx.strokeStyle=INK;mx.lineWidth=1.5*dpr;mx.strokeRect(o(45),oy(46),1205*s,102*s);
  for(const i of IS){mx.globalAlpha=i.empty?.3:(CAT>=0&&!i.cn?.18:1);mx.fillStyle=COL[i.sp];mx.fillRect(o(i.x),oy(i.y),i.w*s,i.h*s);mx.globalAlpha=1;if(i===near){mx.strokeStyle='#ffcf3f';mx.lineWidth=2.5*dpr;mx.strokeRect(o(i.x),oy(i.y),i.w*s,i.h*s)}}
@@ -638,7 +663,7 @@ function renderFesta(){const n=spNow();ph.style.background=INK;ph.style.color=CR
 
 const panel=document.getElementById('panel'),ph=document.getElementById('ph'),pb=document.getElementById('pb');
 let view=null,mode='todos',filt='',RV=null,pcat=-1,cfilt='',psort='az';
-RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611161530').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
+RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611161651').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
 const SPN=['#6cc28e','#ef5054','#4a1d1a','#f2a33a','#2f7d4f','#c43a3e','#8a5a44','#e6c84c'];
 const score=b=>{const r=b[6][1],n=b[6][2];return (r*n+3.8*200)/(n+200)};
 const rated=b=>b[6]&&b[6][1]>0&&b[6][2]>=10;
@@ -667,7 +692,7 @@ function covImg(b,sz){const u=covUrl(b,sz);return u?'<img class="cov" src="'+u+'
 const ilhaOf=pk=>IS.find(x=>x.id===PUB[pk].ilha);
 function bookRow(pk,i,showPub){const b=PUB[pk].b[i],sk=b[6],on=inCart(pk,i);return '<div class="bkw"><button class="bk" data-p="'+pk+'" data-i="'+i+'"><span class="sp" style="background:'+SPN[h32(b[0])%SPN.length]+'"><i></i>'+'</span><span><h3>'+esc(b[0])+(isNovo(pk,b)?'<em class="nv">novo</em>':'')+'</h3><small>'+esc(b[1]||'—')+(showPub?' · '+esc(PUB[pk].n):'')+'</small>'+(sk&&sk[1]&&sk[2]?'<small>'+stars(sk[1])+' · '+sk[2].toLocaleString('pt-BR')+(sk[2]===1?' leitor':' leitores')+' no Skoob</small>':'')+'</span><span class="pr">'+(price(b)?(b[3]&&b[2]&&b[3]!==b[2]?'<s>'+esc(b[2])+'</s>':'')+'<b>'+esc(price(b))+'</b>':'<small>preço a<br>confirmar</small>')+'</span></button><button class="add'+(on?' on':'')+'" data-p="'+pk+'" data-i="'+i+'" aria-label="'+(on?'Tirar da cesta':'Colocar na cesta')+'" title="'+(on?'Tirar da cesta':'Colocar na cesta')+'">'+(on?'✓':'+')+'</button></div>'}
 function head(color,small,title,sub){ph.style.background=color;ph.style.color=color===COL.verde?INK:CREAM;ph.innerHTML='<div class="row"><div><small>'+small+'</small><h2>'+esc(title)+'</h2></div><button class="x" id="cl" aria-label="Fechar">✕</button></div>'+(sub?'<p>'+sub+'</p>':'');document.getElementById('cl').onclick=closeP}
-let ILIM=80;function openIsland(i){ILIM=innerWidth<640?60:150;SND.play('open');openI=i;markSeen(i);setTimeout(()=>PASS.stamp(i),400);view={t:'ilha',i,pk:i.p.length===1?i.p[0]:null};mode='todos';filt='';pcat=CAT;psort='az';panel.classList.add('open');render()}
+let ILIM=80;const ILC={};function openIsland(i){try{if(!ILC[i.id]&&window.goatcounter&&goatcounter.count&&/github\.io$/.test(location.hostname)){ILC[i.id]=1;goatcounter.count({path:'ilha/'+pad2(i.id),title:'Ilha '+pad2(i.id),event:true})}}catch(e){}ILIM=innerWidth<640?60:150;SND.play('open');openI=i;markSeen(i);setTimeout(()=>PASS.stamp(i),400);view={t:'ilha',i,pk:i.p.length===1?i.p[0]:null};mode='todos';filt='';pcat=CAT;psort='az';panel.classList.add('open');render()}
 function openCart(){SND.play('open');openI=openI||{cart:1};view={t:'cesta'};cfilt='';panel.classList.add('open');render()}
 function closeP(){if(openI)SND.play('close');openI=null;panel.classList.remove('open');pmin.hidden=true}
 function goBack(){const b=view&&view.from;if(!b)return;SND.play('blip');view=b;render();pb.scrollTop=b.st||0}
@@ -680,7 +705,7 @@ function panelCtl(){const cl=ph.querySelector('#cl');if(!cl||cl.parentNode.class
 function openPub(i,pk){ILIM=innerWidth<640?60:150;view={t:'ilha',i,pk};mode='todos';filt='';pcat=CAT;psort='az';render()}
 const SEM='<span class="sem">ainda sem estoque</span>';
 function catSelect(id,val,counts){return '<select class="csel" id="'+id+'" aria-label="Categoria"><option value="-1">Todas as categorias</option>'+D.cats.map((n,k)=>counts[k]?'<option value="'+k+'"'+(val==k?' selected':'')+'>'+esc(n)+' ('+counts[k]+')</option>':'').join('')+'</select>'}
-function render(){render0();panelCtl()}
+function render(){render0();panelCtl();if(view&&view.t==='livro'&&view.pk!=null)seenAdd(view.pk,view.bi)}
 function render0(){const v=view;
  if(v.t==='cesta'){renderCart();return}
  if(v.t==='festa'){renderFesta();return}
@@ -698,9 +723,9 @@ function render0(){const v=view;
   if(withB.length>1&&sel!=null&&PUB[sel].b.length)h+='<p class="pub1"><b>'+esc(PUB[sel].n)+'</b> '+folBtn(sel)+'</p>';
   h+=progBox(i);
   if(noB.length&&withB.length)h+='<p class="semlist"><span class="sem">ainda sem estoque</span> '+noB.map(pk=>'<button class="semb" data-pk="'+pk+'">'+esc(PUB[pk].n)+'</button>').join(' · ')+'</p>';
-  if(noB.length&&!withB.length)h+='<p class="semlist">'+noB.map(pk=>esc(PUB[pk].n)).join(' · ')+'</p>';
+  if(noB.length&&!withB.length)h+='<div class="sinolist">'+noB.map(pk=>'<p><b>'+esc(PUB[pk].n)+'</b>'+sinoBtn(pk)+'</p>').join('')+'</div>';
   if(sel!=null&&PUB[sel].d)h+='<p class="note">'+esc(PUB[sel].d)+'</p>';
-  if(sel!=null&&!PUB[sel].b.length)h+='<p class="aviso">Ainda sem estoque: '+esc(PUB[sel].n)+' está na Festa, mas ainda não mandou a lista de livros para o site. Assim que mandar, a gente atualiza.</p>'+(PUB[sel].site?'<div class="links"><a href="'+esc(/^http/.test(PUB[sel].site)?PUB[sel].site:'https://'+PUB[sel].site)+'" target="_blank" rel="noopener">Site da editora</a></div>':'');
+  if(sel!=null&&!PUB[sel].b.length)h+='<p class="aviso">Ainda sem estoque: '+esc(PUB[sel].n)+' está na Festa, mas ainda não mandou a lista de livros para o site. Assim que mandar, a gente atualiza.</p><p class="sinol">'+sinoBtn(sel)+'</p>'+(PUB[sel].site?'<div class="links"><a href="'+esc(/^http/.test(PUB[sel].site)?PUB[sel].site:'https://'+PUB[sel].site)+'" target="_blank" rel="noopener">Site da editora</a></div>':'');
   else if(nb){const pks=sel!=null?[sel]:i.p;let all=[];pks.forEach(pk=>PUB[pk].b.forEach((b,k)=>all.push([pk,k,b])));
    const counts={};all.forEach(x=>counts[x[2][7]]=(counts[x[2][7]]||0)+1);
    const f=J2(filt);let list=all.filter(([pk,k,b])=>(pcat<0||b[7]==pcat)&&(!f||J2(b[0]+' '+b[1]+' '+(b[8]||'')).includes(f)));
@@ -746,13 +771,24 @@ function renderCart(){const items=cartItems();const tot=items.reduce((s,x)=>s+nu
  const nIl=new Set(items.map(x=>x.il.id)).size;
  ph.style.background=INK;ph.style.color=CREAM;ph.innerHTML='<div class="row"><div><small>Minha cesta</small><h2>'+brl(tot)+'</h2></div><button class="x" id="cl" aria-label="Fechar">✕</button></div><p>'+items.length+(items.length===1?' livro':' livros')+' · '+nIl+(nIl===1?' ilha':' ilhas')+(semPreco?' · '+semPreco+' sem preço ainda':'')+'</p>';document.getElementById('cl').onclick=closeP;
  if(!items.length){pb.innerHTML='<p class="empty">Sua cesta está vazia. Abra uma ilha, escolha um livro e toque em <b>+</b> para colocar aqui. Cada livro vai para a pilha da sua personagem.</p><div class="cact"><button id="bsurp">Me surpreenda</button></div>';document.getElementById('bsurp').onclick=()=>surprise();return}
- const norm0=items.reduce((t,x)=>t+(num(x.b[2])||num(price(x.b))),0),eco=norm0-tot;
- let h='<div class="orc"><label>Meu orçamento <span>R$</span><input id="orc" inputmode="decimal" placeholder="ex.: 300" value="'+(BUDGET||'')+'"></label>'+(BUDGET?'<div class="obar'+(tot>BUDGET?' over':'')+'"><i style="width:'+Math.min(100,tot/BUDGET*100)+'%"></i></div><p class="'+(tot>BUDGET?'warn':'note')+'">'+(tot>BUDGET?'Passou '+brl(tot-BUDGET)+' do orçamento':'Ainda dá para gastar '+brl(BUDGET-tot))+'</p>':'')+(eco>0?'<p class="note">Economia em relação ao preço normal: <b>'+brl(eco)+'</b></p>':'')+'</div><div class="cact"><button id="bmodo2">Modo na Festa</button><button id="bmap">Mapa do roteiro</button></div><details class="cmore"><summary>Mais opções</summary><div class="cact"><a class="wab" id="bwa" target="_blank" rel="noopener" href="#">Mandar no WhatsApp</a><button id="bcard" class="alt">Cartão da pilha</button><button id="bcmp2" class="alt">Comparar pilhas e ir junto</button><button id="bsurp" class="alt">Me surpreenda</button><button id="bclear" class="alt">Esvaziar cesta</button></div></details>';
+ const norm0=items.reduce((t,x)=>t+(num(x.b[2])||num(price(x.b))),0),eco=norm0-tot;const got=items.filter(x=>COMPREI.includes(ckey(x.pk,x.i))),gotT=got.reduce((s,x)=>s+num(price(x.b)),0),gotE=got.reduce((s,x)=>s+(num(x.b[2])||num(price(x.b))),0)-gotT;const cop=(id,a,b)=>'<button class="cop" id="'+id+'"><b>'+a+'</b><small>'+b+'</small></button>';
+ let h='<div class="orc"><label>Meu orçamento <span>R$</span><input id="orc" inputmode="decimal" placeholder="ex.: 300" value="'+(BUDGET||'')+'"></label>'+(BUDGET?'<div class="obar'+(tot>BUDGET?' over':'')+'"><i style="width:'+Math.min(100,tot/BUDGET*100)+'%"></i></div><p class="'+(tot>BUDGET?'warn':'note')+'">'+(tot>BUDGET?'Passou '+brl(tot-BUDGET)+' do orçamento':'Ainda dá para gastar '+brl(BUDGET-tot))+'</p>':'')+(eco>0?'<p class="note">Economia em relação ao preço normal: <b>'+brl(eco)+'</b></p>':'')+(got.length?'<p class="note pgsum">Já peguei <b>'+got.length+' de '+items.length+'</b> · '+brl(gotT)+' no caixa'+(gotE>0?' · economizei '+brl(gotE):'')+'</p>':'')+(BUDGET?'<button id="bmelhor" class="linkb">Montar a melhor pilha que cabe em '+brl(BUDGET)+'</button><div id="melhor"></div>':'')+'</div>'+
+ '<div class="cops"><h5>Para levar na Festa</h5>'+
+ cop('bmodo2','Modo na Festa','Lista de compras por ilha, para ir marcando o que você pegou')+
+ cop('bmap','Mapa do roteiro','O caminho mais curto pela tenda passando pelas suas ilhas')+
+ cop('bbolso','Mapa de bolso','Uma imagem da lista e do caminho, para salvar no celular e usar sem internet')+
+ '<h5>Para compartilhar</h5>'+
+ '<a class="cop" id="bwa" target="_blank" rel="noopener" href="#"><b>Mandar no WhatsApp</b><small>Manda a lista em texto, com preços e ilhas</small></a>'+
+ cop('bcard','Card da pilha','Imagem para post ou story, com a sua personagem e o total')+
+ cop('bcmp2','Comparar pilhas e ir junto','Gera um link: a outra pessoa abre e vocês veem as duas pilhas e um roteiro juntos')+
+ '<h5>Outros</h5>'+
+ cop('bsurp','Me surpreenda','Coloca na cesta um livro bem avaliado que ainda cabe no orçamento')+
+ cop('bclear','Esvaziar cesta','Tira todos os livros da cesta (pede confirmação)')+'</div>';
  if(pubs.length>1)h+='<h5>Filtrar por editora</h5><div class="filt">'+['',...pubs.map(pk=>PUB[pk].n)].map(n=>'<button data-c="'+esc(n)+'" aria-selected="'+(cfilt===n)+'">'+(n?esc(n):'Todas')+'</button>').join('')+'</div>';
  const by={};shown.forEach(x=>(by[x.il.id]=by[x.il.id]||[]).push(x));
  const RTc=routeIds(Object.keys(by).map(Number));if(RTc.ids.length>1&&!cfilt)h+='<p class="note rtn">Ilhas na ordem da rota mais curta, entrando pela <b>'+RTc.door.n+'</b>.</p>';
  RTc.ids.forEach(id=>{const il=IS.find(x=>x.id===id),xs=by[id],sub=xs.reduce((s,x)=>s+num(price(x.b)),0);
-  h+='<div class="cgrp"><div class="ctit"><span class="dot" style="background:'+COL[il.sp]+'"></span><b>Ilha '+pad2(id)+'</b> · '+NAME[il.sp]+'<span>'+brl(sub)+'</span></div>'+xs.map(x=>'<div class="citem"><button class="bk2" data-p="'+x.pk+'" data-i="'+x.i+'"><b>'+esc(x.b[0])+'</b><small>'+esc(PUB[x.pk].n)+(x.b[1]?' · '+esc(x.b[1]):'')+'</small></button><span class="cp">'+(price(x.b)?esc(price(x.b)):'a confirmar')+'</span><button class="rm" data-k="'+esc(ckey(x.pk,x.i))+'" aria-label="Remover da cesta">✕</button></div>').join('')+'</div>'});
+  h+='<div class="cgrp"><div class="ctit"><span class="dot" style="background:'+COL[il.sp]+'"></span><b>Ilha '+pad2(id)+'</b> · '+NAME[il.sp]+'<span>'+brl(sub)+'</span></div>'+xs.map(x=>{const kk=ckey(x.pk,x.i),pg=COMPREI.includes(kk);return '<div class="citem'+(pg?' pg':'')+'"><button class="pgb" data-pg="'+esc(kk)+'" aria-pressed="'+pg+'" title="'+(pg?'Já peguei':'Marcar como pego')+'">'+(pg?'✓':'')+'</button><button class="bk2" data-p="'+x.pk+'" data-i="'+x.i+'"><b>'+esc(x.b[0])+'</b><small>'+esc(PUB[x.pk].n)+(x.b[1]?' · '+esc(x.b[1]):'')+'</small></button><span class="cp">'+(price(x.b)?esc(price(x.b)):'a confirmar')+'</span><button class="rm" data-k="'+esc(ckey(x.pk,x.i))+'" aria-label="Remover da cesta">✕</button></div>'}).join('')+'</div>'});
  if(cfilt)h+='<p class="note">Mostrando só '+esc(cfilt)+': '+brl(shown.reduce((s,x)=>s+num(price(x.b)),0))+'</p>';
  pb.innerHTML=h;
  pb.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{SND.play('blip');cfilt=b.dataset.c;renderCart()});
@@ -762,7 +798,9 @@ function renderCart(){const items=cartItems();const tot=items.reduce((s,x)=>s+nu
  const oi=document.getElementById('orc');oi.onchange=()=>{BUDGET=num(oi.value.replace(/[^\d,\.]/g,'').replace(/^(\d+)$/,'$1,00'))||0;saveBudget();SND.play('blip');PASS.check();renderCart();cartBadge()};
  document.getElementById('bmap').onclick=()=>{SND.play('blip');openMap()};
  const wa=document.getElementById('bwa');wa.href='https://wa.me/?text='+encodeURIComponent(waText());wa.onclick=()=>{PASS.flag('share');SND.play('blip')};
- document.getElementById('bcard').onclick=()=>openCard();document.getElementById('bsurp').onclick=()=>surprise();document.getElementById('bmodo2').onclick=()=>openModo();document.getElementById('bcmp2').onclick=()=>openCmp()}
+ document.getElementById('bcard').onclick=()=>openCard('post');document.getElementById('bbolso').onclick=()=>openCard('bolso');document.getElementById('bsurp').onclick=()=>surprise();
+ pb.querySelectorAll('[data-pg]').forEach(b=>b.onclick=()=>{const k=b.dataset.pg,st=pb.scrollTop;if(COMPREI.includes(k)){COMPREI=COMPREI.filter(z=>z!==k);SND.play('drop')}else{COMPREI.push(k);SND.play('coin');fxJump()}saveComprei();PASS.check();renderCart();pb.scrollTop=st});
+ const bm2=document.getElementById('bmelhor');if(bm2)bm2.onclick=()=>{SND.play('blip');melhorPilha()};document.getElementById('bmodo2').onclick=()=>openModo();document.getElementById('bcmp2').onclick=()=>openCmp()}
 function J2(s){return String(s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase()}
 /* mapa do roteiro */
 function openMap(){PASS.flag('roteiro');const items=cartItems();const by={};items.forEach(x=>(by[x.il.id]=by[x.il.id]||[]).push(x));const RT=routeIds(Object.keys(by).map(Number)),ids=RT.ids;
@@ -1167,7 +1205,12 @@ const PASS=(()=>{let st={ilhas:{},livros:0,sinopses:0,cats:[],flags:{},done:{}};
   ['papo','Bom de papo','Converse com vendedores de 5 ilhas',()=>[Object.keys(st.papo||{}).length,5]],
   ['modo','Pronta pra Festa','Abra o modo na Festa',()=>[st.flags.modo?1:0,1]],
   ['missao','Missão cumprida','Marque todos os livros da cesta como comprados',()=>[CART.length&&COMPREI.filter(k=>CART.includes(k)).length===CART.length?1:0,1]],
-  ['dupla','Leitura a dois','Compare a sua pilha com a de alguém',()=>[st.flags.compara?1:0,1]]];
+  ['dupla','Leitura a dois','Compare a sua pilha com a de alguém',()=>[st.flags.compara?1:0,1]],
+  ['raia','Até a Raia','Saia da tenda e passeie até a Raia Olímpica',()=>[st.flags.out_raia?1:0,1]],
+  ['voltafora','Volta por fora','Passe pelos quatro lados de fora da tenda',()=>[['praca','raia','relogio','cepe'].filter(k=>st.flags['out_'+k]).length,4]],
+  ['corrida','Fôlego de maratona','Corra por 1 minuto no total (segure Shift ou empurre o joystick até a borda)',()=>[Math.min(st.runT||0,60),60]],
+  ['chuva','Pé na chuva','Passeie fora da tenda num dia de chuva de verdade em São Paulo',()=>[st.flags.chuva?1:0,1]],
+  ['peguei','Sacola cheia','Marque 5 livros como “já peguei” na cesta',()=>[COMPREI.length,5]]];
  const toastEl=document.getElementById('toast');let tq=[],tb=false;
  function toast(h){tq.push(h);if(!tb)next()}
  function next(){const tm=document.getElementById('tutm');if(tm&&!tm.hidden&&tq.length){tb=true;setTimeout(next,900);return}const h=tq.shift();if(!h){tb=false;return}tb=true;toastEl.innerHTML=h;toastEl.classList.add('on');setTimeout(()=>{toastEl.classList.remove('on');setTimeout(next,350)},2600)}
@@ -1185,7 +1228,7 @@ const PASS=(()=>{let st={ilhas:{},livros:0,sinopses:0,cats:[],flags:{},done:{}};
  pm.addEventListener('click',e=>{if(e.target===pm){pm.hidden=true}});
  document.getElementById('passreset').onclick=e=>{const b=e.currentTarget;if(b.dataset.sure){st={ilhas:{},livros:0,sinopses:0,cats:[],flags:{},done:{}};save();render();badge();b.textContent='Recomeçar passaporte';delete b.dataset.sure}else{b.dataset.sure=1;b.textContent='Toque de novo para apagar tudo'}};
  badge();
- return {papo(id){st.papo=st.papo||{};if(!st.papo[id]){st.papo[id]=1;save();check()}},data:()=>st,get total(){return M.length},surpresa(){st.surp=(st.surp||0)+1;save();check()},stamp,check,toast,book(){st.livros++;save();check()},sinopse(){st.sinopses++;save();check()},cat(k){if(k>=0&&!st.cats.includes(k)){st.cats.push(k);save();check()}},flag(f){if(!st.flags[f]){st.flags[f]=1;save()}setTimeout(check,50)},stamped:id=>!!st.ilhas[id]}})();
+ return {papo(id){st.papo=st.papo||{};if(!st.papo[id]){st.papo[id]=1;save();check()}},data:()=>st,get total(){return M.length},surpresa(){st.surp=(st.surp||0)+1;save();check()},stamp,check,toast,book(){st.livros++;save();check()},runSec(){st.runT=(st.runT||0)+1;if(st.runT%10===0){save();check()}},sinopse(){st.sinopses++;save();check()},cat(k){if(k>=0&&!st.cats.includes(k)){st.cats.push(k);save();check()}},flag(f){if(!st.flags[f]){st.flags[f]=1;save()}setTimeout(check,50)},stamped:id=>!!st.ilhas[id]}})();
 
 
 /* alvo do toque */
@@ -1270,26 +1313,28 @@ function drawVendor(i){if(i.empty)return;const v=vst(i),[vx,vy]=vendorPos(i);con
 const CATPH={'Infantil e juvenil':['Tem muito infantil aqui!','Leva um pra criançada!'],'HQ e mangá':['Curte HQ? Temos!','Mangá e quadrinho aqui!'],'Psicologia e psicanálise':['Psicanálise boa aqui!','Freud manda lembranças!'],'Filosofia':['Filosofia de montão!','Bora filosofar?'],'Ciências sociais e política':['Muita ciência social aqui!','Livro pra pensar o Brasil!'],'Comunicação e livro':['Livro sobre livro? Temos!'],'Educação':['Professora? Olha esses!','Muito livro de educação!'],'Poesia':['Poesia boa aqui, viu?','Leva um poema pra casa!'],'Teoria literária e linguística':['Teoria literária aqui!','Pra quem é de Letras!'],'História':['Muita história aqui!','Gosta de história? Vem!'],'Literatura':['Romance bom aqui!','Muita ficção boa!'],'Artes':['Livro de arte lindo aqui!','Olha que capa linda!'],'Arquitetura e urbanismo':['Arquitetura aqui!'],'Ciências e saúde':['Ciência de qualidade!'],'Economia, negócios e direito':['Direito e economia aqui!'],'Religião e espiritualidade':['Espiritualidade aqui!'],'Biografias e memórias':['Biografia boa aqui!'],'Autoajuda e comportamento':['Autoajuda? Temos!'],'Gastronomia e viagem':['Livro de receita aqui!']};
 const short=(t,n)=>{t=String(t).trim();t=t===t.toUpperCase()?t.charAt(0)+t.slice(1).toLowerCase():t;t=t.split(/\s*[:|(]\s*|\s+[–-]\s+/)[0].trim()||t;const m=t.match(/^(.*),\s*(o|a|os|as|um|uma)$/i);if(m)t=m[2].charAt(0).toUpperCase()+m[2].slice(1).toLowerCase()+' '+m[1].charAt(0).toLowerCase()+m[1].slice(1);return t.length>n?t.slice(0,n-1).replace(/[\s,:;–-]+\S*$/,'')+'…':t};
 function rng(seed){let x=seed>>>0||1;return()=>{x^=x<<13;x^=x>>>17;x^=x<<5;return (x>>>0)/4294967296}}
-const PHR={};function phrases(i){if(PHR[i.id])return PHR[i.id];
+const PHR={};function tt0(s){s=String(s||'').split(/\s[:\-–—]\s|:\s|\s\(|\s\//)[0].trim();return s.length>=2&&s.length<=34?s:null}
+function phrases(i){if(PHR[i.id])return PHR[i.id];
  const books=[];i.p.forEach(pk=>PUB[pk].b.forEach(b=>books.push([pk,b])));const withB=i.p.filter(pk=>PUB[pk].b.length);
  const hr=+new Date().toLocaleString('sv-SE',{timeZone:'America/Sao_Paulo'}).slice(11,13);const ola=hr<12?'Bom dia!':hr<18?'Boa tarde!':'Boa noite!';
  const L=[ola+' Chega mais!','Bem-vinda à ilha '+pad2(i.id)+'!','Oi! Pode olhar à vontade','Dá uma olhada, sem pressa'];
- withB.slice(0,4).forEach(pk=>{const n=short(PUB[pk].n,20);L.push(pick(['Aqui é a '+n+'!','A '+n+' tá aqui!','Conhece a '+n+'?']))});
+ withB.slice(0,4).forEach(pk=>{const n=PUB[pk].n;if(n.length>30)return;L.push(pick(['Aqui é a '+n+'!','A '+n+' tá aqui!','Conhece a '+n+'?']))});
  const top=books.filter(([,b])=>rated(b)).sort((a,b)=>score(b[1])-score(a[1]));
- if(top[0]){const t=short(top[0][1][0],22);L.push('Leva '+t+'!','Todo mundo leva '+t,t+': ★ '+top[0][1][6][1].toFixed(1).replace('.',','))}
- if(top[1]){L.push('Também indico '+short(top[1][1][0],20))}
- {const R2=rng(h32('fala'+i.id)),pk2=()=>books[Math.floor(R2()*books.length)];if(books.length){for(let k=0;k<3;k++){const [,b]=pk2(),tt=short(b[0],20),au=String(b[1]||'').split(/[;,]/)[0].trim();
+ {const tp=top.filter(([,b])=>tt0(b[0]));if(tp[0]){const t=tt0(tp[0][1][0]);L.push('Leva '+t+'!','Todo mundo leva '+t,t+': ★ '+tp[0][1][6][1].toFixed(1).replace('.',','))}
+ if(tp[1]){L.push('Também indico '+tt0(tp[1][1][0]))}}
+ {const R2=rng(h32('fala'+i.id)),pk2=()=>books[Math.floor(R2()*books.length)];if(books.length){for(let k=0;k<3;k++){const [,b]=pk2(),tt=tt0(b[0]);if(!tt)continue;const au=String(b[1]||'').split(/[;,]/)[0].trim();
   const F=['Esse eu li duas vezes: '+tt,'Já leu '+tt+'?','Quem leva '+tt+' volta pra contar','Separei '+tt+' pra você','Meu xodó: '+tt,'Abre '+tt+' na página 1, vai','Tô relendo '+tt];if(au&&au.length<24)F.push('Fã de '+au.split(' ')[0]+'? Tem aqui','Já leu '+au.split(' ')[0]+'?');L.push(F[Math.floor(R2()*F.length)])}}}
  L.push(pick(['Trouxe sacola? Vai precisar','Depois tem bandejão?','A fila do caixa tá andando!','Já passou na Raia?','Hoje o sol tá forte, hein','Se perder, segue o relógio','Leitura boa pro busão de volta','Livro novo tem cheiro bom, né?']));
  L.push(pick(['Leva dois, vai!','Já carimbou o passaporte?','Cabe mais um na sacola!','Livro bom é livro lido!','Quer uma dica? Pergunta!','Olha a promoção!','Hoje tá movimentado, hein!']));
  {const P=PERS[i.sp];L.push(pick(P.ola),...P.extra.slice().sort(()=>Math.random()-.5).slice(0,2));for(let k=0;k<L.length;k++)L[k]=styl(i.sp,L[k])}
  const r=rng(h32('p'+i.id+Date.now()));for(let k=L.length-1;k>0;k--){const j=Math.floor(r()*(k+1));[L[k],L[j]]=[L[j],L[k]]}
  return PHR[i.id]=L}
-const BUB={};function drawBubble(i){if(i.empty||openI)return;const[vx,vy]=vendorPos(i);const L=phrases(i);const now=performance.now();if(!BUB[i.id]||now-BUB[i.id].last>600){BUB[i.id]={t0:now,last:now,k:(BUB[i.id]?BUB[i.id].k+1:Math.floor(Math.random()*L.length))}}BUB[i.id].last=now;const per=4800,el=now-BUB[i.id].t0,slot=Math.floor(el/per),ph=el%per;if(ph>per-500)return;const t=L[(BUB[i.id].k+slot)%L.length];
- cx.font='700 13px "Helvetica Neue",Helvetica,Arial,sans-serif';const w=cx.measureText(t).width+22,h=28;let bx=vx-w/2,by=vy-50-h;
+const BUB={};function drawBubble(i){if(i.empty||openI)return;const[vx,vy]=vendorPos(i);const L=phrases(i);const now=performance.now();if(!BUB[i.id]||now-BUB[i.id].last>600){BUB[i.id]={t0:now,last:now,k:(BUB[i.id]?BUB[i.id].k+1:Math.floor(Math.random()*L.length))}}BUB[i.id].last=now;const per=4800,el=now-BUB[i.id].t0,slot=Math.floor(el/per),ph=el%per;if(ph>per-500)return;const ML=memLines(i);const t=ML.length&&slot%3===0?ML[(slot/3)%ML.length]:L[(BUB[i.id].k+slot)%L.length];
+ cx.font='700 13px "Helvetica Neue",Helvetica,Arial,sans-serif';const MW=200,ln=[];{let cur='';for(const wd of String(t).split(' ')){const tr=cur?cur+' '+wd:wd;if(cx.measureText(tr).width>MW&&cur){ln.push(cur);cur=wd}else cur=tr}if(cur)ln.push(cur)}
+ const w=Math.max(...ln.map(s=>cx.measureText(s).width))+22,h=12+ln.length*16;let bx=vx-w/2,by=vy-50-h;
  rr(cx,bx+2,by+3,w,h,14,'#3b161333');rr(cx,bx,by,w,h,14,'#fff');cx.strokeStyle=INK;cx.lineWidth=2;cx.stroke();
  cx.fillStyle='#fff';cx.beginPath();cx.moveTo(vx-6,by+h-1);cx.lineTo(vx,by+h+8);cx.lineTo(vx+6,by+h-1);cx.fill();cx.beginPath();cx.moveTo(vx-6,by+h);cx.lineTo(vx,by+h+8);cx.lineTo(vx+6,by+h);cx.stroke();
- cx.fillStyle=INK;cx.textAlign='center';cx.textBaseline='middle';cx.fillText(t,vx,by+h/2+1)}
+ cx.fillStyle=INK;cx.textAlign='center';cx.textBaseline='middle';ln.forEach((s,k)=>cx.fillText(s,vx,by+14+k*16))}
 /* dia e noite (horário de São Paulo) */
 let SKYC=null,SKYT=0;function sky(){const n=performance.now();if(SKYC&&n-SKYT<5000)return SKYC;SKYT=n;return SKYC=sky0()}function sky0(){const s=new Date().toLocaleString('sv-SE',{timeZone:'America/Sao_Paulo'});const h=+s.slice(11,13)+(+s.slice(14,16))/60;
  if(h>=7&&h<17)return {n:0,d:0};if(h>=17&&h<18.5)return {n:(h-17)/1.5*.5,d:1};if(h>=18.5||h<5.5)return {n:1,d:0};return {n:1-(h-5.5)/1.5,d:.5}}
@@ -1316,7 +1361,7 @@ function waText(){const items=cartItems();const by={};items.forEach(x=>(by[x.il.
  const tot=items.reduce((t,x)=>t+num(price(x.b)),0);
  return '*Minha lista na Festa do Livro da USP* ('+items.length+' livros · '+brl(tot)+')\n\n'+ids.map(id=>{const il=IS.find(x=>x.id===id);return '*Ilha '+pad2(id)+'* · '+NAME[il.sp]+'\n'+by[id].map(x=>'• '+x.b[0]+' ('+PUB[x.pk].n+') '+(price(x.b)||'preço a confirmar')).join('\n')}).join('\n\n')+'\n\nCompare com a sua pilha: '+pilhaLink()+'\n\nMonte a sua: '+SITE}
 /* ===== cartão da minha pilha ===== */
-let CARDF='post';function openCard(fmt){if(fmt)CARDF=fmt;if(CARDF==='story')return storyCard();const items=cartItems();const tot=items.reduce((t,x)=>t+num(price(x.b)),0),norm0=items.reduce((t,x)=>t+(num(x.b[2])||num(price(x.b))),0);
+let CARDF='post';function openCard(fmt){if(fmt)CARDF=fmt;if(CARDF==='story')return storyCard();if(CARDF==='bolso')return bolsoCard();const items=cartItems();const tot=items.reduce((t,x)=>t+num(price(x.b)),0),norm0=items.reduce((t,x)=>t+(num(x.b[2])||num(price(x.b))),0);
  const W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');const F='"Helvetica Neue",Helvetica,Arial,sans-serif';
  g.fillStyle=CREAM;g.fillRect(0,0,W,H);g.fillStyle=INK;g.fillRect(0,0,W,150);
  g.fillStyle=CREAM;g.font='800 50px '+F;g.textAlign='left';g.textBaseline='middle';g.fillText('MINHA PILHA NA FESTA',60,62);g.font='500 30px '+F;g.fillText('28ª Festa do Livro da USP · 25 a 29/11',60,112);
@@ -1328,11 +1373,14 @@ let CARDF='post';function openCard(fmt){if(fmt)CARDF=fmt;if(CARDF==='story')retu
  const ils=new Set(items.map(x=>x.il.id)).size;g.fillStyle=INK;g.font='600 32px '+F;g.fillText(ils+(ils===1?' ilha visitada':' ilhas no roteiro'),600,630);
  const top=items.slice().sort((a,b)=>(rated(b.b)?score(b.b):0)-(rated(a.b)?score(a.b):0)).slice(0,6);g.font='800 26px '+F;g.fillStyle='#7a5a54';g.fillText('DESTAQUES DA SACOLA',600,700);
  g.font='500 27px '+F;g.fillStyle=INK;top.forEach((x,k)=>{let t=x.b[0];while(g.measureText(t).width>420&&t.length>6)t=t.slice(0,-2);if(t!==x.b[0])t=t.trim()+'…';g.fillText('• '+t,600,748+k*44)});
- g.fillStyle=INK;g.fillRect(0,H-110,W,110);g.fillStyle=CREAM;g.font='600 28px '+F;g.textAlign='center';g.fillText('Monte a sua: Passeio na Festa do Livro',W/2,H-55);
+ g.fillStyle=INK;g.fillRect(0,H-110,W,110);g.fillStyle=CREAM;g.font='600 28px '+F;g.textAlign='center';g.fillText('Monte a sua: Passeio na Festa do Livro',W/2,H-70);g.font='500 24px '+F;g.fillStyle='#f3e6c4';g.fillText('isabellezovicodesigner.github.io/festa-do-livro',W/2,H-32);
  showCard(c)}
+const CFN=()=>CARDF==='story'?'minha-pilha-festa-do-livro-story.png':CARDF==='bolso'?'mapa-de-bolso-festa-do-livro.png':'minha-pilha-festa-do-livro.png';
+{const sh=document.getElementById('cardsh');try{if(navigator.canShare&&navigator.canShare({files:[new File([''],'a.png',{type:'image/png'})]}))sh.hidden=false}catch(e){}
+ sh.onclick=()=>{if(!LASTC)return;LASTC.toBlob(bl=>{if(!bl)return;const f=new File([bl],CFN(),{type:'image/png'});navigator.share({files:[f],title:'Passeio na Festa do Livro',text:'Monte a sua pilha: '+siteBase()}).then(()=>PASS.flag('share')).catch(()=>{})},'image/png')}}
 let LASTC=null,DLNS=null;const INCLAUDE=!!(window.claude&&window.claude.use);try{if(INCLAUDE)window.claude.use('downloads').then(n=>{DLNS=n;if(n)document.getElementById('carddl').hidden=false}).catch(()=>{});else document.getElementById('carddl').hidden=false}catch(e){}
-document.getElementById('carddl').onclick=()=>{if(!LASTC)return;if(!DLNS){LASTC.toBlob(bl=>{if(!bl)return;const u=URL.createObjectURL(bl),a=document.createElement('a');a.href=u;a.download=CARDF==='story'?'minha-pilha-festa-do-livro-story.png':'minha-pilha-festa-do-livro.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)},'image/png');return}const b=document.getElementById('carddl');LASTC.toBlob(bl=>{if(!bl)return;DLNS.save({filename:CARDF==='story'?'minha-pilha-festa-do-livro-story.png':'minha-pilha-festa-do-livro.png',data:bl}).then(()=>{b.textContent='Imagem salva ✓';setTimeout(()=>b.textContent='Baixar imagem',2500)}).catch(e=>{const c=e&&e.code;if(c==='unavailable'||c==='not_granted'||c==='capability_disabled'||c==='capability_removed')b.hidden=true;else if(c==='rate_limited'){b.textContent='Aguarde um instante';setTimeout(()=>b.textContent='Baixar imagem',2500)}})},'image/png')};
-function showCard(c){const u=c.toDataURL('image/png');document.getElementById('cardimg').src=u;LASTC=c;document.getElementById('cfpost').classList.toggle('on',CARDF==='post');document.getElementById('cfstory').classList.toggle('on',CARDF==='story');document.getElementById('cardm').hidden=false;PASS.flag('share');SND.play('fanfare')}
+document.getElementById('carddl').onclick=()=>{if(!LASTC)return;if(!DLNS){LASTC.toBlob(bl=>{if(!bl)return;const u=URL.createObjectURL(bl),a=document.createElement('a');a.href=u;a.download=CFN();document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)},'image/png');return}const b=document.getElementById('carddl');LASTC.toBlob(bl=>{if(!bl)return;DLNS.save({filename:CFN(),data:bl}).then(()=>{b.textContent='Imagem salva ✓';setTimeout(()=>b.textContent='Baixar imagem',2500)}).catch(e=>{const c=e&&e.code;if(c==='unavailable'||c==='not_granted'||c==='capability_disabled'||c==='capability_removed')b.hidden=true;else if(c==='rate_limited'){b.textContent='Aguarde um instante';setTimeout(()=>b.textContent='Baixar imagem',2500)}})},'image/png')};
+function showCard(c){const u=c.toDataURL('image/png');document.getElementById('cardimg').src=u;LASTC=c;document.getElementById('cfpost').classList.toggle('on',CARDF==='post');document.getElementById('cfstory').classList.toggle('on',CARDF==='story');document.getElementById('cfbolso').classList.toggle('on',CARDF==='bolso');document.getElementById('cardm').hidden=false;PASS.flag('share');SND.play('fanfare')}
 function storyCard(){const items=cartItems();const tot=items.reduce((t,x)=>t+num(price(x.b)),0),norm0=items.reduce((t,x)=>t+(num(x.b[2])||num(price(x.b))),0);
  const W=1080,H=1920,c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');const F='"Helvetica Neue",Helvetica,Arial,sans-serif';
  const wrap=(t,x,y,mw,lh)=>{const ws=t.split(' ');let ln='',n=0;ws.forEach(w=>{const tt=ln?ln+' '+w:w;if(g.measureText(tt).width>mw&&ln){g.fillText(ln,x,y+n*lh);n++;ln=w}else ln=tt});if(ln){g.fillText(ln,x,y+n*lh);n++}return n};
@@ -1354,9 +1402,9 @@ function storyCard(){const items=cartItems();const tot=items.reduce((t,x)=>t+num
   top.forEach((x,k)=>{g.font='600 30px '+F;g.fillStyle=INK;let t=x.b[0];while(g.measureText(t).width>700&&t.length>6)t=t.slice(0,-2);if(t!==x.b[0])t=t.trim()+'…';g.fillText('• '+t,100,1454+k*56);
    if(rated(x.b)){g.textAlign='right';g.fillStyle='#c98a00';g.font='700 28px '+F;g.fillText('★ '+x.b[6][1].toFixed(1).replace('.',','),W-100,1454+k*56);g.textAlign='left'}})}
  else{g.fillStyle='#7a5a54';g.font='500 32px '+F;g.textAlign='center';g.fillText('Ainda montando a pilha…',W/2,1420);g.textAlign='left'}
- g.fillStyle=INK;g.fillRect(0,H-200,W,200);g.fillStyle=CREAM;g.textAlign='center';g.font='800 36px '+F;g.fillText('Monte a sua pilha antes de ir',W/2,H-120);g.font='500 28px '+F;g.fillStyle='#f3e6c4';g.fillText('Passeio na Festa do Livro',W/2,H-72);
+ g.fillStyle=INK;g.fillRect(0,H-200,W,200);g.fillStyle=CREAM;g.textAlign='center';g.font='800 36px '+F;g.fillText('Monte a sua pilha antes de ir',W/2,H-120);g.font='500 28px '+F;g.fillStyle='#f3e6c4';g.fillText('Passeio na Festa do Livro · isabellezovicodesigner.github.io/festa-do-livro',W/2,H-72);
  showCard(c)}
-document.getElementById('cfpost').onclick=()=>openCard('post');document.getElementById('cfstory').onclick=()=>openCard('story');
+document.getElementById('cfbolso').onclick=()=>openCard('bolso');document.getElementById('numclose').onclick=()=>{document.getElementById('numm').hidden=true;SND.play('close')};document.getElementById('cfpost').onclick=()=>openCard('post');document.getElementById('cfstory').onclick=()=>openCard('story');
 
 /* ===== rota otimizada ===== */
 const DOORS=[{n:'Praça do Relógio Solar',x:45,y:97},{n:'Raia Olímpica',x:1250,y:97}];
@@ -1389,6 +1437,10 @@ function renderModo(){const items=cartItems();COMPREI=COMPREI.filter(k=>CART.inc
 document.getElementById('fmclose').onclick=()=>{fm.hidden=true;SND.play('close')};
 document.getElementById('fmmap').onclick=()=>{fm.hidden=true;openMap()};
 
+/* ===== sininho: editoras sem estoque que a pessoa quer acompanhar ===== */
+let SINO=[];try{SINO=JSON.parse(localStorage.getItem('festa-sino')||'[]')}catch(e){}
+var SINOOK=[];SINO.forEach(n=>{const pk=PUB.findIndex(p=>p.n===n);if(pk>=0&&PUB[pk].b.length)SINOOK.push(pk)});
+if(SINOOK.length){SINO=SINO.filter(n=>!SINOOK.some(pk=>PUB[pk].n===n));try{localStorage.setItem('festa-sino',JSON.stringify(SINO));const f=JSON.parse(localStorage.getItem('festa-seguir')||'[]');SINOOK.forEach(pk=>{if(!f.includes(PUB[pk].n))f.push(PUB[pk].n)});localStorage.setItem('festa-seguir',JSON.stringify(f))}catch(e){}}
 /* ===== novidades desde a última visita ===== */
 var NOVO={},NOVOn=0;
 {const cur={};IS.forEach(i=>{const s=[];i.p.forEach(pk=>PUB[pk].b.forEach(b=>s.push(h32(PUB[pk].n+'|'+b[0]).toString(36))));cur[i.id]=s});
@@ -1399,13 +1451,13 @@ var NOVO={},NOVOn=0;
  if(!prev||prev.v!==1){try{localStorage.setItem('festa-visto',JSON.stringify(st))}catch(e){}}
  if(NOVOn)setTimeout(()=>{const tryOpen=()=>{if(document.querySelector('.avm:not([hidden])')||!document.getElementById('tutm').hidden){setTimeout(tryOpen,1500);return}openNovos()};tryOpen()},1800)}
 function openNovos(){const m=document.getElementById('novm');const rows=Object.entries(NOVO).map(([id,s])=>{const il=IS.find(x=>x.id===+id);const ns=[],eds=new Set(),fol=[];il.p.forEach(pk=>PUB[pk].b.forEach(b=>{if(s.has(h32(PUB[pk].n+'|'+b[0]).toString(36))){ns.push(b);eds.add(PUB[pk].n);if(isFol(pk))fol.push(b)}}));return {il,n:s.size,ns,eds:[...eds],fol:fol.length}}).sort((a,b)=>(b.fol-a.fol)||(b.n-a.n));
- const nb=rows.reduce((t,r)=>t+r.n,0),nf=rows.reduce((t,r)=>t+r.fol,0);
- document.getElementById('novt').textContent=nb.toLocaleString('pt-BR')+(nb===1?' livro novo':' livros novos')+' na Festa!';
- document.getElementById('novsub').innerHTML='Chegaram desde a sua última visita, em '+NOVOn+(NOVOn===1?' ilha':' ilhas')+'.'+(nf?' <b>'+nf+(nf===1?' é':' são')+' de editoras que você segue.</b>':'')+' Nas ilhas, eles aparecem com a etiqueta <span class="novpill">Novo</span>.';
- document.getElementById('novlist').innerHTML=rows.slice(0,8).map(r=>'<button class="novit" data-nil="'+r.il.id+'"><span class="fmn" style="background:'+COL[r.il.sp]+';color:'+(r.il.sp==='verde'?INK:CREAM)+'">'+pad2(r.il.id)+'</span><span class="novtx"><b>'+r.n+(r.n===1?' novo':' novos')+(r.fol?' · ♥ '+r.fol:'')+'</b><small>'+esc(r.eds.slice(0,2).join(', '))+(r.eds.length>2?' e mais':'')+'</small><i>'+r.ns.slice(0,2).map(b=>esc(short(b[0],34))).join(' · ')+'</i></span><span class="novar">›</span></button>').join('')+(rows.length>8?'<p class="note">E mais '+(rows.length-8)+' ilhas com novidade.</p>':'');
+ const nb=rows.reduce((t,r)=>t+r.n,0),nf=rows.reduce((t,r)=>t+r.fol,0);const sinoH=SINOOK.map(pk=>{const il=ilhaOf(pk);return '<button class="novit sinoit" data-nil="'+il.id+'"><span class="fmn" style="background:#ffcf3f;color:'+INK+'">🔔</span><span class="novtx"><b>Chegou estoque: '+esc(PUB[pk].n)+'</b><small>'+PUB[pk].b.length+' livros · Ilha '+pad2(il.id)+'</small><i>Você pediu para ser avisada. Agora você segue essa editora.</i></span><span class="novar">›</span></button>'}).join('');
+ document.getElementById('novt').textContent=nb?nb.toLocaleString('pt-BR')+(nb===1?' livro novo':' livros novos')+' na Festa!':(SINOOK.length===1?'Chegou o estoque que você esperava!':'Chegaram os estoques que você esperava!');
+ document.getElementById('novsub').innerHTML=!nb?'As editoras do sininho mandaram a lista de livros.':'Chegaram desde a sua última visita, em '+NOVOn+(NOVOn===1?' ilha':' ilhas')+'.'+(nf?' <b>'+nf+(nf===1?' é':' são')+' de editoras que você segue.</b>':'')+' Nas ilhas, eles aparecem com a etiqueta <span class="novpill">Novo</span>.';
+ document.getElementById('novlist').innerHTML=sinoH+rows.slice(0,8).map(r=>'<button class="novit" data-nil="'+r.il.id+'"><span class="fmn" style="background:'+COL[r.il.sp]+';color:'+(r.il.sp==='verde'?INK:CREAM)+'">'+pad2(r.il.id)+'</span><span class="novtx"><b>'+r.n+(r.n===1?' novo':' novos')+(r.fol?' · ♥ '+r.fol:'')+'</b><small>'+esc(r.eds.slice(0,2).join(', '))+(r.eds.length>2?' e mais':'')+'</small><i>'+r.ns.slice(0,2).map(b=>esc(short(b[0],34))).join(' · ')+'</i></span><span class="novar">›</span></button>').join('')+(rows.length>8?'<p class="note">E mais '+(rows.length-8)+' ilhas com novidade.</p>':'');
  const go=id=>{const il=IS.find(x=>x.id===+id);m.hidden=true;if(il){goTo(il);openIsland(il)}};
  document.getElementById('novlist').querySelectorAll('[data-nil]').forEach(b=>b.onclick=()=>go(b.dataset.nil));
- document.getElementById('novgo').onclick=()=>go(rows[0].il.id);document.getElementById('novclose').onclick=()=>{m.hidden=true;SND.play('close')};
+ document.getElementById('novgo').onclick=()=>go(SINOOK.length?ilhaOf(SINOOK[0]).id:rows[0].il.id);document.getElementById('novclose').onclick=()=>{m.hidden=true;SND.play('close')};
  SND.play('fanfare');m.hidden=false;document.getElementById('novgo').focus()}
 function isNovo(pk,b){const s=NOVO[PUB[pk].ilha];return !!s&&s.has(h32(PUB[pk].n+'|'+b[0]).toString(36))}
 function novosBox(i){const s=NOVO[i.id];if(!s)return '';const L=[];i.p.forEach(pk=>PUB[pk].b.forEach((b,bi)=>{if(isNovo(pk,b))L.push([pk,bi])}));if(!L.length)return '';
@@ -1429,20 +1481,20 @@ const PERS={verde:{tag:'jeito acadêmico',ola:['Saudações, leitora.','Seja bem
  rosa:{tag:'jeito animado',ola:['Oiê!! Chega mais!','AMIGA, vem ver!','Que bom que você veio!!'],
   ans:{p30:t=>'Baratinho e lindo: '+t+'!!',p50:t=>'Cabe no bolso: '+t+'!!',top:t=>t+' é SUCESSO!!',low:t=>'Olha esse preço: '+t+'!!',sur:t=>'Confia em mim: '+t+'!!',none:'Ai, nessa faixa não tenho!!'},
   extra:['Que dia lindo pra comprar livro!!','Cabe mais um, vai!!','Cada capa linda, olha!!','Tô amando esse movimento!!']},
- marrom:{tag:'jeito sussurrado',ola:['psiu… pode chegar…','aqui é mais tranquilo…','oi… sem pressa…'],
-  ans:{p30:t=>'baratinho… '+t+'…',p50:t=>'cabe no bolso… '+t+'…',top:t=>'um segredo… '+t+'…',low:t=>'o mais em conta… '+t+'…',sur:t=>'fecha os olhos… '+t+'…',none:'nessa faixa… não tenho…'},
-  extra:['fala baixinho que é mais gostoso…','respira… escolhe com calma…','cada livro tem seu tempo…','sem pressa por aqui…']}};
-function styl(sp,t){if(sp==='marrom')return t.toLowerCase().replace(/r\$/g,'R$').replace(/[!.?…]+$/,'').replace(/!\s+/g,'… ').replace(/!/g,'')+'…';if(sp==='rosa')return /!!$/.test(t)?t:/[!?]$/.test(t)?t.replace(/!$/,'!!'):t+'!!';t=t.replace(/!+$/,'.').replace(/!\s+/g,'. ').replace(/!/g,'');return /[.?…★\d]$/.test(t)?t:t+'.'}
+ marrom:{tag:'jeito sussurrado',ola:['psiu, pode chegar.','aqui é mais tranquilo.','oi, sem pressa.'],
+  ans:{p30:t=>'baratinho, baixinho: '+t+'.',p50:t=>'cabe no bolso: '+t+'.',top:t=>'um segredo: '+t+'.',low:t=>'o mais em conta: '+t+'.',sur:t=>'fecha os olhos e leva '+t+'.',none:'nessa faixa eu não tenho.'},
+  extra:['fala baixinho que é mais gostoso.','respira e escolhe com calma.','cada livro tem seu tempo.','sem pressa por aqui.']}};
+function styl(sp,t){if(sp==='marrom'){t=t.replace(/!+$/,'').replace(/!\s+/g,', ').replace(/!/g,'');t=t.charAt(0).toLowerCase()+t.slice(1);return /[.?…★\d]$/.test(t)?t:t+'.'}if(sp==='rosa')return /!!$/.test(t)?t:/[!?]$/.test(t)?t.replace(/!$/,'!!'):t+'!!';t=t.replace(/!+$/,'.').replace(/!\s+/g,'. ').replace(/!/g,'');return /[.?…★\d]$/.test(t)?t:t+'.'}
 const VTALK={};
 function vendorBox(i){const P=PERS[i.sp],a=vendorAV(i),who=a.tipo==='menino'?'Vendedor':'Vendedora',t=VTALK[i.id];
- return '<div class="vbox vb-'+i.sp+'"><canvas class="vav" width="112" height="128" data-v="'+i.id+'"></canvas><div class="vtx"><small>'+who+' da ilha · '+P.tag+'</small><p class="vsay">'+esc(t?t.say:pick(P.ola))+'</p>'+
+ return '<div class="vbox vb-'+i.sp+'"><canvas class="vav" width="112" height="128" data-v="'+i.id+'"></canvas><div class="vtx"><small>'+who+' da ilha · '+P.tag+'</small><p class="vsay">'+esc(t?t.say:(memLines(i)[0]||pick(P.ola)))+'</p>'+
   '<div class="vq">'+[['sur','Me indica um livro']].map(([k,l])=>'<button data-q="'+k+'"'+(t&&t.q===k?' aria-pressed="true"':'')+'>'+l+'</button>').join('')+'</div></div>'+
   (t&&t.pk!=null?'<div class="vans">'+bookRow(t.pk,t.bi,i.p.length>1)+'</div>':'')+'</div>'}
 function vendorAnswer(i,q){const P=PERS[i.sp];const L=[];i.p.forEach(pk=>PUB[pk].b.forEach((b,bi)=>L.push([pk,bi,b])));const pr=x=>num(price(x[2]));let pool=L.filter(x=>pr(x)>0),r=null;
  const best=a=>a.slice().sort((x,y)=>(rated(y[2])?score(y[2]):0)-(rated(x[2])?score(x[2]):0)||pr(x)-pr(y))[0];
  if(q==='p30')r=best(pool.filter(x=>pr(x)<=30));else if(q==='p50')r=best(pool.filter(x=>pr(x)<=50));else if(q==='top')r=best(L.filter(x=>rated(x[2])))||best(L);
  else if(q==='low')r=pool.sort((x,y)=>pr(x)-pr(y))[0];else{const g=L.filter(x=>rated(x[2])&&score(x[2])>=3.8);const s=g.length?g:L;r=s[Math.floor(Math.random()*s.length)]}
- const T=r?short(r[2][0],38):'';VTALK[i.id]={q,say:r?P.ans[q](T)+(q==='top'&&rated(r[2])?' ★ '+r[2][6][1].toFixed(1).replace('.',','):''):P.ans.none,pk:r?r[0]:null,bi:r?r[1]:null};PASS.papo(i.id)}
+ const T=r?r[2][0]:'';VTALK[i.id]={q,say:r?P.ans[q](T)+(q==='top'&&rated(r[2])?' ★ '+r[2][6][1].toFixed(1).replace('.',','):''):P.ans.none,pk:r?r[0]:null,bi:r?r[1]:null};PASS.papo(i.id)}
 function wireVendor(){const v=view;if(!v||v.t!=='ilha')return;const i=v.i;
  pb.querySelectorAll('.vq [data-q]').forEach(b=>b.onclick=()=>{SND.play('blip');const q=b.dataset.q;vendorAnswer(i,q);if(q==='p30'||q==='p50'){mode=q;psort='pmenor'}else if(q==='top'){mode='top';psort='nota'}else if(q==='low'){mode='todos';psort='pmenor'}const st=pb.scrollTop;render();pb.scrollTop=st;const fb=pb.querySelector('.fbar');if(fb&&q!=='sur')setTimeout(()=>fb.scrollIntoView({behavior:'smooth',block:'start'}),60)});
  const cv2=pb.querySelector('canvas.vav');if(cv2){const g=cv2.getContext('2d');g.clearRect(0,0,112,128);g.save();g.translate(56,118);g.scale(2.2,2.2);drawAvatar(g,vendorAV(i),'down',0,0,0,0,false,'');g.restore()}
@@ -1513,7 +1565,7 @@ document.getElementById('retimg').onclick=()=>{const d=retData(),W=1080,H=1920,c
  cards.forEach(([bg,fg,big,lab],k)=>{const x=70+(k%2)*480,y=600+Math.floor(k/2)*250;rr(g,x,y,460,220,28,bg);g.fillStyle=fg;g.font='800 '+(big.length>8?62:84)+'px '+F;g.fillText(big,x+34,y+120);g.font='600 30px '+F;g.fillText(lab,x+34,y+180)});
  const L=[['ASSUNTO DA FESTA',d.cat||'—'],['EDITORA DO CORAÇÃO',d.pub||'—'],['MAIS BEM AVALIADO',d.best?d.best.b[0]+' · ★ '+d.best.b[6][1].toFixed(1).replace('.',','):'—'],['CONQUISTAS',d.conq+' de '+d.conqT+' no passaporte']];
  L.forEach(([k,v],j)=>{const y=1150+j*120;g.fillStyle='#7a5a54';g.font='800 26px '+F;g.fillText(k,70,y);g.fillStyle=INK;g.font='700 40px '+F;let t=v;while(g.measureText(t).width>940&&t.length>6)t=t.slice(0,-2);if(t!==v)t=t.trim()+'…';g.fillText(t,70,y+50)});
- g.fillStyle=INK;g.fillRect(0,H-200,W,200);g.fillStyle=CREAM;g.textAlign='center';g.font='800 36px '+F;g.fillText('E a sua Festa, como foi?',W/2,H-120);g.font='500 28px '+F;g.fillStyle='#f3e6c4';g.fillText('Passeio na Festa do Livro',W/2,H-72);
+ g.fillStyle=INK;g.fillRect(0,H-200,W,200);g.fillStyle=CREAM;g.textAlign='center';g.font='800 36px '+F;g.fillText('E a sua Festa, como foi?',W/2,H-120);g.font='500 28px '+F;g.fillStyle='#f3e6c4';g.fillText('Passeio na Festa do Livro · isabellezovicodesigner.github.io/festa-do-livro',W/2,H-72);
  retm.hidden=true;CARDF='story';showCard(c)};
 
 /* ===== área da equipe (download protegido por senha) ===== */
@@ -1644,9 +1696,100 @@ function renderTop(){ph.style.background=INK;ph.style.color=CREAM;ph.innerHTML='
  pb.innerHTML=L.length?'<ol class="toplist">'+L.map(([[pk,bi],n],k)=>'<li><span class="tpn">'+(k+1)+'</span>'+bookRow(pk,bi,true)+'<small class="tpc">'+n+(n>1?' cestas':' cesta')+'</small></li>').join('')+'</ol>':'<p class="empty">O ranking começa a aparecer depois da próxima atualização do jogo, quando as primeiras cestas forem contadas. Enquanto isso, veja os <button class="linkb" id="topmel">mais bem avaliados</button>.</p>';
  const tm=document.getElementById('topmel');if(tm)tm.onclick=()=>{LST.mode='top';LST.sort='nota';openList()};wire()}
 document.getElementById('btop').onclick=e=>{e.currentTarget.blur();openTop()};
+/* ===== melhor pilha que cabe no orçamento ===== */
+function melhorPilha(){const el=document.getElementById('melhor');if(!el)return;const items=cartItems(),tot=items.reduce((s,x)=>s+num(price(x.b)),0),left=BUDGET-tot;
+ if(left<=0){el.innerHTML='<p class="note">O orçamento já está todo na cesta. Aumente o valor ou tire algum livro.</p>';return}
+ const pool=[];PUB.forEach((p,pk)=>p.b.forEach((b,i)=>{if(!rated(b)||score(b)<4||inCart(pk,i))return;if(CAT>=0&&b[7]!=CAT)return;const pr=num(price(b));if(!pr||pr>left)return;pool.push([pk,i,pr,score(b)])}));
+ pool.sort((a,b)=>b[3]-a[3]||a[2]-b[2]);const pick=[];let s=0;const usedP={};
+ for(const x of pool){if(pick.length>=8)break;if(s+x[2]>left)continue;if((usedP[x[0]]||0)>=2)continue;pick.push(x);s+=x[2];usedP[x[0]]=(usedP[x[0]]||0)+1}
+ if(!pick.length){el.innerHTML='<p class="note">Não achei livro bem avaliado que caiba em '+brl(left)+'.</p>';return}
+ el.innerHTML='<div class="mlh"><p><b>'+pick.length+' livros por '+brl(s)+'</b> · os mais bem avaliados no Skoob que cabem nos '+brl(left)+' que sobram'+(CAT>=0?' (só '+esc(D.cats[CAT])+')':'')+'.</p>'+pick.map(([pk,i,pr])=>{const b=PUB[pk].b[i];return '<div class="mlr"><span><b>'+esc(b[0])+'</b><small>'+esc(PUB[pk].n)+' · Ilha '+pad2(ilhaOf(pk).id)+' · ★ '+b[6][1].toFixed(1).replace('.',',')+'</small></span><em>'+brl(pr)+'</em></div>'}).join('')+'<div class="cact"><button id="mlhok">Colocar todos na cesta</button><button id="mlhno" class="alt">Agora não</button></div></div>';
+ document.getElementById('mlhok').onclick=()=>{pick.forEach(([pk,i])=>{if(!inCart(pk,i))CART.push(ckey(pk,i))});saveCart();SND.play('fanfare');fxJump();PASS.check();renderCart()};
+ document.getElementById('mlhno').onclick=()=>{el.innerHTML='';SND.play('close')}}
+
+/* ===== mapa de bolso ===== */
+function bolsoCard(){const items=cartItems();const by={};items.forEach(x=>(by[x.il.id]=by[x.il.id]||[]).push(x));const RT=routeIds(Object.keys(by).map(Number));
+ const F='"Helvetica Neue",Helvetica,Arial,sans-serif',W=1080;const rows=RT.ids.reduce((n,id)=>n+1+by[id].length,0);
+ const msc=(W-120)/((tent.w+40)/2),mH=((tent.h+40)*msc)*2+40,H=Math.max(900,220+mH+100+RT.ids.reduce((n,id)=>n+68+by[id].length*58,0)+180);const c=document.createElement('canvas');c.width=W;c.height=H;const g=c.getContext('2d');
+ g.fillStyle=CREAM;g.fillRect(0,0,W,H);g.fillStyle=INK;g.fillRect(0,0,W,170);g.fillStyle=CREAM;g.textBaseline='middle';g.textAlign='left';g.font='800 52px '+F;g.fillText('MAPA DE BOLSO',60,66);g.font='500 30px '+F;g.fillText('Festa do Livro da USP · '+items.length+(items.length===1?' livro':' livros')+' · '+RT.ids.length+(RT.ids.length===1?' ilha':' ilhas'),60,124);
+ ['#6cc28e','#ef5054','#4a1d1a'].forEach((s2,k)=>{g.fillStyle=s2;g.fillRect(k*W/3,170,W/3,12)});
+ // mapa em duas faixas (a tenda é muito comprida)
+ const mx0=60,my0=220,mw=W-120,half=(tent.w+40)/2,sc=mw/half,bandH=(tent.h+40)*sc,mh=bandH*2+40;const pts0=RT.ids.map(id=>{const i=IS.find(x=>x.id===id);return [i.X+i.W/2,i.Y+i.H/2]});const d=RT.door,[dx,dy]=T(d.x,d.y);
+ for(let k=0;k<2;k++){const wx0=tent.x-20+k*half,oy=my0+k*(bandH+40),ox=mx0-wx0*sc,oyy=oy-(tent.y-20)*sc;
+  g.fillStyle='#7a5a54';g.font='700 20px '+F;g.textAlign='left';g.fillText(k?'Lado da Raia Olímpica →':'← Lado da Praça do Relógio Solar',mx0,oy-14);
+  g.save();rr(g,mx0,oy,mw,bandH,14,'#fff');g.clip();
+  IS.forEach(i=>{const on=!!by[i.id];g.fillStyle=on?COL[i.sp]:'#ece5ca';g.fillRect(ox+i.X*sc,oyy+i.Y*sc,i.W*sc,i.H*sc);if(on){g.strokeStyle=INK;g.lineWidth=3;g.strokeRect(ox+i.X*sc,oyy+i.Y*sc,i.W*sc,i.H*sc)}});
+  g.strokeStyle=INK;g.lineWidth=5;g.strokeRect(ox+tent.x*sc,oyy+tent.y*sc,tent.w*sc,tent.h*sc);
+  g.lineWidth=4;g.setLineDash([12,9]);g.beginPath();g.moveTo(ox+dx*sc,oyy+dy*sc);pts0.forEach(p=>g.lineTo(ox+p[0]*sc,oyy+p[1]*sc));g.stroke();g.setLineDash([]);
+  pts0.forEach((p,n)=>{const X=ox+p[0]*sc,Y=oyy+p[1]*sc;g.fillStyle=INK;g.beginPath();g.arc(X,Y,22,0,7);g.fill();g.fillStyle=CREAM;g.font='800 22px '+F;g.textAlign='center';g.fillText(String(n+1),X,Y+1)});
+  g.restore();g.beginPath();g.roundRect(mx0,oy,mw,bandH,14);g.strokeStyle=INK;g.lineWidth=3;g.stroke()}
+ g.textAlign='left';let y=my0+mh+50;g.fillStyle=INK;g.font='600 28px '+F;g.fillText('Entre pela '+d.n+' e siga os números.',60,y);y+=50;
+ RT.ids.forEach((id,k)=>{const il=IS.find(x=>x.id===id),xs=by[id];g.fillStyle=COL[il.sp];rr(g,60,y-22,W-120,48,12,COL[il.sp]);g.fillStyle=il.sp==='verde'?INK:CREAM;g.font='800 28px '+F;g.fillText((k+1)+' · ILHA '+pad2(id)+' · '+NAME[il.sp].toUpperCase(),80,y+2);y+=58;
+  xs.forEach(x=>{const pg=COMPREI.includes(ckey(x.pk,x.i));g.strokeStyle=INK;g.lineWidth=3;g.strokeRect(70,y-15,30,30);if(pg){g.fillStyle=INK;g.font='800 26px '+F;g.fillText('✓',74,y+1)}
+   g.fillStyle=INK;g.font='600 27px '+F;let tt=x.b[0];while(g.measureText(tt).width>640&&tt.length>6)tt=tt.slice(0,-2);if(tt!==x.b[0])tt=tt.trim()+'…';g.fillText(tt,120,y-4);g.font='500 21px '+F;g.fillStyle='#7a5a54';let pn=PUB[x.pk].n;if(pn.length>48)pn=pn.slice(0,46)+'…';g.fillText(pn,120,y+22);
+   g.textAlign='right';g.fillStyle=INK;g.font='800 27px '+F;g.fillText(price(x.b)||'—',W-70,y+2);g.textAlign='left';y+=58});y+=10});
+ const tot=items.reduce((s,x)=>s+num(price(x.b)),0);g.fillStyle=INK;g.fillRect(0,H-160,W,160);g.fillStyle=CREAM;g.font='800 40px '+F;g.fillText('Total: '+brl(tot),60,H-112);g.font='500 24px '+F;g.fillStyle='#f3e6c4';g.fillText('Preços do site da Festa, sujeitos a mudança no caixa.',60,H-68);g.fillText('isabellezovicodesigner.github.io/festa-do-livro',60,H-34);
+ showCard(c)}
+
+/* ===== sininho de estoque ===== */
+function sinoBtn(pk){const on=SINO.includes(PUB[pk].n);return '<button class="folb sinob'+(on?' on':'')+'" data-sino="'+pk+'" aria-pressed="'+on+'">'+(on?'🔔 Vou te avisar':'🔔 Avisar quando chegar')+'</button>'}
+function togSino(pk){const n=PUB[pk].n,was=SINO.includes(n);SINO=was?SINO.filter(x=>x!==n):[...SINO,n];try{localStorage.setItem('festa-sino',JSON.stringify(SINO))}catch(e){}SND.play(was?'drop':'coin');if(!was)PASS.toast('<b>Combinado!</b> Quando '+esc(n)+' mandar os livros, o jogo te avisa na próxima visita')}
+pb.addEventListener('click',e=>{const s=e.target.closest('[data-sino]');if(!s)return;e.stopPropagation();const st=pb.scrollTop;togSino(+s.dataset.sino);render();pb.scrollTop=st});
+if(!NOVOn&&SINOOK.length)setTimeout(()=>{const tryOpen=()=>{if(document.querySelector('.avm:not([hidden])')||!document.getElementById('tutm').hidden){setTimeout(tryOpen,1500);return}openNovos()};tryOpen()},1800);
+
+/* ===== vendedor que lembra de você ===== */
+let SEEN=[];try{SEEN=JSON.parse(localStorage.getItem('festa-vistos')||'[]')}catch(e){}
+function seenAdd(pk,bi){const k=ckey(pk,bi);if(SEEN[SEEN.length-1]===k)return;SEEN=SEEN.filter(x=>x!==k);SEEN.push(k);if(SEEN.length>300)SEEN=SEEN.slice(-300);try{localStorage.setItem('festa-vistos',JSON.stringify(SEEN))}catch(e){}MEMC={}}
+let MEMC={};
+function memLines(i){const c=MEMC[i.id];if(c&&performance.now()-c.t<4000)return c.L;const L=[];const mine=pk=>i.p.includes(pk);
+ const inC=cartItems().filter(x=>mine(x.pk)),pg=inC.filter(x=>COMPREI.includes(ckey(x.pk,x.i)));
+ const vis=SEEN.slice().reverse().map(k=>KEYMAP[k]).filter(x=>x&&mine(x[0])&&!inCart(x[0],x[1]));
+ if(vis.length){const t=tt0(PUB[vis[0][0]].b[vis[0][1]][0]);if(t)L.push(pick(['Voltou! Ainda pensando em '+t+'?','E aí, vai levar '+t+'?','Guardei '+t+' pra você!']))}
+ if(pg.length){const t=tt0(pg[0].b[0]);if(t)L.push('Boa leitura com '+t+'!')}else if(inC.length){const t=tt0(inC[0].b[0]);if(t)L.push(pick(['Boa escolha, '+t+'!','Vi que '+t+' tá na sua sacola!']))}
+ if(!L.length&&PASS.stamped(i.id))L.push(pick(['Que bom te ver de novo!','Ô, de volta por aqui!']));
+ for(let k=0;k<L.length;k++)L[k]=styl(i.sp,L[k]);MEMC[i.id]={t:performance.now(),L};return L}
+
+/* ===== clima de São Paulo (sempre de dia) ===== */
+let WX={rain:0,cloud:0,temp:null,txt:''};
+function wxLoad(){fetch('https://api.open-meteo.com/v1/forecast?latitude=-23.561&longitude=-46.725&current=temperature_2m,precipitation,cloud_cover,weather_code&timezone=America%2FSao_Paulo',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j||!j.current)return;const c=j.current,w=c.weather_code;
+  const rain=(w>=51&&w<=67)||(w>=80&&w<=82)||w>=95||c.precipitation>0.1;WX={rain:rain?(w>=63&&w<=67||w===65||w>=81?2:1):0,cloud:Math.min(1,(c.cloud_cover||0)/100),temp:Math.round(c.temperature_2m),txt:w>=95?'trovoada':rain?(w>=63?'chuva':'garoa'):c.cloud_cover>70?'nublado':c.cloud_cover>30?'parcialmente nublado':'céu aberto'};
+  const el=document.getElementById('wx');if(el){el.hidden=false;el.textContent=(rain?'🌧 ':c.cloud_cover>70?'☁ ':'☀ ')+WX.temp+'° · '+WX.txt+' na USP agora'}}).catch(()=>{})}
+setTimeout(wxLoad,1500);setInterval(wxLoad,15*60*1000);
+const DROPS=[];
+function drawWeather(W,H){if(WX.cloud>.5){cx.save();cx.setTransform(dpr*ZOOM,0,0,dpr*ZOOM,0,0);cx.fillStyle='rgba(90,100,120,'+((WX.cloud-.5)*.14+(WX.rain?.05:0))+')';cx.fillRect(0,0,W,H);cx.restore()}
+ if(!WX.rain)return;const n=(MOB?60:140)*WX.rain;while(DROPS.length<n)DROPS.push({x:Math.random()*W,y:Math.random()*H,v:6+Math.random()*5});
+ cx.save();cx.setTransform(dpr*ZOOM,0,0,dpr*ZOOM,0,0);cx.beginPath();cx.rect(0,0,W,H);const tx=tent.x+Math.round(cam.x),ty=tent.y+Math.round(cam.y);cx.rect(tx+tent.w,ty,-tent.w,tent.h);cx.clip('evenodd');
+ cx.strokeStyle='rgba(70,110,170,.5)';cx.lineWidth=1.4;cx.beginPath();for(const d of DROPS){d.y+=d.v;d.x-=d.v*.18;if(d.y>H){d.y=-10;d.x=Math.random()*(W+40)}cx.moveTo(d.x,d.y);cx.lineTo(d.x+2,d.y-9)}cx.stroke();cx.restore()}
+function drawUmbrella(){if(!WX.rain)return;const inT=me.x>tent.x&&me.x<tent.x+tent.w&&me.y>tent.y&&me.y<tent.y+tent.h;if(inT)return;cx.save();cx.translate(me.x+6,me.y-58);cx.fillStyle='#ef5054';cx.strokeStyle=INK;cx.lineWidth=2;cx.beginPath();cx.arc(0,0,24,Math.PI,0);cx.closePath();cx.fill();cx.stroke();cx.beginPath();cx.moveTo(0,0);cx.lineTo(0,30);cx.stroke();cx.restore()}
+
+/* ===== conquistas de corredor ===== */
+let RUNF=0;const OUTF={};
+function corredor(){if(me.run){RUNF++;if(RUNF%60===0)PASS.runSec()}
+ if(FR%20)return;const z=me.x<tent.x?'praca':me.x>tent.x+tent.w?'raia':me.y<tent.y?'relogio':me.y>tent.y+tent.h?'cepe':null;if(!z)return;
+ if(!OUTF[z]){OUTF[z]=1;PASS.flag('out_'+z)}if(WX.rain&&!OUTF.chuva){OUTF.chuva=1;PASS.flag('chuva')}}
+
+/* ===== números da Festa ===== */
+function openNum(){const m=document.getElementById('numm');m.hidden=false;SND.play('open');const b=document.getElementById('numbody');
+ const comB=PUB.filter(p=>p.b.length).length,all=[];PUB.forEach((p,pk)=>p.b.forEach(x=>all.push(x)));const pr=all.map(x=>num(price(x))).filter(Boolean);
+ const ds=all.filter(x=>num(x[2])>num(x[3])&&num(x[3])>0).map(x=>1-num(x[3])/num(x[2]));const md=ds.length?Math.round(ds.reduce((a,c)=>a+c,0)/ds.length*100):0;
+ const cc={};all.forEach(x=>cc[x[7]]=(cc[x[7]]||0)+1);const tc=Object.entries(cc).sort((a,b)=>b[1]-a[1]).slice(0,5);
+ const avg=pr.length?pr.reduce((a,c)=>a+c,0)/pr.length:0,ate20=pr.filter(p=>p<=20).length;const sk=all.filter(x=>rated(x)).length;
+ const ex=Object.fromEntries(['verde','rosa','marrom'].map(s=>[s,IS.filter(i=>i.sp===s).reduce((n,i)=>n+i.p.reduce((t,pk)=>t+PUB[pk].b.length,0),0)]));
+ const card=(n,l)=>'<div class="nmc"><b>'+n+'</b><small>'+l+'</small></div>';
+ const top=(D.top||[]).slice(0,5);const IB={};PUB.forEach((p,pk)=>p.b.forEach((x,bi)=>{if(x[8])IB[x[8]]=[pk,bi];IB[h32(p.n+'|'+x[0]).toString(36)]=[pk,bi]}));
+ b.innerHTML='<div class="nmg">'+card(VIS?VIS.toLocaleString('pt-BR'):'—','visitas ao jogo')+card(D.total.toLocaleString('pt-BR'),'livros no acervo')+card(comB+' de '+PUB.length,'editoras com lista')+card(md+'%','desconto médio')+card(brl(avg),'preço médio na Festa')+card(ate20.toLocaleString('pt-BR'),'livros por até R$ 20')+card(sk.toLocaleString('pt-BR'),'livros com nota no Skoob')+card('60','ilhas na tenda')+'</div>'+
+  '<h5>Livros por espaço</h5><div class="nmbar">'+['verde','rosa','marrom'].map(s=>'<div><span>'+NAME[s]+'</span><i style="width:'+Math.round(ex[s]/Math.max(1,D.total)*100)+'%;background:'+COL[s]+'"></i><em>'+ex[s].toLocaleString('pt-BR')+'</em></div>').join('')+'</div>'+
+  '<h5>Assuntos com mais livros</h5><ol class="nml">'+tc.map(([k,n])=>'<li>'+esc(D.cats[k])+' <em>'+n.toLocaleString('pt-BR')+'</em></li>').join('')+'</ol>'+
+  (top.length?'<h5>Mais levados para as cestas</h5><ol class="nml">'+top.map(([k,n])=>IB[k]?'<li>'+esc(PUB[IB[k][0]].b[IB[k][1]][0])+' <em>'+esc(PUB[IB[k][0]].n)+'</em></li>':'').join('')+'</ol>':'')+
+  '<h5>Ilhas mais visitadas</h5><div id="nmil"><p class="note">Contando…</p></div>'+
+  '<p class="note">Dados do site da Festa do Livro da USP e do Skoob, atualizados em '+esc(D.updated)+'. Visitas contadas sem identificar ninguém. Link direto desta tela: <b>'+esc(siteBase())+'?numeros</b></p>';
+ if(/github\.io$/.test(location.hostname)){Promise.all(IS.map(i=>fetch('https://euzodesigner.goatcounter.com/counter/'+encodeURIComponent('ilha/'+pad2(i.id))+'.json').then(r=>r.ok?r.json():null).then(j=>[i,j?+String(j.count).replace(/\D/g,''):0]).catch(()=>[i,0]))).then(L=>{L=L.filter(x=>x[1]).sort((a,b)=>b[1]-a[1]).slice(0,5);const el=document.getElementById('nmil');if(!el)return;el.innerHTML=L.length?'<ol class="nml">'+L.map(([i,n])=>'<li>Ilha '+pad2(i.id)+' · '+esc(i.p.slice(0,2).map(k=>PUB[k].n).join(', '))+' <em>'+n.toLocaleString('pt-BR')+'</em></li>').join('')+'</ol>':'<p class="note">Ainda juntando os dados das visitas às ilhas.</p>'})}else document.getElementById('nmil').innerHTML='<p class="note">Disponível no site publicado.</p>'}
+document.getElementById('bnum').onclick=e=>{e.currentTarget.blur();openNum()};
+if(/[?&]numeros/.test(location.search))setTimeout(openNum,1200);
+
 /* janelas: X, Esc e clique fora fecham; painel minimizado volta pelo botão */
 const pmin=document.getElementById('pmin');pmin.onclick=restoreP;
-if(/[?&]teste/.test(location.search))window.__t={me:()=>me,tent:()=>tent,G:()=>[G1,G2],set:(x,y)=>{me.x=x;me.y=y},open:n=>openIsland(IS[n]),openI:()=>!!openI};
+if(/[?&]teste/.test(location.search))window.__t={me:()=>me,tent:()=>tent,G:()=>[G1,G2],set:(x,y)=>{me.x=x;me.y=y},open:n=>openIsland(IS[n]),openI:()=>!!openI,wx:o=>Object.assign(WX,o)};
 {const hm=document.getElementById('helpm'),open=()=>{SND.play('open');hm.hidden=false;document.getElementById('helpclose').focus()},close=()=>{hm.hidden=true};document.getElementById('bhelp').onclick=open;document.getElementById('helpclose').onclick=close;document.getElementById('helptut').onclick=()=>{close();document.getElementById('btut').click()};
  addEventListener('keydown',e=>{if((e.key==='h'||e.key==='H')&&!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)&&!document.querySelector('.avm:not([hidden])'))open()})}
 {const bm=document.getElementById('bmore'),ex=document.getElementById('extra');bm.addEventListener('click',()=>requestAnimationFrame(()=>{ex.style.left='';ex.style.right='';const r=ex.getBoundingClientRect();if(r.left<4){ex.style.right='auto';ex.style.left='0'}}))}
