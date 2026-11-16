@@ -10,7 +10,7 @@
 <meta property="og:description" content="Passeie pela tenda antes de ir: 60 ilhas, mais de 7 mil livros, preços da Festa e notas do Skoob. Monte sua cesta e chegue sabendo onde ir.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233b1613'/%3E%3Crect x='7' y='8' width='5' height='17' rx='1' fill='%236cc28e'/%3E%3Crect x='13.5' y='6' width='5' height='19' rx='1' fill='%23ef5054'/%3E%3Crect x='20' y='9' width='5' height='16' rx='1' fill='%23ffcf3f'/%3E%3C/svg%3E">
-<link rel="preload" href="data.json?v=202611161716" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="data.json?v=202611161735" as="fetch" crossorigin="anonymous">
 <style>
 /* VOICE: brincalhão e acolhedor, um passeio de sábado na tenda da USP
    IDEA: o mapa oficial da Festa virado jogo 2D — a tenda horizontal com as ilhas numeradas
@@ -425,7 +425,7 @@ kbd{display:inline-block;min-width:22px;padding:2px 7px;border:2px solid var(--i
 <script>
 (async()=>{const bar=document.getElementById('ldb'),t=document.getElementById('ldt');
  const msgs=['Arrumando as estantes…','Contando 7 mil livros…','Montando a tenda…','Carimbando o passaporte…'];let mi=0;const mt=setInterval(()=>{t.textContent=msgs[++mi%msgs.length]},1400);
- try{const r=await fetch('data.json?v=202611161716',{credentials:'same-origin',mode:'cors'});const total=+r.headers.get('content-length')||0;let txt;
+ try{const r=await fetch('data.json?v=202611161735',{credentials:'same-origin',mode:'cors'});const total=+r.headers.get('content-length')||0;let txt;
   if(r.body&&total){const rd=r.body.getReader();const parts=[];let got=0;for(;;){const {done,value}=await rd.read();if(done)break;parts.push(value);got+=value.length;bar.style.width=Math.min(100,got/total*100)+'%'}const u=new Uint8Array(got);let o=0;for(const p of parts){u.set(p,o);o+=p.length}txt=new TextDecoder().decode(u)}
   else{bar.style.width='60%';txt=await r.text()}
   window.DATA=JSON.parse(txt);bar.style.width='100%';clearInterval(mt);
@@ -436,7 +436,7 @@ kbd{display:inline-block;min-width:22px;padding:2px 7px;border:2px solid var(--i
 <script type="text/plain" id="main">
 {
 var VERSAO='3.0';
-function updTxt(n){const sm=innerWidth<640,u=sm?String(D.updated).replace(/\/\d{4}/,''):D.updated;return (sm?'v':'Versão ')+VERSAO+' · '+(sm?'Atualizado em ':'Última atualização em ')+u+(n?' · '+n.toLocaleString('pt-BR')+(n===1?' visita':' visitas'):'')}
+function updTxt(n){const sm=innerWidth<640,u=sm?String(D.updated).replace(/\/\d{4}/,''):D.updated;return (sm?'v':'Versão ')+VERSAO+' · '+(sm?'Atualizado em ':'Última atualização em ')+u+(n?' · '+n.toLocaleString('pt-BR')+(n===1?' acesso':' acessos'):'')}
 /* ===== SOM: efeitos 8-bit + jazzinho gerados com Web Audio ===== */
 const SND=(()=>{let ac=null,master,musicBus,sfxBus,started=false,timer=null;
  let prefs={music:true,sfx:true};try{const p=JSON.parse(localStorage.getItem('festa-som')||'null');if(p)prefs=p}catch(e){}
@@ -655,7 +655,7 @@ let ACC=0,LT=0;function loop(n){n=n||performance.now();if(!LT)LT=n;ACC+=Math.min
 function placeHint(){const mb=document.querySelector('.minibox'),he=document.getElementById('hint')||document.querySelector('.hint'),jo=document.getElementById('joy');if(!mb)return;const base=innerHeight-mb.getBoundingClientRect().top;BOTH=base+(innerWidth<640?34:0);if(he)he.style.bottom=(base+(innerWidth<640?32:40))+'px';document.documentElement.style.setProperty('--toastb',(base+(innerWidth<640?130:92))+'px');if(jo)jo.style.bottom=(base+30)+'px'}
 try{const ro=new ResizeObserver(()=>{const tp=document.querySelector('.top');if(tp)TOPH=tp.offsetHeight||60;document.documentElement.style.setProperty('--toph',TOPH+'px');const co=document.getElementById('corner');if(co)co.style.top=(TOPH+10)+'px';placeHint()});ro.observe(document.querySelector('.top'));ro.observe(document.querySelector('.minibox'))}catch(e){}addEventListener('resize',placeHint);setTimeout(placeHint,300);
 document.getElementById('upd').textContent=updTxt(0);
-let VIS=null;function visitas(){fetch('https://euzodesigner.goatcounter.com/counter/TOTAL.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j)return;const n=+String(j.count).replace(/\D/g,'');if(!n)return;VIS=n;document.getElementById('upd').textContent=updTxt(n)}).catch(()=>{})}
+let VIS=null;function visitas(){const one=p=>fetch('https://euzodesigner.goatcounter.com/counter/'+encodeURIComponent(p)+'.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>j?+String(j.count).replace(/\D/g,'')||0:0).catch(()=>0);Promise.all(['/festa-do-livro','/festa-do-livro/'].map(one)).then(a=>({count:a[0]+a[1]})).then(j=>{if(!j)return;const n=j.count;if(!n)return;VIS=n;document.getElementById('upd').textContent=updTxt(n)}).catch(()=>{})}
 if(/github\.io$/.test(location.hostname)){setTimeout(visitas,2500);setInterval(visitas,300000)}
 /* categoria global */
 let CAT=-1;
@@ -682,7 +682,7 @@ function renderFesta(){const n=spNow();ph.style.background=INK;ph.style.color=CR
 
 const panel=document.getElementById('panel'),ph=document.getElementById('ph'),pb=document.getElementById('pb');
 let view=null,mode='todos',filt='',RV=null,pcat=-1,cfilt='',psort='az';
-RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611161716').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
+RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611161735').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
 const SPN=['#6cc28e','#ef5054','#4a1d1a','#f2a33a','#2f7d4f','#c43a3e','#8a5a44','#e6c84c'];
 const score=b=>{const r=b[6][1],n=b[6][2];return (r*n+3.8*200)/(n+200)};
 const rated=b=>b[6]&&b[6][1]>0&&b[6][2]>=10;
@@ -1852,7 +1852,7 @@ function openNum(){const m=document.getElementById('numm');m.hidden=false;SND.pl
  const ex=Object.fromEntries(['verde','rosa','marrom'].map(s=>[s,IS.filter(i=>i.sp===s).reduce((n,i)=>n+i.p.reduce((t,pk)=>t+PUB[pk].b.length,0),0)]));
  const card=(n,l)=>'<div class="nmc"><b>'+n+'</b><small>'+l+'</small></div>';
  const top=(D.top||[]).slice(0,5);const IB={};PUB.forEach((p,pk)=>p.b.forEach((x,bi)=>{if(x[8])IB[x[8]]=[pk,bi];IB[h32(p.n+'|'+x[0]).toString(36)]=[pk,bi]}));
- b.innerHTML='<div class="nmg">'+card(VIS?VIS.toLocaleString('pt-BR'):'—','visitas ao jogo')+card(D.total.toLocaleString('pt-BR'),'livros no acervo')+card(comB+' de '+PUB.length,'editoras com lista')+card(md+'%','desconto médio')+card(brl(avg),'preço médio na Festa')+card(ate20.toLocaleString('pt-BR'),'livros por até R$ 20')+card(sk.toLocaleString('pt-BR'),'livros com nota no Skoob')+card('60','ilhas na tenda')+'</div>'+
+ b.innerHTML='<div class="nmg">'+card(VIS?VIS.toLocaleString('pt-BR'):'—','acessos ao jogo')+card(D.total.toLocaleString('pt-BR'),'livros no acervo')+card(comB+' de '+PUB.length,'editoras com lista')+card(md+'%','desconto médio')+card(brl(avg),'preço médio na Festa')+card(ate20.toLocaleString('pt-BR'),'livros por até R$ 20')+card(sk.toLocaleString('pt-BR'),'livros com nota no Skoob')+card('60','ilhas na tenda')+'</div>'+
   '<h5>Livros por espaço</h5><div class="nmbar">'+['verde','rosa','marrom'].map(s=>'<div><span>'+NAME[s]+'</span><i style="width:'+Math.round(ex[s]/Math.max(1,D.total)*100)+'%;background:'+COL[s]+'"></i><em>'+ex[s].toLocaleString('pt-BR')+'</em></div>').join('')+'</div>'+
   '<h5>Assuntos com mais livros</h5><ol class="nml">'+tc.map(([k,n])=>'<li>'+esc(D.cats[k])+' <em>'+n.toLocaleString('pt-BR')+'</em></li>').join('')+'</ol>'+
   (top.length?'<h5>Mais levados para as cestas</h5><ol class="nml">'+top.map(([k,n])=>IB[k]?'<li>'+esc(PUB[IB[k][0]].b[IB[k][1]][0])+' <em>'+esc(PUB[IB[k][0]].n)+'</em></li>':'').join('')+'</ol>':'')+
@@ -1896,6 +1896,7 @@ addEventListener('keydown',e=>{if(e.key!=='Escape')return;const open=[...documen
 loop();
 }
 </script>
+<script>window.goatcounter={path:function(p){return p.split("?")[0].replace(/\/$/,"")||"/"}}</script>
 <script data-goatcounter="https://euzodesigner.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
