@@ -10,7 +10,7 @@
 <meta property="og:description" content="Passeie pela tenda antes de ir: 60 ilhas, mais de 7 mil livros, preços da Festa e notas do Skoob. Monte sua cesta e chegue sabendo onde ir.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233b1613'/%3E%3Crect x='7' y='8' width='5' height='17' rx='1' fill='%236cc28e'/%3E%3Crect x='13.5' y='6' width='5' height='19' rx='1' fill='%23ef5054'/%3E%3Crect x='20' y='9' width='5' height='16' rx='1' fill='%23ffcf3f'/%3E%3C/svg%3E">
-<link rel="preload" href="data.json?v=202611160156" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="data.json?v=202611161155" as="fetch" crossorigin="anonymous">
 <style>
 /* VOICE: brincalhão e acolhedor, um passeio de sábado na tenda da USP
    IDEA: o mapa oficial da Festa virado jogo 2D — a tenda horizontal com as ilhas numeradas
@@ -321,7 +321,6 @@ body:has(#sug[style*="block"]) .catpill{display:none}
  body:has(.pmin:not([hidden])) .spot{top:calc(var(--toph,60px) + 112px)}
 }
 @media (min-width:641px) and (max-height:800px){.corner{gap:4px}.corner .cb{height:38px!important;min-width:38px}.corner .cb:not(.cbk):not(#blist):not(#bpass):not(#bidea):not(#bteam){width:38px!important}}
-.rowlab{margin:12px 0 6px;font:800 11px "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
 </style>
 </head>
 <body>
@@ -364,7 +363,7 @@ body:has(#sug[style*="block"]) .catpill{display:none}
 <script>
 (async()=>{const bar=document.getElementById('ldb'),t=document.getElementById('ldt');
  const msgs=['Arrumando as estantes…','Contando 7 mil livros…','Montando a tenda…','Carimbando o passaporte…'];let mi=0;const mt=setInterval(()=>{t.textContent=msgs[++mi%msgs.length]},1400);
- try{const r=await fetch('data.json?v=202611160156',{credentials:'same-origin',mode:'cors'});const total=+r.headers.get('content-length')||0;let txt;
+ try{const r=await fetch('data.json?v=202611161155',{credentials:'same-origin',mode:'cors'});const total=+r.headers.get('content-length')||0;let txt;
   if(r.body&&total){const rd=r.body.getReader();const parts=[];let got=0;for(;;){const {done,value}=await rd.read();if(done)break;parts.push(value);got+=value.length;bar.style.width=Math.min(100,got/total*100)+'%'}const u=new Uint8Array(got);let o=0;for(const p of parts){u.set(p,o);o+=p.length}txt=new TextDecoder().decode(u)}
   else{bar.style.width='60%';txt=await r.text()}
   window.DATA=JSON.parse(txt);bar.style.width='100%';clearInterval(mt);
@@ -617,7 +616,7 @@ function renderFesta(){const n=spNow();ph.style.background=INK;ph.style.color=CR
 
 const panel=document.getElementById('panel'),ph=document.getElementById('ph'),pb=document.getElementById('pb');
 let view=null,mode='todos',filt='',RV=null,pcat=-1,cfilt='',psort='az';
-RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611160156').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
+RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611161155').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
 const SPN=['#6cc28e','#ef5054','#4a1d1a','#f2a33a','#2f7d4f','#c43a3e','#8a5a44','#e6c84c'];
 const score=b=>{const r=b[6][1],n=b[6][2];return (r*n+3.8*200)/(n+200)};
 const rated=b=>b[6]&&b[6][1]>0&&b[6][2]>=10;
@@ -672,7 +671,7 @@ function render0(){const v=view;
   head(c,NAME[i.sp],'Ilha '+pad2(i.id),i.p.length+(i.p.length>1?' editoras':' editora')+(nb?' · '+nb.toLocaleString('pt-BR')+' livros':''));
   let h=i.empty?'<p class="aviso">Ilha ainda sem estoque: nenhuma editora daqui mandou a lista de livros para o site da Festa. Assim que mandarem, a gente atualiza.</p>':vendorBox(i)+novosBox(i);
   const withB=i.p.filter(pk=>PUB[pk].b.length),noB=i.p.filter(pk=>!PUB[pk].b.length);
-  if(withB.length>1||(withB.length&&sel!=null&&!PUB[sel].b.length))h+='<p class="rowlab">Editoras desta ilha</p><div class="pubs sc">'+(withB.length>1?'<button class="pub'+(sel==null?' sel':'')+'" data-pk="-1">Todas <em>'+nb+'</em></button>':'')+withB.map(pk=>'<button class="pub'+(sel===pk?' sel':'')+'" data-pk="'+pk+'">'+esc(PUB[pk].n)+' <em>'+PUB[pk].b.length+'</em></button>').join('')+'</div>';
+  if(withB.length>1||(withB.length&&sel!=null&&!PUB[sel].b.length))h+='<div class="pubs sc">'+(withB.length>1?'<button class="pub'+(sel==null?' sel':'')+'" data-pk="-1">Todas <em>'+nb+'</em></button>':'')+withB.map(pk=>'<button class="pub'+(sel===pk?' sel':'')+'" data-pk="'+pk+'">'+esc(PUB[pk].n)+' <em>'+PUB[pk].b.length+'</em></button>').join('')+'</div>';
   else if(withB.length===1)h+='<p class="pub1"><b>'+esc(PUB[withB[0]].n)+'</b> · '+PUB[withB[0]].b.length+' livros '+folBtn(withB[0])+'</p>';
   if(withB.length>1&&sel!=null&&PUB[sel].b.length)h+='<p class="pub1"><b>'+esc(PUB[sel].n)+'</b> '+folBtn(sel)+'</p>';
   h+=progBox(i);
@@ -687,7 +686,7 @@ function render0(){const v=view;
    const P0=b=>num(price(b))||Infinity,P1=b=>num(price(b))||-1,ttl=b=>J2(b[0]).replace(/^(o|a|os|as|um|uma) /,'');
    if(psort==='az')list.sort((a,b)=>ttl(a[2]).localeCompare(ttl(b[2])));else if(psort==='za')list.sort((a,b)=>ttl(b[2]).localeCompare(ttl(a[2])));else if(psort==='pmenor')list.sort((a,b)=>P0(a[2])-P0(b[2]));else if(psort==='pmaior')list.sort((a,b)=>P1(b[2])-P1(a[2]));else list.sort((a,b)=>(rated(b[2])?score(b[2]):0)-(rated(a[2])?score(a[2]):0));
    const nTop=all.filter(x=>rated(x[2])).length,nRv=RV?all.filter(x=>hasRv(x[2])).length:null,nP=c=>all.filter(x=>{const p=num(price(x[2]));return p>0&&p<=c}).length;
-   h+='<div class="fbar"><p class="rowlab">Filtrar os livros</p><div class="filt sc" role="tablist">'+[['todos','Todos',all.length],['p30','Até R$ 30',nP(30)],['p50','Até R$ 50',nP(50)],['top','Mais bem avaliados',nTop],['rv','Com resenhas',nRv]].map(([k,l,n])=>'<button role="tab" data-m="'+k+'" aria-selected="'+(mode===k)+'">'+l+(n!=null?' <em>'+n+'</em>':'')+'</button>').join('')+'</div>'+
+   h+='<div class="fbar"><div class="filt sc" role="tablist">'+[['todos','Todos',all.length],['p30','Até R$ 30',nP(30)],['p50','Até R$ 50',nP(50)],['top','Mais bem avaliados',nTop],['rv','Com resenhas',nRv]].map(([k,l,n])=>'<button role="tab" data-m="'+k+'" aria-selected="'+(mode===k)+'">'+l+(n!=null?' <em>'+n+'</em>':'')+'</button>').join('')+'</div>'+
    '<div class="frow"><input class="find" id="ff" placeholder="Filtrar por título, autor ou ISBN" value="'+esc(filt)+'" aria-label="Filtrar livros">'+catSelect('pc',pcat,counts)+'<select class="csel" id="ps" aria-label="Ordenar">'+[['az','A a Z'],['za','Z a A'],['pmenor','Menor preço'],['pmaior','Maior preço'],['nota','Melhor nota']].map(([k,l])=>'<option value="'+k+'"'+(psort===k?' selected':'')+'>'+l+'</option>').join('')+'</select></div>'+
    '<p class="note cnt">'+list.length.toLocaleString('pt-BR')+(list.length===1?' livro':' livros')+(mode==='top'?' · nota do Skoob pesada pelo número de leitores':mode==='p30'?' até R$ 30':mode==='p50'?' até R$ 50':'')+'</p></div>'+
    (list.length?list.slice(0,ILIM).map(([pk,k])=>bookRow(pk,k,sel==null&&i.p.length>1)).join(''):'<p class="empty">Nada encontrado com esse filtro.</p>')+(list.length>ILIM?'<div class="cact"><button id="bmorebk" class="alt">Mostrar mais livros ('+(list.length-ILIM).toLocaleString('pt-BR')+' restantes)</button></div>':'')}
@@ -1407,7 +1406,7 @@ function styl(sp,t){if(sp==='marrom')return t.toLowerCase().replace(/r\$/g,'R$')
 const VTALK={};
 function vendorBox(i){const P=PERS[i.sp],a=vendorAV(i),who=a.tipo==='menino'?'Vendedor':'Vendedora',t=VTALK[i.id];
  return '<div class="vbox vb-'+i.sp+'"><canvas class="vav" width="112" height="128" data-v="'+i.id+'"></canvas><div class="vtx"><small>'+who+' da ilha · '+P.tag+'</small><p class="vsay">'+esc(t?t.say:pick(P.ola))+'</p>'+
-  '<div class="vq">'+[['sur','Me indica um livro']].map(([k,l])=>'<button data-q="'+k+'"'+(t&&t.q===k?' aria-pressed="true"':'')+'>'+l+'</button>').join('')+'</div></div>'+
+  '<div class="vq">'+[['p30','Até R$ 30'],['p50','Até R$ 50'],['top','O mais amado'],['low','O mais baratinho'],['sur','Me surpreende']].map(([k,l])=>'<button data-q="'+k+'"'+(t&&t.q===k?' aria-pressed="true"':'')+'>'+l+'</button>').join('')+'</div></div>'+
   (t&&t.pk!=null?'<div class="vans">'+bookRow(t.pk,t.bi,i.p.length>1)+'</div>':'')+'</div>'}
 function vendorAnswer(i,q){const P=PERS[i.sp];const L=[];i.p.forEach(pk=>PUB[pk].b.forEach((b,bi)=>L.push([pk,bi,b])));const pr=x=>num(price(x[2]));let pool=L.filter(x=>pr(x)>0),r=null;
  const best=a=>a.slice().sort((x,y)=>(rated(y[2])?score(y[2]):0)-(rated(x[2])?score(x[2]):0)||pr(x)-pr(y))[0];
