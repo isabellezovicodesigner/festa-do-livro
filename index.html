@@ -10,7 +10,7 @@
 <meta property="og:description" content="Passeie pela tenda antes de ir: 60 ilhas, mais de 7 mil livros, preços da Festa e notas do Skoob. Monte sua cesta e chegue sabendo onde ir.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233b1613'/%3E%3Crect x='7' y='8' width='5' height='17' rx='1' fill='%236cc28e'/%3E%3Crect x='13.5' y='6' width='5' height='19' rx='1' fill='%23ef5054'/%3E%3Crect x='20' y='9' width='5' height='16' rx='1' fill='%23ffcf3f'/%3E%3C/svg%3E">
-<link rel="preload" href="data.json?v=202611161651" as="fetch" crossorigin="anonymous">
+<link rel="preload" href="data.json?v=202611161716" as="fetch" crossorigin="anonymous">
 <style>
 /* VOICE: brincalhão e acolhedor, um passeio de sábado na tenda da USP
    IDEA: o mapa oficial da Festa virado jogo 2D — a tenda horizontal com as ilhas numeradas
@@ -200,7 +200,7 @@ h5{font:800 13px "Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppe
 .cact{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 4px}.cact button{border:2px solid var(--ink);background:var(--ink);color:var(--cream);border-radius:10px;min-height:44px;padding:0 16px;font:600 15px "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer}.cact button.alt{background:none;color:var(--ink)}
 .cgrp{margin-top:16px}.ctit{display:flex;align-items:center;gap:8px;font-size:14px;padding-bottom:6px;border-bottom:2px solid var(--ink)}.ctit span:last-child{margin-left:auto;font-weight:800}
 .dot{width:14px;height:14px;border-radius:3px;border:2px solid var(--ink);flex:none}
-.citem{display:grid;grid-template-columns:minmax(0,1fr) auto 40px;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.citem{display:grid;grid-template-columns:32px minmax(0,1fr) auto 36px;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
 .bk2{border:0;background:none;text-align:left;color:inherit;font:inherit;cursor:pointer;padding:0}.bk2 b{display:block;font-weight:600;font-size:15px;line-height:1.25}.bk2 small{color:var(--soft);font-size:13px}
 .cp{font:800 15px "Helvetica Neue",Helvetica,Arial,sans-serif;white-space:nowrap}.rm{width:36px;height:36px;border-radius:8px;border:0;background:var(--line);color:var(--ink);font:800 14px "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer}
 .mapbox{width:min(1000px,100%)}.maptop{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.maptop h2{font:800 24px "Helvetica Neue",Helvetica,Arial,sans-serif;margin:0;text-transform:uppercase}
@@ -338,7 +338,7 @@ kbd{display:inline-block;min-width:22px;padding:2px 7px;border:2px solid var(--i
 .cop{display:grid;gap:2px;text-align:left;background:#fff;border:2px solid var(--ink);border-radius:12px;padding:10px 12px;color:var(--ink);font:inherit;cursor:pointer;text-decoration:none}
 .cop b{font:800 15px "Helvetica Neue",Helvetica,Arial,sans-serif}.cop small{font-size:13px;opacity:.78;line-height:1.35}.cop:hover,.cop:focus-visible{background:#fdf8d3}
 #bclear{border-style:dashed}
-.pgb{flex:none;width:28px;height:28px;border:2px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink);font:800 16px/1 "Helvetica Neue",Arial,sans-serif;cursor:pointer;padding:0;margin-right:6px}
+.pgb{flex:none;width:30px;height:30px;justify-self:start;border:2px solid var(--ink);border-radius:8px;background:#fff;color:var(--ink);font:800 16px/1 "Helvetica Neue",Arial,sans-serif;cursor:pointer;padding:0;margin:0}
 .pgb[aria-pressed="true"]{background:#6cc28e}.citem.pg .bk2 b{text-decoration:line-through;opacity:.6}
 .pgsum{background:#e6f5ec;border-radius:10px;padding:8px 10px}
 .linkb{background:none;border:0;color:var(--ink);font:700 14px "Helvetica Neue",Arial,sans-serif;text-decoration:underline;cursor:pointer;padding:6px 0;min-height:36px}
@@ -357,6 +357,23 @@ kbd{display:inline-block;min-width:22px;padding:2px 7px;border:2px solid var(--i
 #numbody{max-height:min(64vh,620px);overflow:auto}
 @media (max-width:640px){#extra{max-height:calc(100vh - var(--toph,96px) - 150px);overflow:auto}}
 
+.vq{display:flex;flex-wrap:wrap;gap:6px}.vq button{font-size:13px}
+@media (max-width:640px){.vtx{flex:1;min-width:0}.vq{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-10px;padding-right:10px}.vq::-webkit-scrollbar{display:none}.vq button{flex:none;min-height:34px;padding:5px 10px}}
+.vask{display:flex;gap:6px;margin-top:8px}.vask input{flex:1;min-width:0;border:2px solid var(--ink);border-radius:10px;padding:8px 10px;font:500 15px "Helvetica Neue",Helvetica,Arial,sans-serif;background:#fff;color:var(--ink)}
+.vask button{flex:none;border:2px solid var(--ink);background:var(--ink);color:var(--cream);border-radius:10px;padding:0 12px;font:700 14px "Helvetica Neue",Arial,sans-serif;cursor:pointer;min-height:40px}
+.vgo{display:flex;flex-wrap:wrap;gap:6px;flex-basis:100%}.vgo button{border:2px solid var(--ink);background:#ffcf3f;color:var(--ink);border-radius:999px;padding:6px 12px;font:700 14px "Helvetica Neue",Arial,sans-serif;cursor:pointer}
+.ctop{position:sticky;top:-1px;z-index:2;background:var(--cream,#fdf8d3);padding:8px 0 10px;margin:-4px 0 6px;border-bottom:1px solid #3b161322}
+.cbud{display:grid;gap:4px;font:700 13px "Helvetica Neue",Arial,sans-serif;margin-bottom:6px}.cbud .obar{margin:0}
+.cpg{margin:0 0 6px;font:700 13px "Helvetica Neue",Arial,sans-serif;color:#2c7a4b}
+.cquick{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}.cquick::-webkit-scrollbar{display:none}
+.cquick button{flex:none;border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:999px;padding:6px 12px;font:700 13px "Helvetica Neue",Arial,sans-serif;cursor:pointer;min-height:36px}
+.cquick button:first-child{background:var(--ink);color:var(--cream,#fdf8d3)}
+.ctools{margin-top:22px;padding-top:14px;border-top:2px dashed #3b161340}.ctools h4{margin:0 0 10px;font:800 15px Archivo,"Helvetica Neue",Arial,sans-serif;text-transform:uppercase}
+@media (pointer:coarse){.semb{min-height:34px;padding:4px 8px}#spotx,.spotx{min-width:36px;min-height:36px}}
+.bkw{grid-template-columns:minmax(0,1fr) 34px 40px!important}
+.dsj{width:34px;height:34px;border:0;background:none;color:#ef5054;font:800 22px/1 "Helvetica Neue",Arial,sans-serif;cursor:pointer;padding:0;border-radius:50%}.dsj:hover{background:#ef505422}.dsj.on{color:#ef5054}
+.cbrow{display:flex;gap:8px;align-items:stretch}.cbrow .cartbtn{flex:1}.dsjbig{flex:none;min-height:48px;margin:4px 0 10px;border-radius:12px;border:2px solid #ef5054;background:#fff;color:#ef5054;font:800 15px "Helvetica Neue",Arial,sans-serif;padding:0 14px;cursor:pointer}.dsjbig.on{background:#ef5054;color:#fff}
+.ctabs{display:flex;gap:6px;margin:0 0 10px}.ctabs button{border:2px solid currentColor;background:none;color:inherit;border-radius:999px;padding:5px 12px;font:700 13px "Helvetica Neue",Arial,sans-serif;cursor:pointer;opacity:.75}.ctabs button[aria-selected="true"]{background:var(--cream,#fdf8d3);color:var(--ink);border-color:var(--cream,#fdf8d3);opacity:1}
 </style>
 </head>
 <body>
@@ -401,14 +418,14 @@ kbd{display:inline-block;min-width:22px;padding:2px 7px;border:2px solid var(--i
 <div class="helpg"><div><h5>No computador</h5><ul class="keys">
 <li><kbd>←↑→↓</kbd> ou <kbd>W A S D</kbd> anda</li><li>Segure <kbd>Shift</kbd> para correr</li><li><kbd>Espaço</kbd> abre a ilha perto de você</li><li><kbd>C</kbd> cesta · <kbd>L</kbd> lista · <kbd>P</kbd> passaporte</li><li><kbd>R</kbd> me surpreenda · <kbd>/</kbd> busca</li><li><kbd>−</kbd> e <kbd>+</kbd> zoom no mapa · <kbd>Esc</kbd> fecha</li><li>Dá para andar com a ilha aberta e clicar no chão para ir até lá</li></ul></div>
 <div><h5>No celular</h5><ul class="keys"><li>Arraste o joystick para andar; empurre até a borda para correr</li><li>Ou toque no chão e a personagem vai sozinha</li><li>Toque na ilha para abrir</li><li>Dois dedos no mapa: zoom</li><li>Botão ⋯ no canto: personagem, música, sons e mais</li></ul></div></div>
-<p class="note">Saia pelas portas laterais para passear pela Praça do Relógio Solar e pela Raia Olímpica.</p>
+<p class="note">Saia pelas portas laterais para passear pela Praça do Relógio Solar e pela Raia Olímpica.</p><p class="note">Passeio na Festa do Livro · versão 3.0</p>
 <div class="avact"><button id="helptut">Ver o tutorial de novo</button><button id="helpclose" class="alt">Fechar</button></div></div></div><div class="catpill" id="catpill" hidden><button class="cpgo"><b></b> →</button><button class="cpx" aria-label="Tirar o destaque de categoria" title="Tirar o destaque">✕</button></div><button class="pmin" id="pmin" hidden aria-label="Abrir o painel de novo"><span>▴</span><b>Painel</b></button>
 <aside class="panel" id="panel" aria-live="polite"><button class="grab" id="grab" aria-label="Minimizar painel"></button><div class="ph" id="ph"></div><div class="pb" id="pb"></div></aside>
 <div id="load"><div class="ld"><div class="ldstack"><i></i><i></i><i></i><i></i><i></i></div><h1>Festa do Livro da USP</h1><p id="ldt">Arrumando as estantes…</p><div class="ldbar"><b id="ldb"></b></div></div></div>
 <script>
 (async()=>{const bar=document.getElementById('ldb'),t=document.getElementById('ldt');
  const msgs=['Arrumando as estantes…','Contando 7 mil livros…','Montando a tenda…','Carimbando o passaporte…'];let mi=0;const mt=setInterval(()=>{t.textContent=msgs[++mi%msgs.length]},1400);
- try{const r=await fetch('data.json?v=202611161651',{credentials:'same-origin',mode:'cors'});const total=+r.headers.get('content-length')||0;let txt;
+ try{const r=await fetch('data.json?v=202611161716',{credentials:'same-origin',mode:'cors'});const total=+r.headers.get('content-length')||0;let txt;
   if(r.body&&total){const rd=r.body.getReader();const parts=[];let got=0;for(;;){const {done,value}=await rd.read();if(done)break;parts.push(value);got+=value.length;bar.style.width=Math.min(100,got/total*100)+'%'}const u=new Uint8Array(got);let o=0;for(const p of parts){u.set(p,o);o+=p.length}txt=new TextDecoder().decode(u)}
   else{bar.style.width='60%';txt=await r.text()}
   window.DATA=JSON.parse(txt);bar.style.width='100%';clearInterval(mt);
@@ -418,6 +435,8 @@ kbd{display:inline-block;min-width:22px;padding:2px 7px;border:2px solid var(--i
 </script>
 <script type="text/plain" id="main">
 {
+var VERSAO='3.0';
+function updTxt(n){const sm=innerWidth<640,u=sm?String(D.updated).replace(/\/\d{4}/,''):D.updated;return (sm?'v':'Versão ')+VERSAO+' · '+(sm?'Atualizado em ':'Última atualização em ')+u+(n?' · '+n.toLocaleString('pt-BR')+(n===1?' visita':' visitas'):'')}
 /* ===== SOM: efeitos 8-bit + jazzinho gerados com Web Audio ===== */
 const SND=(()=>{let ac=null,master,musicBus,sfxBus,started=false,timer=null;
  let prefs={music:true,sfx:true};try{const p=JSON.parse(localStorage.getItem('festa-som')||'null');if(p)prefs=p}catch(e){}
@@ -635,8 +654,8 @@ function goTo(i){SND.play('warp');const cands=[];for(const f of [.3,.5,.15,.7])c
 let ACC=0,LT=0;function loop(n){n=n||performance.now();if(!LT)LT=n;ACC+=Math.min(n-LT,120);LT=n;let k=0;while(ACC>=14.7&&k<6){FR++;step();stepNPC();stepVendors();ACC-=16.667;k++}if(k>=6)ACC=0;if(k&&(MOB?(panel.classList.contains('open')?FR%4<k:FR%2<k):true))draw();requestAnimationFrame(loop)}
 function placeHint(){const mb=document.querySelector('.minibox'),he=document.getElementById('hint')||document.querySelector('.hint'),jo=document.getElementById('joy');if(!mb)return;const base=innerHeight-mb.getBoundingClientRect().top;BOTH=base+(innerWidth<640?34:0);if(he)he.style.bottom=(base+(innerWidth<640?32:40))+'px';document.documentElement.style.setProperty('--toastb',(base+(innerWidth<640?130:92))+'px');if(jo)jo.style.bottom=(base+30)+'px'}
 try{const ro=new ResizeObserver(()=>{const tp=document.querySelector('.top');if(tp)TOPH=tp.offsetHeight||60;document.documentElement.style.setProperty('--toph',TOPH+'px');const co=document.getElementById('corner');if(co)co.style.top=(TOPH+10)+'px';placeHint()});ro.observe(document.querySelector('.top'));ro.observe(document.querySelector('.minibox'))}catch(e){}addEventListener('resize',placeHint);setTimeout(placeHint,300);
-document.getElementById('upd').textContent='Última atualização em '+D.updated;
-let VIS=null;function visitas(){fetch('https://euzodesigner.goatcounter.com/counter/TOTAL.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j)return;const n=+String(j.count).replace(/\D/g,'');if(!n)return;VIS=n;document.getElementById('upd').textContent='Última atualização em '+D.updated+' · '+n.toLocaleString('pt-BR')+(n===1?' visita':' visitas')}).catch(()=>{})}
+document.getElementById('upd').textContent=updTxt(0);
+let VIS=null;function visitas(){fetch('https://euzodesigner.goatcounter.com/counter/TOTAL.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j)return;const n=+String(j.count).replace(/\D/g,'');if(!n)return;VIS=n;document.getElementById('upd').textContent=updTxt(n)}).catch(()=>{})}
 if(/github\.io$/.test(location.hostname)){setTimeout(visitas,2500);setInterval(visitas,300000)}
 /* categoria global */
 let CAT=-1;
@@ -663,7 +682,7 @@ function renderFesta(){const n=spNow();ph.style.background=INK;ph.style.color=CR
 
 const panel=document.getElementById('panel'),ph=document.getElementById('ph'),pb=document.getElementById('pb');
 let view=null,mode='todos',filt='',RV=null,pcat=-1,cfilt='',psort='az';
-RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611161651').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
+RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611161716').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
 const SPN=['#6cc28e','#ef5054','#4a1d1a','#f2a33a','#2f7d4f','#c43a3e','#8a5a44','#e6c84c'];
 const score=b=>{const r=b[6][1],n=b[6][2];return (r*n+3.8*200)/(n+200)};
 const rated=b=>b[6]&&b[6][1]>0&&b[6][2]>=10;
@@ -681,6 +700,10 @@ const PROGI={};(D.prog||[]).forEach(p=>{const tx=J2((p.t||'')+' '+(p.d||'')+' '+
 const KEYMAP={};PUB.forEach((p,pk)=>p.b.forEach((b,i)=>KEYMAP[p.n+'|'+b[0]]=[pk,i]));
 CART=CART.filter(k=>KEYMAP[k]);
 let COMPREI=[];try{COMPREI=JSON.parse(localStorage.getItem('festa-comprei')||'[]')}catch(e){}
+let DESEJO=[];try{DESEJO=JSON.parse(localStorage.getItem('festa-desejos')||'[]')}catch(e){}
+const isDes=(pk,i)=>DESEJO.includes(ckey(pk,i));
+function togDes(pk,i){const k=ckey(pk,i);if(DESEJO.includes(k)){DESEJO=DESEJO.filter(x=>x!==k);SND.play('drop')}else{DESEJO.push(k);SND.play('coin');if(DESEJO.length===1)PASS.toast('<b>♥ Guardado nos desejos</b> · fica separado da cesta. Veja tudo em Cesta → Desejos')}try{localStorage.setItem('festa-desejos',JSON.stringify(DESEJO))}catch(e){}desBadge()}
+function desBadge(){const b=document.getElementById('bcart');if(b)b.dataset.des=DESEJO.length||''}
 const inCart=(pk,i)=>CART.includes(ckey(pk,i));
 function saveCart(){try{localStorage.setItem('festa-cesta',JSON.stringify(CART))}catch(e){};cartBadge()}
 function toggleCart(pk,i){if(!inCart(pk,i)){fxJump();try{const b=PUB[pk].b[i];if(window.goatcounter&&goatcounter.count&&/github\.io$/.test(location.hostname))goatcounter.count({path:'cesta/'+(b[8]||h32(ckey(pk,i)).toString(36)),title:b[0]+' · '+PUB[pk].n,event:true})}catch(e){}}setTimeout(()=>PASS.check(),60);const k=ckey(pk,i);if(CART.includes(k)){CART=CART.filter(x=>x!==k);SND.play('drop')}else{CART.push(k);SND.play('coin')}saveCart()}
@@ -690,7 +713,7 @@ function covD(b,pk){const sk=b[6],il=ilhaOf(pk),dd=sk&&il&&DET[il.id];return sk&
 function covUrl(b,sz){if(b[6]&&b[6][3]){const u='https://skoob.s3.amazonaws.com/livros/'+b[6][3];return sz==='S'?u.replace(/B\.jpg$/,'P.jpg'):u}const d=String(b[8]||'').replace(/\D/g,'');return d.length>=10?'https://covers.openlibrary.org/b/isbn/'+d+'-'+sz+'.jpg?default=false':''}
 function covImg(b,sz){const u=covUrl(b,sz);return u?'<img class="cov" src="'+u+'" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="if(this.dataset.f||!/P\.jpg$/.test(this.src))this.remove();else{this.dataset.f=1;this.src=this.src.replace(/P\.jpg$/,\'B.jpg\')}" onload="if(this.naturalWidth<20)this.remove()">':''}
 const ilhaOf=pk=>IS.find(x=>x.id===PUB[pk].ilha);
-function bookRow(pk,i,showPub){const b=PUB[pk].b[i],sk=b[6],on=inCart(pk,i);return '<div class="bkw"><button class="bk" data-p="'+pk+'" data-i="'+i+'"><span class="sp" style="background:'+SPN[h32(b[0])%SPN.length]+'"><i></i>'+'</span><span><h3>'+esc(b[0])+(isNovo(pk,b)?'<em class="nv">novo</em>':'')+'</h3><small>'+esc(b[1]||'—')+(showPub?' · '+esc(PUB[pk].n):'')+'</small>'+(sk&&sk[1]&&sk[2]?'<small>'+stars(sk[1])+' · '+sk[2].toLocaleString('pt-BR')+(sk[2]===1?' leitor':' leitores')+' no Skoob</small>':'')+'</span><span class="pr">'+(price(b)?(b[3]&&b[2]&&b[3]!==b[2]?'<s>'+esc(b[2])+'</s>':'')+'<b>'+esc(price(b))+'</b>':'<small>preço a<br>confirmar</small>')+'</span></button><button class="add'+(on?' on':'')+'" data-p="'+pk+'" data-i="'+i+'" aria-label="'+(on?'Tirar da cesta':'Colocar na cesta')+'" title="'+(on?'Tirar da cesta':'Colocar na cesta')+'">'+(on?'✓':'+')+'</button></div>'}
+function bookRow(pk,i,showPub){const b=PUB[pk].b[i],sk=b[6],on=inCart(pk,i);return '<div class="bkw"><button class="bk" data-p="'+pk+'" data-i="'+i+'"><span class="sp" style="background:'+SPN[h32(b[0])%SPN.length]+'"><i></i>'+'</span><span><h3>'+esc(b[0])+(isNovo(pk,b)?'<em class="nv">novo</em>':'')+'</h3><small>'+esc(b[1]||'—')+(showPub?' · '+esc(PUB[pk].n):'')+'</small>'+(sk&&sk[1]&&sk[2]?'<small>'+stars(sk[1])+' · '+sk[2].toLocaleString('pt-BR')+(sk[2]===1?' leitor':' leitores')+' no Skoob</small>':'')+'</span><span class="pr">'+(price(b)?(b[3]&&b[2]&&b[3]!==b[2]?'<s>'+esc(b[2])+'</s>':'')+'<b>'+esc(price(b))+'</b>':'<small>preço a<br>confirmar</small>')+'</span></button><button class="dsj'+(isDes(pk,i)?' on':'')+'" data-dsj="'+pk+'.'+i+'" aria-pressed="'+isDes(pk,i)+'" aria-label="'+(isDes(pk,i)?'Tirar dos desejos':'Guardar nos desejos')+'" title="'+(isDes(pk,i)?'Tirar dos desejos':'Guardar nos desejos (sem compromisso)')+'">'+(isDes(pk,i)?'♥':'♡')+'</button><button class="add'+(on?' on':'')+'" data-p="'+pk+'" data-i="'+i+'" aria-label="'+(on?'Tirar da cesta':'Colocar na cesta')+'" title="'+(on?'Tirar da cesta':'Colocar na cesta')+'">'+(on?'✓':'+')+'</button></div>'}
 function head(color,small,title,sub){ph.style.background=color;ph.style.color=color===COL.verde?INK:CREAM;ph.innerHTML='<div class="row"><div><small>'+small+'</small><h2>'+esc(title)+'</h2></div><button class="x" id="cl" aria-label="Fechar">✕</button></div>'+(sub?'<p>'+sub+'</p>':'');document.getElementById('cl').onclick=closeP}
 let ILIM=80;const ILC={};function openIsland(i){try{if(!ILC[i.id]&&window.goatcounter&&goatcounter.count&&/github\.io$/.test(location.hostname)){ILC[i.id]=1;goatcounter.count({path:'ilha/'+pad2(i.id),title:'Ilha '+pad2(i.id),event:true})}}catch(e){}ILIM=innerWidth<640?60:150;SND.play('open');openI=i;markSeen(i);setTimeout(()=>PASS.stamp(i),400);view={t:'ilha',i,pk:i.p.length===1?i.p[0]:null};mode='todos';filt='';pcat=CAT;psort='az';panel.classList.add('open');render()}
 function openCart(){SND.play('open');openI=openI||{cart:1};view={t:'cesta'};cfilt='';panel.classList.add('open');render()}
@@ -707,7 +730,8 @@ const SEM='<span class="sem">ainda sem estoque</span>';
 function catSelect(id,val,counts){return '<select class="csel" id="'+id+'" aria-label="Categoria"><option value="-1">Todas as categorias</option>'+D.cats.map((n,k)=>counts[k]?'<option value="'+k+'"'+(val==k?' selected':'')+'>'+esc(n)+' ('+counts[k]+')</option>':'').join('')+'</select>'}
 function render(){render0();panelCtl();if(view&&view.t==='livro'&&view.pk!=null)seenAdd(view.pk,view.bi)}
 function render0(){const v=view;
- if(v.t==='cesta'){renderCart();return}
+ if(v.t==='cesta'){renderCart();wireTabs();return}
+ if(v.t==='desejos'){renderDesejos();return}
  if(v.t==='festa'){renderFesta();return}
  if(v.t==='lista'){renderList();return}
  if(v.t==='caca'){renderCaca();return}
@@ -747,7 +771,7 @@ function render0(){const v=view;
   head(c,esc(p.n)+' · Ilha '+pad2(i.id),b[0],esc(b[1]||''));
   cacaCheck(v.pk,v.bi);
   let h=(v.surp?'<div class="surp"><b>Surpresa!</b> Um livro bem avaliado'+(CAT>=0?' de '+esc(D.cats[CAT]):'')+(BUDGET>0?' que cabe no seu orçamento':'')+'. <button id="again">Sortear outro</button></div>':'')+'<button class="back" id="bk">← voltar para a lista</button><div class="det">'+(covD(b,v.pk)?'<div class="bcov"><img src="'+covD(b,v.pk)+'" width="110" decoding="async" alt="Capa de '+esc(b[0])+'" referrerpolicy="no-referrer" onerror="this.parentNode.remove()" onload="if(this.naturalWidth<20)this.parentNode.remove()"></div>':'')+(b[4]?'<p class="note">'+esc(D.cats[b[7]])+' · '+esc(b[4])+'</p>':'')+'<div class="chips">'+(price(b)?'<span class="chip y">Na Festa: '+esc(price(b))+'</span>':'<span class="chip">Preço a confirmar</span>')+(b[3]&&b[2]&&b[3]!==b[2]?'<span class="chip">Preço normal: '+esc(b[2])+'</span>'+(num(b[2])?'<span class="chip off">−'+Math.round((1-num(b[3])/num(b[2]))*100)+'%</span>':''):'')+(sk?'<span class="chip">Skoob '+(sk[1]?stars(sk[1])+' · ':'sem nota · ')+sk[2].toLocaleString('pt-BR')+' leitores</span>':'<span class="chip">Não encontrado no Skoob</span>')+'</div>'+
-  '<button class="cartbtn'+(on?' on':'')+'" id="cb">'+(on?'✓ Está na sua cesta · tirar':'Colocar na cesta')+'</button>'+
+  '<div class="cbrow"><button class="cartbtn'+(on?' on':'')+'" id="cb">'+(on?'✓ Está na sua cesta · tirar':'Colocar na cesta')+'</button><button class="dsjbig'+(isDes(v.pk,v.bi)?' on':'')+'" data-dsj="'+v.pk+'.'+v.bi+'" aria-pressed="'+isDes(v.pk,v.bi)+'">'+(isDes(v.pk,v.bi)?'♥ Nos desejos':'♡ Desejo')+'</button></div>'+
   '<h5>Comparar preço fora da Festa</h5><div class="links cmp"><a class="alt" href="https://www.amazon.com.br/s?k='+encodeURIComponent(b[8]||b[0]+' '+(b[1]||''))+'" target="_blank" rel="noopener">Amazon</a><a class="alt" href="https://www.estantevirtual.com.br/busca?q='+encodeURIComponent(b[8]||b[0])+'" target="_blank" rel="noopener">Estante Virtual</a><a class="alt" href="https://www.google.com/search?tbm=shop&q='+encodeURIComponent(b[8]||b[0])+'" target="_blank" rel="noopener">Google Shopping</a></div>'+'<div class="links">'+(sk?'<a href="https://www.skoob.com.br/pt/book/'+sk[0]+'/reviews" target="_blank" rel="noopener">Ver no Skoob</a>':'')+(bookLink(b,v.pk,v.bi)?'<a class="alt" href="'+esc(bookLink(b,v.pk,v.bi))+'" target="_blank" rel="noopener">Página do livro</a>':'')+'</div>';
   const dd=det(ilhaOf(v.pk));const syn=sk&&dd?dd.syn[sk[0]]:null;
   if(syn)h+='<h5>Sinopse</h5><p class="syn'+(syn.length>420?' cut':'')+'" id="syn">'+esc(syn)+'</p>'+(syn.length>420?'<button class="more" id="more">Ler sinopse inteira</button>':'')+'<p class="note">Sinopse do Skoob.</p>';
@@ -765,14 +789,25 @@ function wire(){const v=view;wireVendor();{const mb=document.getElementById('bmo
  pb.querySelectorAll('.add').forEach(el=>el.onclick=()=>{const st=pb.scrollTop;toggleCart(+el.dataset.p,+el.dataset.i);render();pb.scrollTop=st});
  if(!(document.activeElement&&document.activeElement.id==='ff'))pb.scrollTop=0}
 function cartItems(){return CART.map(k=>KEYMAP[k]).filter(Boolean).map(([pk,i])=>({pk,i,b:PUB[pk].b[i],il:ilhaOf(pk)}))}
+function cartTabs(on){return '<div class="ctabs" role="tablist"><button role="tab" data-tab="cesta" aria-selected="'+(on==='cesta')+'">Cesta · '+CART.length+'</button><button role="tab" data-tab="desejos" aria-selected="'+(on==='desejos')+'">♥ Desejos · '+DESEJO.length+'</button></div>'}
+function wireTabs(){ph.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{SND.play('blip');view={t:b.dataset.tab};render();pb.scrollTop=0})}
+function renderDesejos(){const items=DESEJO.map(k=>KEYMAP[k]).filter(Boolean).map(([pk,i])=>({pk,i,b:PUB[pk].b[i],il:ilhaOf(pk)}));const tot=items.reduce((s,x)=>s+num(price(x.b)),0);
+ ph.style.background='#ef5054';ph.style.color=CREAM;ph.innerHTML=cartTabs('desejos')+'<div class="row"><div><small>Lista de desejos</small><h2>'+items.length+(items.length===1?' livro':' livros')+'</h2></div><button class="x" id="cl" aria-label="Fechar">✕</button></div><p>Sem compromisso: só para guardar ideias. Somam '+brl(tot)+'.</p>';document.getElementById('cl').onclick=closeP;wireTabs();
+ if(!items.length){pb.innerHTML='<p class="empty">Ainda não tem nada aqui. Toque no <b>♡</b> ao lado de qualquer livro para guardar como desejo, sem colocar na cesta.</p>';return}
+ const by={};items.forEach(x=>(by[x.il.id]=by[x.il.id]||[]).push(x));let h='<div class="cact"><button id="dall">Passar todos para a cesta</button></div>';
+ Object.keys(by).map(Number).sort((a,b)=>a-b).forEach(id=>{const il=IS.find(x=>x.id===id);h+='<div class="cgrp"><div class="ctit"><span class="dot" style="background:'+COL[il.sp]+'"></span><b>Ilha '+pad2(id)+'</b> · '+NAME[il.sp]+'</div>'+by[id].map(x=>bookRow(x.pk,x.i,true)).join('')+'</div>'});
+ pb.innerHTML=h;
+ pb.querySelectorAll('.bk').forEach(el=>el.onclick=()=>{SND.play('book');const pk=+el.dataset.p;view={t:'livro',i:ilhaOf(pk),pk,bi:+el.dataset.i,from:{t:'desejos',st:pb.scrollTop}};render();pb.scrollTop=0});
+ pb.querySelectorAll('.add').forEach(el=>el.onclick=()=>{const st=pb.scrollTop;toggleCart(+el.dataset.p,+el.dataset.i);render();pb.scrollTop=st});
+ document.getElementById('dall').onclick=()=>{items.forEach(x=>{if(!inCart(x.pk,x.i))CART.push(ckey(x.pk,x.i))});saveCart();SND.play('fanfare');fxJump();PASS.check();render()}}
 function renderCart(){const items=cartItems();const tot=items.reduce((s,x)=>s+num(price(x.b)),0);const semPreco=items.filter(x=>!num(price(x.b))).length;
  const pubs=[...new Set(items.map(x=>x.pk))].sort((a,b)=>PUB[a].n.localeCompare(PUB[b].n));
  const shown=items.filter(x=>!cfilt||PUB[x.pk].n===cfilt);
  const nIl=new Set(items.map(x=>x.il.id)).size;
- ph.style.background=INK;ph.style.color=CREAM;ph.innerHTML='<div class="row"><div><small>Minha cesta</small><h2>'+brl(tot)+'</h2></div><button class="x" id="cl" aria-label="Fechar">✕</button></div><p>'+items.length+(items.length===1?' livro':' livros')+' · '+nIl+(nIl===1?' ilha':' ilhas')+(semPreco?' · '+semPreco+' sem preço ainda':'')+'</p>';document.getElementById('cl').onclick=closeP;
+ ph.style.background=INK;ph.style.color=CREAM;ph.innerHTML=cartTabs('cesta')+'<div class="row"><div><small>Minha cesta</small><h2>'+brl(tot)+'</h2></div><button class="x" id="cl" aria-label="Fechar">✕</button></div><p>'+items.length+(items.length===1?' livro':' livros')+' · '+nIl+(nIl===1?' ilha':' ilhas')+(semPreco?' · '+semPreco+' sem preço ainda':'')+'</p>';document.getElementById('cl').onclick=closeP;
  if(!items.length){pb.innerHTML='<p class="empty">Sua cesta está vazia. Abra uma ilha, escolha um livro e toque em <b>+</b> para colocar aqui. Cada livro vai para a pilha da sua personagem.</p><div class="cact"><button id="bsurp">Me surpreenda</button></div>';document.getElementById('bsurp').onclick=()=>surprise();return}
  const norm0=items.reduce((t,x)=>t+(num(x.b[2])||num(price(x.b))),0),eco=norm0-tot;const got=items.filter(x=>COMPREI.includes(ckey(x.pk,x.i))),gotT=got.reduce((s,x)=>s+num(price(x.b)),0),gotE=got.reduce((s,x)=>s+(num(x.b[2])||num(price(x.b))),0)-gotT;const cop=(id,a,b)=>'<button class="cop" id="'+id+'"><b>'+a+'</b><small>'+b+'</small></button>';
- let h='<div class="orc"><label>Meu orçamento <span>R$</span><input id="orc" inputmode="decimal" placeholder="ex.: 300" value="'+(BUDGET||'')+'"></label>'+(BUDGET?'<div class="obar'+(tot>BUDGET?' over':'')+'"><i style="width:'+Math.min(100,tot/BUDGET*100)+'%"></i></div><p class="'+(tot>BUDGET?'warn':'note')+'">'+(tot>BUDGET?'Passou '+brl(tot-BUDGET)+' do orçamento':'Ainda dá para gastar '+brl(BUDGET-tot))+'</p>':'')+(eco>0?'<p class="note">Economia em relação ao preço normal: <b>'+brl(eco)+'</b></p>':'')+(got.length?'<p class="note pgsum">Já peguei <b>'+got.length+' de '+items.length+'</b> · '+brl(gotT)+' no caixa'+(gotE>0?' · economizei '+brl(gotE):'')+'</p>':'')+(BUDGET?'<button id="bmelhor" class="linkb">Montar a melhor pilha que cabe em '+brl(BUDGET)+'</button><div id="melhor"></div>':'')+'</div>'+
+ let tools='<div class="orc"><label>Meu orçamento <span>R$</span><input id="orc" inputmode="decimal" placeholder="ex.: 300" value="'+(BUDGET||'')+'"></label>'+(BUDGET?'<div class="obar'+(tot>BUDGET?' over':'')+'"><i style="width:'+Math.min(100,tot/BUDGET*100)+'%"></i></div><p class="'+(tot>BUDGET?'warn':'note')+'">'+(tot>BUDGET?'Passou '+brl(tot-BUDGET)+' do orçamento':'Ainda dá para gastar '+brl(BUDGET-tot))+'</p>':'')+(eco>0?'<p class="note">Economia em relação ao preço normal: <b>'+brl(eco)+'</b></p>':'')+(got.length?'<p class="note pgsum">Já peguei <b>'+got.length+' de '+items.length+'</b> · '+brl(gotT)+' no caixa'+(gotE>0?' · economizei '+brl(gotE):'')+'</p>':'')+(BUDGET?'<button id="bmelhor" class="linkb">Montar a melhor pilha que cabe em '+brl(BUDGET)+'</button><div id="melhor"></div>':'')+'</div>'+
  '<div class="cops"><h5>Para levar na Festa</h5>'+
  cop('bmodo2','Modo na Festa','Lista de compras por ilha, para ir marcando o que você pegou')+
  cop('bmap','Mapa do roteiro','O caminho mais curto pela tenda passando pelas suas ilhas')+
@@ -784,13 +819,17 @@ function renderCart(){const items=cartItems();const tot=items.reduce((s,x)=>s+nu
  '<h5>Outros</h5>'+
  cop('bsurp','Me surpreenda','Coloca na cesta um livro bem avaliado que ainda cabe no orçamento')+
  cop('bclear','Esvaziar cesta','Tira todos os livros da cesta (pede confirmação)')+'</div>';
+ let h='<div class="ctop">'+(BUDGET?'<div class="cbud"><span>'+(tot>BUDGET?'Passou '+brl(tot-BUDGET)+' do orçamento':'Faltam '+brl(BUDGET-tot)+' de '+brl(BUDGET))+'</span><div class="obar'+(tot>BUDGET?' over':'')+'"><i style="width:'+Math.min(100,tot/BUDGET*100)+'%"></i></div></div>':'')+(got.length?'<p class="cpg">✓ Já peguei '+got.length+' de '+items.length+'</p>':'')+
+  '<div class="cquick"><button data-qa="bmodo2">Modo na Festa</button><button data-qa="bbolso">Mapa de bolso</button><button data-qa="bwa">WhatsApp</button><button data-qa="ctools">Mais ferramentas ↓</button></div></div>';
  if(pubs.length>1)h+='<h5>Filtrar por editora</h5><div class="filt">'+['',...pubs.map(pk=>PUB[pk].n)].map(n=>'<button data-c="'+esc(n)+'" aria-selected="'+(cfilt===n)+'">'+(n?esc(n):'Todas')+'</button>').join('')+'</div>';
  const by={};shown.forEach(x=>(by[x.il.id]=by[x.il.id]||[]).push(x));
  const RTc=routeIds(Object.keys(by).map(Number));if(RTc.ids.length>1&&!cfilt)h+='<p class="note rtn">Ilhas na ordem da rota mais curta, entrando pela <b>'+RTc.door.n+'</b>.</p>';
  RTc.ids.forEach(id=>{const il=IS.find(x=>x.id===id),xs=by[id],sub=xs.reduce((s,x)=>s+num(price(x.b)),0);
   h+='<div class="cgrp"><div class="ctit"><span class="dot" style="background:'+COL[il.sp]+'"></span><b>Ilha '+pad2(id)+'</b> · '+NAME[il.sp]+'<span>'+brl(sub)+'</span></div>'+xs.map(x=>{const kk=ckey(x.pk,x.i),pg=COMPREI.includes(kk);return '<div class="citem'+(pg?' pg':'')+'"><button class="pgb" data-pg="'+esc(kk)+'" aria-pressed="'+pg+'" title="'+(pg?'Já peguei':'Marcar como pego')+'">'+(pg?'✓':'')+'</button><button class="bk2" data-p="'+x.pk+'" data-i="'+x.i+'"><b>'+esc(x.b[0])+'</b><small>'+esc(PUB[x.pk].n)+(x.b[1]?' · '+esc(x.b[1]):'')+'</small></button><span class="cp">'+(price(x.b)?esc(price(x.b)):'a confirmar')+'</span><button class="rm" data-k="'+esc(ckey(x.pk,x.i))+'" aria-label="Remover da cesta">✕</button></div>'}).join('')+'</div>'});
  if(cfilt)h+='<p class="note">Mostrando só '+esc(cfilt)+': '+brl(shown.reduce((s,x)=>s+num(price(x.b)),0))+'</p>';
+ h+='<div id="ctools" class="ctools"><h4>Orçamento e ferramentas</h4>'+tools+'</div>';
  pb.innerHTML=h;
+ pb.querySelectorAll('[data-qa]').forEach(q=>q.onclick=()=>{const id=q.dataset.qa;if(id==='ctools'){document.getElementById('ctools').scrollIntoView({behavior:'smooth',block:'start'});return}document.getElementById(id).click()});
  pb.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{SND.play('blip');cfilt=b.dataset.c;renderCart()});
  pb.querySelectorAll('.rm').forEach(b=>b.onclick=()=>{CART=CART.filter(k=>k!==b.dataset.k);SND.play('drop');saveCart();if(cfilt&&!cartItems().some(x=>PUB[x.pk].n===cfilt))cfilt='';renderCart()});
  pb.querySelectorAll('.bk2').forEach(el=>el.onclick=()=>{SND.play('book');const pk=+el.dataset.p;view={t:'livro',i:ilhaOf(pk),pk,bi:+el.dataset.i,from:{t:'cesta',st:pb.scrollTop}};render();pb.scrollTop=0});
@@ -1488,15 +1527,50 @@ function styl(sp,t){if(sp==='marrom'){t=t.replace(/!+$/,'').replace(/!\s+/g,', '
 const VTALK={};
 function vendorBox(i){const P=PERS[i.sp],a=vendorAV(i),who=a.tipo==='menino'?'Vendedor':'Vendedora',t=VTALK[i.id];
  return '<div class="vbox vb-'+i.sp+'"><canvas class="vav" width="112" height="128" data-v="'+i.id+'"></canvas><div class="vtx"><small>'+who+' da ilha · '+P.tag+'</small><p class="vsay">'+esc(t?t.say:(memLines(i)[0]||pick(P.ola)))+'</p>'+
-  '<div class="vq">'+[['sur','Me indica um livro']].map(([k,l])=>'<button data-q="'+k+'"'+(t&&t.q===k?' aria-pressed="true"':'')+'>'+l+'</button>').join('')+'</div></div>'+
-  (t&&t.pk!=null?'<div class="vans">'+bookRow(t.pk,t.bi,i.p.length>1)+'</div>':'')+'</div>'}
+  '<div class="vq">'+[['sur','Me indica um livro'],['low','O mais barato'],['top','O mais bem avaliado'],['kid','Tem pra criança?'],['like','Parecido com a minha cesta']].map(([k,l])=>'<button data-q="'+k+'"'+(t&&t.q===k?' aria-pressed="true"':'')+'>'+l+'</button>').join('')+'</div>'+
+  '<form class="vask" autocomplete="off"><input name="q" maxlength="80" placeholder="Pergunte: “tem Clarice?”, “poesia até R$ 30”" aria-label="Pergunte ao vendedor" value="'+esc(t&&t.ask||'')+'"><button type="submit">Perguntar</button></form></div>'+
+  (()=>{if(!t)return '';const res=t.res||(t.pk!=null?[[t.pk,t.bi]]:[]);return (res.length?'<div class="vans">'+res.map(([pk,bi])=>bookRow(pk,bi,true)).join('')+'</div>':'')+(t.go?'<div class="vgo">'+t.go.map(id=>'<button data-goil="'+id+'">Ir à Ilha '+pad2(id)+' →</button>').join('')+'</div>':'')})()+'</div>'}
+/* ===== perguntar ao vendedor (sem IA: palavras-chave) ===== */
+const ASKCAT=[[/\b(crianca|criancas|infantil|infanto|filh[oa]s?|sobrinh[oa]s?|bebe|kids|juvenil|adolescente)\b/,'Infantil e juvenil'],[/\b(hq|hqs|quadrinhos?|manga|mangas|gibi)\b/,'HQ e mangá'],[/\b(psicolog\w*|psicanalise|freud|lacan|terapia)\b/,'Psicologia e psicanálise'],[/\bfilosof\w*\b/,'Filosofia'],
+ [/\b(sociolog\w*|politica|ciencias sociais|antropolog\w*)\b/,'Ciências sociais e política'],[/\b(comunicacao|jornalismo|editorial)\b/,'Comunicação e livro'],[/\b(educacao|pedagog\w*|professor\w*|escola)\b/,'Educação'],[/\b(poesia|poemas?|poeta|poetas|versos?)\b/,'Poesia'],
+ [/\b(linguistica|teoria literaria|critica literaria)\b/,'Teoria literária e linguística'],[/\bhistori\w*\b/,'História'],[/\b(romances?|ficcao|contos?|literatura|cronicas?|novela)\b/,'Literatura'],[/\b(arte|artes|pintura|fotografia|cinema|musica|teatro|design)\b/,'Artes'],
+ [/\b(arquitetura|urbanismo|cidades?)\b/,'Arquitetura e urbanismo'],[/\b(ciencias?|saude|medicina|biologia|fisica|quimica|matematica)\b/,'Ciências e saúde'],[/\b(economia|negocios|direito|juridico|administracao)\b/,'Economia, negócios e direito'],
+ [/\b(religiao|espiritualidade|biblia)\b/,'Religião e espiritualidade'],[/\b(biografias?|memorias?|autobiografia)\b/,'Biografias e memórias'],[/\b(autoajuda|comportamento)\b/,'Autoajuda e comportamento'],[/\b(gastronomia|culinaria|receitas?|viage\w*)\b/,'Gastronomia e viagem']];
+const ASKSTOP=new Set('tem tens teria voce vc voces o a os as um uma uns umas de do da dos das e em no na nos nas pra pro para por com sem que qual quais quero queria procuro procurando busco algum alguma alguns algumas livro livros sobre me indica indicar recomenda recomendacao dica eu meu minha mais menos muito bem bom boa coisa coisas aqui ai ali isso esse essa este esta tipo assim sei la oi ola obrigado obrigada valeu ate reais real r preco precos custa barato barata baratos baratas caro conta melhor melhores avaliado avaliados avaliada nota notas top presente presentes dar novo novos novidade novidades lancamento lancamentos resenha resenhas leitura ler lido gosto gosta gostaria seria mae pai namorado namorada amigo amiga irma irmao avo tia tio esposa marido chefe ele ela dele dela'.split(' '));
+function askParse(q){const s=J2(q).replace(/[^\w\s$]/g,' ');const o={};
+ const m=s.match(/(?:ate|menos de|abaixo de|max\w*|no maximo|por)\s*r?\$?\s*(\d{1,4})/)||s.match(/r?\$\s*(\d{1,4})/)||s.match(/(\d{1,4})\s*(?:reais|conto|pila)/);if(m)o.max=+m[1];
+ if(/\b(barat\w*|em conta|economi\w*|mais barato)\b/.test(s))o.sort='price';
+ if(/\b(melhor\w*|bem avaliad\w*|nota|top|bom|boa|classico\w*|imperdive\w*)\b/.test(s))o.sort=o.sort||'score';
+ if(/\bpresente\w*\b/.test(s)){o.gift=1;o.sort=o.sort||'score'}
+ if(/\b(novo|novos|novidade\w*|lancament\w*|chegou)\b/.test(s))o.novo=1;
+ if(/\bresenha\w*\b/.test(s))o.rv=1;
+ for(const [re,c] of ASKCAT)if(re.test(s)){o.cat=D.cats.indexOf(c);break}
+ o.terms=s.split(/\s+/).filter(w=>w.length>2&&!ASKSTOP.has(w)&&!/^\d+$/.test(w)&&!ASKCAT.some(([re])=>re.test(w)));return o}
+function askFind(books,o){const pr=b=>num(price(b));let L=books.filter(([pk,bi,b])=>(o.cat==null||o.cat<0||b[7]==o.cat)&&(!o.max||(pr(b)>0&&pr(b)<=o.max))&&(!o.novo||isNovo(pk,b))&&(!o.rv||hasRv(b))&&(!o.gift||(rated(b)&&score(b)>=3.9)));
+ if(o.terms.length){const hay=b=>J2(b[0]+' '+b[1]+' '+(b[4]||''));const all=L.filter(([,,b])=>o.terms.every(w=>hay(b).includes(w)));L=all.length?all:L.filter(([,,b])=>o.terms.some(w=>w.length>3&&hay(b).includes(w)))}
+ const sc=b=>rated(b)?score(b):0;L.sort((x,y)=>o.sort==='price'?pr(x[2])-pr(y[2]):(sc(y[2])-sc(x[2])||pr(x[2])-pr(y[2])));return L}
+function askVendor(i,q){const P=PERS[i.sp];const o=askParse(q);const here=[];i.p.forEach(pk=>PUB[pk].b.forEach((b,bi)=>here.push([pk,bi,b])));
+ const vago=o.cat==null&&!o.max&&!o.terms.length&&!o.novo&&!o.rv&&!o.gift&&!o.sort;
+ if(vago){VTALK[i.id]={q:'ask',ask:q,say:styl(i.sp,pick(['Não entendi bem! Tenta assim: “tem poesia até 30?” ou “tem Clarice?”','Me fala um autor, um assunto ou um preço que eu procuro!'])),res:[]};return}
+ const R=askFind(here,o).slice(0,3);const desc=[o.cat>=0&&o.cat!=null?D.cats[o.cat].toLowerCase():'',o.terms.length?'“'+o.terms.join(' ')+'”':'',o.max?'até '+brl(o.max):''].filter(Boolean).join(', ');
+ if(R.length){VTALK[i.id]={q:'ask',ask:q,say:styl(i.sp,pick(['Tenho, sim! Olha o que eu separei','Achei aqui! Separei estes','Tem, sim! Dá uma olhada nestes'])+(desc?' ('+desc+')':'')),res:R.map(x=>[x[0],x[1]])};PASS.papo(i.id);return}
+ const all=[];PUB.forEach((p,pk)=>p.b.forEach((b,bi)=>all.push([pk,bi,b])));const F=askFind(all,o);const by={};F.forEach(x=>{const il=ilhaOf(x[0]);if(il&&il!==i)(by[il.id]=by[il.id]||[]).push(x)});const top=Object.entries(by).sort((a,b)=>b[1].length-a[1].length).slice(0,2);
+ if(top.length){const [id,xs]=top[0];VTALK[i.id]={q:'ask',ask:q,say:styl(i.sp,'Aqui não tenho, mas a Ilha '+pad2(+id)+' tem '+xs.length+(xs.length===1?' livro assim!':' livros assim!')+(top[1]?' A Ilha '+pad2(+top[1][0])+' também tem.':'')),res:xs.slice(0,2).map(x=>[x[0],x[1]]),go:top.map(([id])=>+id)};PASS.papo(i.id);return}
+ VTALK[i.id]={q:'ask',ask:q,say:styl(i.sp,pick(['Puxa, não achei nada assim na Festa.','Hmm, isso a Festa não tem. Tenta outro assunto!'])),res:[]}}
+function askLike(i){const it=cartItems();if(!it.length){VTALK[i.id]={q:'like',say:styl(i.sp,'Sua cesta ainda tá vazia! Escolhe um livro e eu acho parecidos.'),res:[]};return}
+ const cc={},au={};it.forEach(x=>{cc[x.b[7]]=(cc[x.b[7]]||0)+1;const a=J2(String(x.b[1]||'').split(/[;,]/)[0]).trim();if(a)au[a]=1});const cat=+Object.entries(cc).sort((a,b)=>b[1]-a[1])[0][0];
+ const here=[];i.p.forEach(pk=>PUB[pk].b.forEach((b,bi)=>{if(!inCart(pk,bi))here.push([pk,bi,b])}));const sc=b=>(rated(b)?score(b):0)+(au[J2(String(b[1]||'').split(/[;,]/)[0]).trim()]?2:0);
+ const R=here.filter(x=>x[2][7]==cat||au[J2(String(x[2][1]||'').split(/[;,]/)[0]).trim()]).sort((a,b)=>sc(b[2])-sc(a[2])).slice(0,3);
+ VTALK[i.id]={q:'like',say:styl(i.sp,R.length?'Você gosta de '+D.cats[cat].toLowerCase()+', né? Então leva esses:':'Aqui não tenho nada parecido com a sua cesta.'),res:R.map(x=>[x[0],x[1]])};PASS.papo(i.id)}
+
 function vendorAnswer(i,q){const P=PERS[i.sp];const L=[];i.p.forEach(pk=>PUB[pk].b.forEach((b,bi)=>L.push([pk,bi,b])));const pr=x=>num(price(x[2]));let pool=L.filter(x=>pr(x)>0),r=null;
  const best=a=>a.slice().sort((x,y)=>(rated(y[2])?score(y[2]):0)-(rated(x[2])?score(x[2]):0)||pr(x)-pr(y))[0];
  if(q==='p30')r=best(pool.filter(x=>pr(x)<=30));else if(q==='p50')r=best(pool.filter(x=>pr(x)<=50));else if(q==='top')r=best(L.filter(x=>rated(x[2])))||best(L);
  else if(q==='low')r=pool.sort((x,y)=>pr(x)-pr(y))[0];else{const g=L.filter(x=>rated(x[2])&&score(x[2])>=3.8);const s=g.length?g:L;r=s[Math.floor(Math.random()*s.length)]}
  const T=r?r[2][0]:'';VTALK[i.id]={q,say:r?P.ans[q](T)+(q==='top'&&rated(r[2])?' ★ '+r[2][6][1].toFixed(1).replace('.',','):''):P.ans.none,pk:r?r[0]:null,bi:r?r[1]:null};PASS.papo(i.id)}
 function wireVendor(){const v=view;if(!v||v.t!=='ilha')return;const i=v.i;
- pb.querySelectorAll('.vq [data-q]').forEach(b=>b.onclick=()=>{SND.play('blip');const q=b.dataset.q;vendorAnswer(i,q);if(q==='p30'||q==='p50'){mode=q;psort='pmenor'}else if(q==='top'){mode='top';psort='nota'}else if(q==='low'){mode='todos';psort='pmenor'}const st=pb.scrollTop;render();pb.scrollTop=st;const fb=pb.querySelector('.fbar');if(fb&&q!=='sur')setTimeout(()=>fb.scrollIntoView({behavior:'smooth',block:'start'}),60)});
+ {const f=pb.querySelector('.vask');if(f)f.onsubmit=e=>{e.preventDefault();const q=f.q.value.trim();if(!q)return;SND.play('blip');askVendor(i,q);const st=pb.scrollTop;render();pb.scrollTop=st;const vb=pb.querySelector('.vbox');if(vb)vb.scrollIntoView({block:'nearest'});try{if(window.goatcounter&&goatcounter.count&&/github\.io$/.test(location.hostname))goatcounter.count({path:'pergunta/'+J2(q).replace(/[^\w ]/g,'').trim().slice(0,40).replace(/ +/g,'-'),title:'Pergunta ao vendedor',event:true})}catch(e){}}}
+ pb.querySelectorAll('.vq [data-q]').forEach(b=>b.onclick=()=>{SND.play('blip');const q=b.dataset.q;if(q==='kid'||q==='like'){if(q==='kid')askVendor(i,'infantil');else askLike(i);VTALK[i.id].q=q;const st=pb.scrollTop;render();pb.scrollTop=st;return}vendorAnswer(i,q);if(q==='p30'||q==='p50'){mode=q;psort='pmenor'}else if(q==='top'){mode='top';psort='nota'}else if(q==='low'){mode='todos';psort='pmenor'}const st=pb.scrollTop;render();pb.scrollTop=st;const fb=pb.querySelector('.fbar');if(fb&&q!=='sur')setTimeout(()=>fb.scrollIntoView({behavior:'smooth',block:'start'}),60)});
  const cv2=pb.querySelector('canvas.vav');if(cv2){const g=cv2.getContext('2d');g.clearRect(0,0,112,128);g.save();g.translate(56,118);g.scale(2.2,2.2);drawAvatar(g,vendorAV(i),'down',0,0,0,0,false,'');g.restore()}
  const nt=document.getElementById('nvtg');if(nt)nt.onclick=()=>{const l=pb.querySelector('.nvl');l.hidden=!l.hidden;nt.textContent=l.hidden?'Ver os novos':'Esconder';SND.play('blip')};
  const nl=pb.querySelector('.nvl');if(nl&&!nt)nl.hidden=false}
@@ -1734,6 +1808,7 @@ function bolsoCard(){const items=cartItems();const by={};items.forEach(x=>(by[x.
 /* ===== sininho de estoque ===== */
 function sinoBtn(pk){const on=SINO.includes(PUB[pk].n);return '<button class="folb sinob'+(on?' on':'')+'" data-sino="'+pk+'" aria-pressed="'+on+'">'+(on?'🔔 Vou te avisar':'🔔 Avisar quando chegar')+'</button>'}
 function togSino(pk){const n=PUB[pk].n,was=SINO.includes(n);SINO=was?SINO.filter(x=>x!==n):[...SINO,n];try{localStorage.setItem('festa-sino',JSON.stringify(SINO))}catch(e){}SND.play(was?'drop':'coin');if(!was)PASS.toast('<b>Combinado!</b> Quando '+esc(n)+' mandar os livros, o jogo te avisa na próxima visita')}
+pb.addEventListener('click',e=>{const d=e.target.closest('[data-dsj]');if(!d)return;e.stopPropagation();const [pk,i]=d.dataset.dsj.split('.').map(Number);const st=pb.scrollTop;togDes(pk,i);render();pb.scrollTop=st},true);
 pb.addEventListener('click',e=>{const s=e.target.closest('[data-sino]');if(!s)return;e.stopPropagation();const st=pb.scrollTop;togSino(+s.dataset.sino);render();pb.scrollTop=st});
 if(!NOVOn&&SINOOK.length)setTimeout(()=>{const tryOpen=()=>{if(document.querySelector('.avm:not([hidden])')||!document.getElementById('tutm').hidden){setTimeout(tryOpen,1500);return}openNovos()};tryOpen()},1800);
 
