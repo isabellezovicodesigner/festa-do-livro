@@ -294,7 +294,7 @@ h5{font:800 13px "Helvetica Neue",Helvetica,Arial,sans-serif;text-transform:uppe
 <script>
 (async()=>{const bar=document.getElementById('ldb'),t=document.getElementById('ldt');
  const msgs=['Arrumando as estantes…','Contando 7 mil livros…','Montando a tenda…','Carimbando o passaporte…'];let mi=0;const mt=setInterval(()=>{t.textContent=msgs[++mi%msgs.length]},1400);
- try{const r=await fetch('data.json?v=202611160027');const total=+r.headers.get('content-length')||0;let txt;
+ try{const r=await fetch('data.json?v=202611160034');const total=+r.headers.get('content-length')||0;let txt;
   if(r.body&&total){const rd=r.body.getReader();const parts=[];let got=0;for(;;){const {done,value}=await rd.read();if(done)break;parts.push(value);got+=value.length;bar.style.width=Math.min(100,got/total*100)+'%'}const u=new Uint8Array(got);let o=0;for(const p of parts){u.set(p,o);o+=p.length}txt=new TextDecoder().decode(u)}
   else{bar.style.width='60%';txt=await r.text()}
   window.DATA=JSON.parse(txt);bar.style.width='100%';clearInterval(mt);
@@ -542,7 +542,7 @@ function renderFesta(){const n=spNow();ph.style.background=INK;ph.style.color=CR
 
 const panel=document.getElementById('panel'),ph=document.getElementById('ph'),pb=document.getElementById('pb');
 let view=null,mode='todos',filt='',RV=null,pcat=-1,cfilt='',psort='az';
-RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611160027').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
+RV={};const DET={};function det(il){if(!il)return {rv:{},syn:{}};if(DET[il.id]!==undefined)return DET[il.id];DET[il.id]=null;fetch('det-ilha-'+pad2(il.id)+'.json?v=202611160034').then(r=>r.ok?r.json():{rv:{},syn:{}}).then(j=>{DET[il.id]=j;if(panel.classList.contains('open'))render()}).catch(()=>{DET[il.id]={rv:{},syn:{}}});return null}
 const SPN=['#6cc28e','#ef5054','#4a1d1a','#f2a33a','#2f7d4f','#c43a3e','#8a5a44','#e6c84c'];
 const score=b=>{const r=b[6][1],n=b[6][2];return (r*n+3.8*200)/(n+200)};
 const rated=b=>b[6]&&b[6][1]>0&&b[6][2]>=10;
@@ -1300,5 +1300,6 @@ addEventListener('keydown',e=>{if(e.key!=='Escape')return;const open=[...documen
 loop();
 }
 </script>
+<script data-goatcounter="https://euzodesigner.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
